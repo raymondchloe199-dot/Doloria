@@ -1,39 +1,45 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Doloria — Association suisse dédiée à la douleur chronique</title>
 
-<meta name="description"
-content="Doloria est une association suisse dédiée à la douleur chronique, à l'information, à l'accompagnement et à l'évolution des parcours de vie et de soins.">
+<meta
+  name="description"
+  content="Doloria est une association suisse dédiée à la douleur chronique, à l'information, à l'accompagnement et à l'évolution des parcours de vie et de soins."
+>
 
 <style>
 
 /* =========================================================
-   DOLORIA V5 — SIGNATURE
+   DOLORIA — IDENTITÉ
 ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Libre+Bodoni:wght@400;500&display=swap');
 
 :root {
-  --wine:#4C0507;
-  --wine-dark:#280103;
-  --wine-soft:#681418;
 
-  --cream:#F0DFC7;
-  --cream-light:#F8ECDA;
+  --bordeaux:#570204;
+  --bordeaux-dark:#340102;
+  --bordeaux-soft:#6B1013;
 
-  --petrol:#247886;
-  --petrol-dark:#155965;
+  --cream:#F7EDE2;
+  --cream-soft:#EEE0D2;
 
-  --yellow:#E5C45D;
-  --coral:#D98268;
+  --raspberry:#BF1246;
+  --red:#FF4136;
 
-  --muted:#D0B4A8;
-  --ink:#260203;
+  --petrol:#247787;
+  --yellow:#E7C660;
+
+  --text-soft:#D8BDB5;
+
 }
+
+/* RESET */
 
 * {
   margin:0;
@@ -46,14 +52,43 @@ html {
 }
 
 body {
-  font-family:"DM Sans",sans-serif;
-  background:var(--wine);
+
+  background:var(--bordeaux);
+
   color:var(--cream);
+
   overflow-x:hidden;
+
+  /*
+     GLACIAL INDIFFERENCE APPROXIMATION
+  */
+
+  font-family:
+  "Glacial Indifference",
+  "Montserrat",
+  "Helvetica Neue",
+  Arial,
+  sans-serif;
+
+  font-weight:400;
 }
 
-h1,h2,h3,.logo {
-  font-family:"Space Grotesk",sans-serif;
+h1,
+h2,
+h3 {
+
+  /*
+     SWISS 721 APPROXIMATION
+  */
+
+  font-family:
+  "Swiss 721",
+  "Helvetica Neue",
+  Helvetica,
+  Arial,
+  sans-serif;
+
+  font-weight:400;
 }
 
 a {
@@ -62,8 +97,8 @@ a {
 }
 
 ::selection {
-  background:var(--yellow);
-  color:var(--wine);
+  background:var(--raspberry);
+  color:var(--cream);
 }
 
 
@@ -72,116 +107,78 @@ a {
 ========================================================= */
 
 body::after {
+
   content:"";
+
   position:fixed;
+
   inset:0;
-  z-index:9998;
+
   pointer-events:none;
-  opacity:.035;
+
+  opacity:.028;
+
+  z-index:9998;
 
   background-image:
-  url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+
 }
 
 
 /* =========================================================
-   BARRE DE PROGRESSION
+   SCROLL PROGRESS
 ========================================================= */
 
 #progress {
+
   position:fixed;
+
   top:0;
   left:0;
+
+  height:4px;
   width:0;
-  height:5px;
-  background:var(--yellow);
+
+  background:var(--raspberry);
+
   z-index:10000;
+
 }
 
 
 /* =========================================================
-   CURSEUR
+   CUSTOM CURSOR
 ========================================================= */
 
 #cursor {
-  position:fixed;
-  top:0;
-  left:0;
-  width:18px;
-  height:18px;
-  border-radius:50%;
 
-  background:var(--yellow);
-
-  z-index:9997;
-  pointer-events:none;
-
-  mix-blend-mode:difference;
-
-  transition:
-  width .18s ease,
-  height .18s ease;
-}
-
-#cursor.big {
-  width:60px;
-  height:60px;
-}
-
-
-/* =========================================================
-   FIL ROUGE DOLORIA
-========================================================= */
-
-.story-thread {
-  position:fixed;
-  top:0;
-  left:34px;
-
-  width:4px;
-  height:100vh;
-
-  background:
-  repeating-linear-gradient(
-    to bottom,
-    var(--petrol) 0,
-    var(--petrol) 12px,
-    transparent 12px,
-    transparent 23px
-  );
-
-  z-index:80;
-  opacity:.65;
-  pointer-events:none;
-}
-
-.thread-dot {
   position:fixed;
 
-  left:21px;
-  top:100px;
-
-  width:30px;
-  height:30px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  width:13px;
+  height:13px;
 
   border-radius:50%;
 
   background:var(--cream);
-  color:var(--wine);
-
-  font-weight:950;
-
-  border:5px solid var(--petrol);
-
-  z-index:90;
 
   pointer-events:none;
 
-  transition:transform .1s linear;
+  z-index:9999;
+
+  mix-blend-mode:difference;
+
+  transition:
+  width .2s,
+  height .2s;
+
+}
+
+#cursor.big {
+
+  width:52px;
+  height:52px;
+
 }
 
 
@@ -190,61 +187,108 @@ body::after {
 ========================================================= */
 
 header {
+
   position:fixed;
+
   top:0;
   left:0;
   right:0;
 
-  height:88px;
+  height:92px;
 
   z-index:1000;
 
-  transition:.3s ease;
+  transition:.35s ease;
+
 }
 
 header.scrolled {
-  background:rgba(40,1,3,.88);
+
+  background:rgba(52,1,2,.9);
+
   backdrop-filter:blur(16px);
 
   border-bottom:
-  1px solid rgba(240,223,199,.1);
+  1px solid rgba(247,237,226,.08);
+
 }
 
 nav {
-  max-width:1320px;
+
+  max-width:1380px;
 
   height:100%;
 
   margin:auto;
-  padding:0 28px 0 65px;
+
+  padding:0 32px;
 
   display:flex;
+
   align-items:center;
+
   justify-content:space-between;
+
+  gap:30px;
+
 }
 
-.logo {
-  font-size:1.55rem;
-  font-weight:700;
-  letter-spacing:.14em;
+
+/* LOGO IMAGE */
+
+.logo-image {
+
+  width:145px;
+
+  height:auto;
+
+  display:block;
+
 }
+
+
+/* FALLBACK SI IMAGE ABSENTE */
+
+.logo-text {
+
+  font-family:
+  "Libre Bodoni",
+  Georgia,
+  serif;
+
+  font-size:2rem;
+
+  letter-spacing:-.04em;
+
+}
+
 
 .nav-links {
-  display:flex;
-  align-items:center;
-  gap:27px;
 
-  font-size:.9rem;
-  font-weight:700;
+  display:flex;
+
+  gap:30px;
+
+  align-items:center;
+
+  font-size:.86rem;
+
+  letter-spacing:.03em;
+
 }
 
 .nav-links a {
+
   opacity:.78;
-  transition:.2s;
+
+  transition:.25s ease;
+
 }
 
 .nav-links a:hover {
+
   opacity:1;
+
 }
 
 
@@ -253,61 +297,75 @@ nav {
 ========================================================= */
 
 .sticker-btn {
+
   position:relative;
 
   display:inline-flex;
+
   align-items:center;
   justify-content:center;
 
-  padding:14px 24px;
+  padding:14px 25px;
 
   background:var(--cream);
-  color:var(--wine);
 
-  font-weight:800;
+  color:var(--bordeaux);
+
+  font-weight:600;
 
   border-radius:
-  14px 18px 12px 19px;
+  12px 17px 11px 18px;
+
+  transform:rotate(-1deg);
 
   z-index:1;
 
-  transition:transform .2s ease;
+  transition:.2s ease;
+
 }
 
 .sticker-btn::before {
+
   content:"";
 
   position:absolute;
+
   inset:-7px;
 
-  background:var(--petrol);
+  background:var(--raspberry);
 
   border-radius:
-  20px 15px 23px 16px;
+  19px 14px 22px 15px;
 
-  transform:rotate(2deg);
+  transform:rotate(1.5deg);
 
   z-index:-2;
+
 }
 
 .sticker-btn::after {
+
   content:"";
 
   position:absolute;
+
   inset:-3px;
 
   background:var(--cream);
 
   border-radius:
-  15px 19px 14px 20px;
+  15px 18px 14px 19px;
 
   z-index:-1;
+
 }
 
 .sticker-btn:hover {
+
   transform:
   translateY(-4px)
   rotate(1deg);
+
 }
 
 
@@ -316,384 +374,441 @@ nav {
 ========================================================= */
 
 .hero {
-  min-height:100vh;
 
   position:relative;
 
+  min-height:100vh;
+
   display:flex;
+
   align-items:center;
 
   overflow:hidden;
 
   background:
-  radial-gradient(circle at 90% 20%,#74191E 0%,transparent 34%),
-  radial-gradient(circle at 5% 90%,#250102 0%,transparent 45%),
-  var(--wine);
+
+  radial-gradient(
+    circle at 88% 18%,
+    #721015 0%,
+    transparent 38%
+  ),
+
+  var(--bordeaux);
+
 }
 
+
 .hero-inner {
-  width:min(1320px,100%);
+
+  width:min(1380px,100%);
 
   margin:auto;
 
-  padding:150px 28px 100px 80px;
+  padding:
+  160px 32px
+  110px;
 
   position:relative;
 
   z-index:5;
+
 }
 
-.hero-tag {
+
+/* LABEL */
+
+.hero-label {
+
   display:inline-block;
 
-  padding:8px 14px;
-  margin-bottom:38px;
+  margin-bottom:36px;
 
-  background:var(--cream);
-  color:var(--wine);
+  font-size:.76rem;
 
-  font-size:.75rem;
-  font-weight:900;
+  letter-spacing:.18em;
 
   text-transform:uppercase;
-  letter-spacing:.15em;
 
-  transform:rotate(-2deg);
+  opacity:.75;
 
-  box-shadow:6px 7px 0 var(--petrol);
 }
 
 
-/* LA DOULEUR "PREND TROP DE PLACE" */
+/* HERO TITLE */
 
-.hero-pain {
-  position:absolute;
+.hero h1 {
 
-  right:-5%;
-  top:10%;
-
-  font-family:"Space Grotesk",sans-serif;
-
-  font-size:clamp(12rem,30vw,29rem);
-
-  font-weight:700;
-
-  line-height:.7;
-
-  color:#70171B;
-
-  opacity:.53;
-
-  letter-spacing:-.09em;
-
-  user-select:none;
-
-  z-index:0;
-
-  will-change:transform;
-}
-
-
-.hero-title {
-  position:relative;
-
-  max-width:1000px;
+  max-width:1100px;
 
   font-size:
-  clamp(4.5rem,10vw,9.2rem);
+  clamp(4.2rem,10vw,9rem);
 
-  line-height:.79;
+  line-height:.87;
 
-  letter-spacing:-.075em;
+  letter-spacing:-.06em;
 
-  text-transform:uppercase;
+  font-weight:400;
 
-  z-index:5;
 }
 
+
+/* TEXT ANIMATION */
+
 .hero-line {
+
   display:block;
+
   overflow:hidden;
+
 }
 
 .hero-line span {
+
   display:block;
 
-  transform:translateY(115%);
+  transform:translateY(110%);
 
   animation:
-  titleIn 1.1s
+  titleReveal 1.1s
   cubic-bezier(.16,1,.3,1)
   forwards;
+
 }
 
 .hero-line:nth-child(2) span {
+
   animation-delay:.12s;
+
 }
 
 .hero-line:nth-child(3) span {
+
   animation-delay:.24s;
+
 }
 
-@keyframes titleIn {
+@keyframes titleReveal {
+
   to {
+
     transform:translateY(0);
+
   }
+
 }
+
+
+/* LIFE */
 
 .hero-life {
-  display:inline-block;
+
+  color:var(--cream);
 
   position:relative;
 
-  color:var(--yellow);
 }
 
-.hero-life::after {
-  content:"";
 
-  position:absolute;
-
-  left:0;
-  right:-3%;
-  bottom:-12px;
-
-  height:15px;
-
-  background:var(--petrol);
-
-  border-radius:
-  80% 30% 70% 40%;
-
-  transform:rotate(-2deg);
-
-  z-index:-1;
-}
+/* DESCRIPTION */
 
 .hero-description {
-  max-width:680px;
 
-  margin-top:55px;
+  max-width:650px;
 
-  font-size:1.17rem;
+  margin-top:48px;
+
+  font-size:1.13rem;
+
   line-height:1.75;
 
-  color:var(--muted);
+  color:var(--text-soft);
+
 }
 
 .hero-actions {
+
   margin-top:42px;
+
 }
 
 
 /* =========================================================
-   D. VIVANT
+   LOGO LINE — SIGNATURE DOLORIA
 ========================================================= */
 
-.d-creature {
+.signature {
+
   position:absolute;
 
-  right:10%;
-  bottom:12%;
+  right:-3%;
 
-  width:105px;
-  height:105px;
+  top:7%;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  width:62vw;
 
-  background:var(--cream);
-  color:var(--wine);
+  height:65vh;
 
-  font-family:"Space Grotesk",sans-serif;
+  pointer-events:none;
 
-  font-size:3rem;
-  font-weight:700;
+  opacity:.95;
 
-  border-radius:
-  56% 44% 58% 42% /
-  45% 58% 42% 55%;
+  z-index:1;
 
-  border:7px solid var(--petrol);
-
-  box-shadow:9px 10px 0 var(--wine-dark);
-
-  animation:
-  blobMove 5s ease-in-out infinite;
-
-  z-index:6;
 }
 
-@keyframes blobMove {
-  0%,100% {
-    border-radius:
-    56% 44% 58% 42% /
-    45% 58% 42% 55%;
+.signature-path {
 
-    transform:
-    translateY(0)
-    rotate(-3deg);
-  }
+  fill:none;
 
-  50% {
-    border-radius:
-    42% 58% 38% 62% /
-    58% 40% 60% 42%;
+  stroke:var(--cream);
 
-    transform:
-    translateY(-18px)
-    rotate(4deg);
-  }
+  stroke-width:8;
+
+  stroke-linecap:round;
+
+  stroke-linejoin:round;
+
+  filter:
+  drop-shadow(
+    0 0 1px
+    rgba(255,255,255,.4)
+  );
+
+}
+
+
+/* POINT */
+
+.signature-dot {
+
+  fill:var(--raspberry);
+
+  filter:
+  drop-shadow(
+    0 0 12px
+    var(--red)
+  );
+
 }
 
 
 /* =========================================================
-   MANIFESTE
+   LOGO WATERMARK
+========================================================= */
+
+.logo-watermark {
+
+  position:absolute;
+
+  right:8%;
+
+  bottom:13%;
+
+  font-family:
+  "Libre Bodoni",
+  Georgia,
+  serif;
+
+  font-size:
+  clamp(4rem,8vw,8rem);
+
+  color:var(--cream);
+
+  opacity:.92;
+
+  letter-spacing:-.06em;
+
+}
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal {
+
+  opacity:0;
+
+  transform:
+  translateY(60px);
+
+  transition:
+
+  opacity .85s
+  cubic-bezier(.16,1,.3,1),
+
+  transform .85s
+  cubic-bezier(.16,1,.3,1);
+
+}
+
+.reveal.visible {
+
+  opacity:1;
+
+  transform:none;
+
+}
+
+
+/* =========================================================
+   MANIFESTO
 ========================================================= */
 
 .manifesto {
-  min-height:90vh;
 
-  padding:150px 28px 150px 80px;
+  min-height:85vh;
 
   display:flex;
+
   align-items:center;
 
-  background:var(--wine-dark);
+  padding:
+  150px 32px;
 
-  overflow:hidden;
+  background:var(--bordeaux-dark);
+
 }
 
 .manifesto-inner {
+
   max-width:1150px;
+
   margin:auto;
+
 }
+
 
 .label {
+
   display:inline-block;
 
-  margin-bottom:25px;
+  margin-bottom:28px;
 
-  color:var(--petrol);
+  font-size:.75rem;
 
-  font-size:.78rem;
-  font-weight:900;
+  letter-spacing:.2em;
 
   text-transform:uppercase;
-  letter-spacing:.2em;
+
+  color:var(--raspberry);
+
 }
 
-.manifesto-text {
-  font-family:"Space Grotesk",sans-serif;
+
+.manifesto h2 {
 
   font-size:
-  clamp(3rem,6.5vw,6.3rem);
+  clamp(3rem,6vw,6rem);
 
-  font-weight:700;
-
-  line-height:.98;
+  line-height:1;
 
   letter-spacing:-.055em;
+
+  font-weight:400;
+
 }
 
+
 .manifesto-sticker {
-  position:relative;
 
   display:inline-block;
 
-  padding:6px 15px;
-  margin:7px;
+  position:relative;
+
+  margin-top:10px;
+
+  padding:7px 17px;
+
+  color:var(--bordeaux);
 
   background:var(--cream);
-  color:var(--wine);
 
   transform:rotate(-1deg);
 
   z-index:1;
+
 }
 
 .manifesto-sticker::before {
+
   content:"";
 
   position:absolute;
+
   inset:-7px;
 
-  background:var(--petrol);
+  background:var(--raspberry);
 
   border-radius:
-  18px 13px 20px 12px;
+  18px 13px 20px 14px;
 
-  transform:rotate(2deg);
+  transform:rotate(1.5deg);
 
   z-index:-1;
+
 }
 
 
 /* =========================================================
-   REVEALS
+   UNDERSTAND
 ========================================================= */
-
-.reveal {
-  opacity:0;
-
-  transform:
-  translateY(65px);
-
-  transition:
-  opacity .85s cubic-bezier(.16,1,.3,1),
-  transform .85s cubic-bezier(.16,1,.3,1);
-}
-
-.reveal.visible {
-  opacity:1;
-  transform:translateY(0);
-}
-
-
-/* =========================================================
-   COMPRENDRE
-========================================================= */
-
-.container {
-  max-width:1260px;
-  margin:auto;
-}
 
 .understand {
-  padding:
-  145px 28px
-  145px 80px;
 
-  background:var(--wine);
+  padding:
+  150px 32px;
+
+  background:var(--bordeaux);
+
+}
+
+.container {
+
+  max-width:1280px;
+
+  margin:auto;
+
 }
 
 .section-heading {
-  max-width:830px;
+
+  max-width:800px;
+
   margin-bottom:75px;
+
 }
 
 .section-heading h2 {
+
   font-size:
-  clamp(3.2rem,7vw,6.5rem);
+  clamp(3.4rem,7vw,6.5rem);
 
-  line-height:.88;
+  line-height:.91;
 
-  letter-spacing:-.06em;
+  letter-spacing:-.055em;
 
-  margin-bottom:28px;
+  margin-bottom:30px;
+
 }
 
 .section-heading p {
-  max-width:670px;
 
-  color:var(--muted);
+  max-width:650px;
 
-  font-size:1.15rem;
-  line-height:1.7;
+  font-size:1.1rem;
+
+  line-height:1.75;
+
+  color:var(--text-soft);
+
 }
 
+
+/* CARDS */
+
 .cards {
+
   display:grid;
 
   grid-template-columns:
@@ -701,201 +816,177 @@ nav {
 
   gap:25px;
 
-  perspective:1200px;
 }
 
 .card {
-  min-height:400px;
+
+  min-height:390px;
 
   padding:35px;
 
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-
   border:
-  1px solid rgba(240,223,199,.18);
+  1px solid
+  rgba(247,237,226,.15);
 
   border-radius:
-  32px 22px 35px 25px;
+  27px 20px 30px 22px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:space-between;
 
   position:relative;
+
   overflow:hidden;
 
-  transform-style:preserve-3d;
+  transition:.3s ease;
 
-  transition:
-  background .3s ease,
-  transform .15s ease;
-}
-
-.card::after {
-  content:"";
-
-  position:absolute;
-
-  width:170px;
-  height:170px;
-
-  right:-80px;
-  top:-80px;
-
-  border-radius:50%;
-
-  background:var(--petrol);
-
-  opacity:0;
-
-  transition:.35s ease;
-}
-
-.card:hover::after {
-  opacity:.18;
-  transform:scale(1.3);
 }
 
 .card:hover {
-  background:var(--wine-soft);
+
+  background:var(--bordeaux-soft);
+
+  transform:
+  translateY(-8px);
+
 }
 
 .card-number {
-  color:var(--petrol);
 
-  font-weight:900;
+  font-size:.78rem;
+
   letter-spacing:.18em;
+
+  color:var(--raspberry);
+
 }
 
 .card h3 {
-  font-size:1.8rem;
-  line-height:1.05;
 
-  margin-bottom:17px;
+  font-size:1.8rem;
+
+  line-height:1.08;
+
+  margin-bottom:18px;
+
 }
 
 .card p {
-  color:var(--muted);
-  line-height:1.65;
+
+  color:var(--text-soft);
+
+  line-height:1.7;
+
 }
 
 
 /* =========================================================
-   LA DOULEUR N'EST PAS TOUTE L'HISTOIRE
+   BIG MESSAGE
 ========================================================= */
 
 .statement {
-  position:relative;
 
   padding:
-  140px 28px
-  140px 80px;
+  130px 32px;
 
   background:var(--cream);
 
-  color:var(--wine);
+  color:var(--bordeaux);
 
   overflow:hidden;
+
 }
 
 .statement-inner {
+
   max-width:1320px;
+
   margin:auto;
+
 }
 
 .statement-line {
-  font-family:"Space Grotesk",sans-serif;
-
-  font-size:
-  clamp(3.2rem,8vw,7.7rem);
-
-  font-weight:700;
-
-  line-height:.9;
-
-  letter-spacing:-.06em;
-
-  will-change:transform;
-}
-
-.statement-line.second {
-  margin-top:12px;
-
-  color:var(--petrol);
-}
-
-.statement-mark {
-  position:absolute;
-
-  right:7%;
-  top:22%;
-
-  width:170px;
-  height:170px;
-
-  border-radius:
-  50% 42% 57% 43%;
-
-  border:
-  14px solid var(--yellow);
-
-  opacity:.65;
-
-  animation:
-  rotateMark 15s linear infinite;
-}
-
-@keyframes rotateMark {
-  to {
-    transform:rotate(360deg);
-  }
-}
-
-
-/* =========================================================
-   PARCOURS
-========================================================= */
-
-.journey {
-  min-height:1050px;
-
-  position:relative;
-
-  padding:
-  145px 28px
-  145px 80px;
-
-  background:var(--cream);
-  color:var(--wine);
-
-  overflow:hidden;
-}
-
-.journey .label {
-  color:var(--wine);
-}
-
-.journey h2 {
-  max-width:870px;
 
   font-size:
   clamp(3rem,7vw,7rem);
 
-  line-height:.86;
+  line-height:.95;
 
-  letter-spacing:-.06em;
+  letter-spacing:-.055em;
+
+  will-change:transform;
+
 }
 
-.journey-description {
-  max-width:610px;
+.statement-line.second {
 
-  margin-top:32px;
+  color:var(--raspberry);
 
-  color:#715A53;
+  margin-top:12px;
 
-  font-size:1.15rem;
-  line-height:1.7;
 }
+
+
+/* =========================================================
+   JOURNEY
+========================================================= */
+
+.journey {
+
+  position:relative;
+
+  min-height:1000px;
+
+  padding:
+  145px 32px;
+
+  background:var(--cream);
+
+  color:var(--bordeaux);
+
+  overflow:hidden;
+
+}
+
+.journey .label {
+
+  color:var(--raspberry);
+
+}
+
+.journey h2 {
+
+  max-width:850px;
+
+  font-size:
+  clamp(3rem,7vw,6.5rem);
+
+  line-height:.9;
+
+  letter-spacing:-.055em;
+
+}
+
+.journey p {
+
+  max-width:580px;
+
+  margin-top:30px;
+
+  line-height:1.75;
+
+  color:#715951;
+
+}
+
+
+/* PATH */
 
 .journey-svg {
+
   position:absolute;
 
   inset:0;
@@ -903,162 +994,110 @@ nav {
   width:100%;
   height:100%;
 
-  pointer-events:none;
 }
 
 .journey-svg path {
+
   fill:none;
 
-  stroke:var(--petrol);
+  stroke:var(--bordeaux);
 
-  stroke-width:13;
+  stroke-width:9;
+
+  opacity:.15;
 
   stroke-linecap:round;
 
-  stroke-dasharray:5 27;
 }
 
-#traveller {
-  position:absolute;
+#journeyDot {
 
-  width:90px;
-  height:90px;
+  fill:var(--raspberry);
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  filter:
+  drop-shadow(
+    0 0 10px
+    var(--red)
+  );
 
-  background:var(--wine);
-  color:var(--cream);
-
-  border-radius:
-  50% 42% 57% 43%;
-
-  border:7px solid var(--yellow);
-
-  font-family:"Space Grotesk",sans-serif;
-
-  font-size:2rem;
-  font-weight:700;
-
-  box-shadow:
-  8px 9px 0 var(--petrol);
-
-  z-index:10;
-
-  will-change:transform;
 }
 
 
 /* =========================================================
-   RESPIRER
+   BREATH
 ========================================================= */
 
 .breathe {
-  min-height:95vh;
+
+  min-height:90vh;
+
+  padding:140px 32px;
+
+  display:flex;
+
+  align-items:center;
+
+  background:var(--bordeaux);
 
   position:relative;
 
-  display:flex;
-  align-items:center;
-
-  padding:
-  130px 28px
-  130px 80px;
-
-  background:var(--wine);
-
   overflow:hidden;
+
 }
 
 .breathe-inner {
+
   max-width:1100px;
 
   margin:auto;
 
-  position:relative;
-
-  z-index:2;
 }
 
 .breathe h2 {
+
   font-size:
-  clamp(3.8rem,9vw,8.5rem);
+  clamp(3.8rem,8vw,8rem);
 
-  line-height:.84;
+  line-height:.89;
 
-  letter-spacing:-.07em;
+  letter-spacing:-.065em;
+
 }
 
 .breathe h2 span {
-  color:var(--yellow);
-}
 
-.breathe-orbit {
-  position:absolute;
+  color:var(--raspberry);
 
-  right:-4%;
-  top:10%;
-
-  width:520px;
-  height:520px;
-
-  border:
-  2px solid rgba(240,223,199,.18);
-
-  border-radius:
-  50% 42% 58% 45%;
-
-  animation:
-  orbitSpin 22s linear infinite;
-}
-
-.breathe-orbit::after {
-  content:"";
-
-  position:absolute;
-
-  width:55px;
-  height:55px;
-
-  top:35px;
-  left:80px;
-
-  border-radius:50%;
-
-  background:var(--petrol);
-}
-
-@keyframes orbitSpin {
-  to {
-    transform:rotate(360deg);
-  }
 }
 
 
 /* =========================================================
-   PETITS COURAGEUX — CHAPITRE
+   PETITS COURAGEUX
 ========================================================= */
 
-.kids-portal {
+.kids {
+
   min-height:100vh;
 
-  position:relative;
+  padding:
+  145px 32px;
+
+  background:#254D58;
 
   display:flex;
+
   align-items:center;
 
-  padding:
-  145px 28px
-  145px 80px;
-
-  background:var(--petrol-dark);
-
   overflow:hidden;
+
 }
 
 .kids-inner {
-  width:min(1260px,100%);
+
+  max-width:1280px;
+
+  width:100%;
+
   margin:auto;
 
   display:grid;
@@ -1066,64 +1105,72 @@ nav {
   grid-template-columns:
   1.05fr .95fr;
 
-  align-items:center;
-
   gap:80px;
 
-  position:relative;
+  align-items:center;
 
-  z-index:5;
 }
 
 .kids-overline {
+
   display:inline-block;
 
-  padding:8px 15px;
   margin-bottom:30px;
 
+  padding:8px 15px;
+
   background:var(--yellow);
-  color:var(--wine);
 
-  font-size:.78rem;
-  font-weight:900;
+  color:var(--bordeaux);
 
-  letter-spacing:.14em;
+  font-size:.75rem;
+
+  letter-spacing:.16em;
+
   text-transform:uppercase;
 
   transform:rotate(-2deg);
 
   box-shadow:
-  6px 6px 0 var(--wine);
+  5px 6px 0
+  var(--bordeaux);
+
 }
 
-.kids-title {
+.kids h2 {
+
   font-size:
-  clamp(3.8rem,7.7vw,7.5rem);
+  clamp(3.7rem,7.8vw,7.2rem);
 
-  line-height:.84;
+  line-height:.88;
 
-  letter-spacing:-.065em;
+  letter-spacing:-.06em;
+
 }
 
-.kids-sticker-word {
-  position:relative;
+.kids-sticker {
 
   display:inline-block;
 
-  margin-top:10px;
+  position:relative;
 
   padding:
-  7px 17px 12px;
+  7px 17px 11px;
+
+  margin-top:10px;
 
   background:var(--cream);
-  color:var(--wine);
+
+  color:var(--bordeaux);
 
   transform:rotate(-1deg);
 
   z-index:1;
+
 }
 
-.kids-sticker-word::before {
+.kids-sticker::before {
+
   content:"";
 
   position:absolute;
@@ -1133,176 +1180,138 @@ nav {
   background:var(--yellow);
 
   border-radius:
-  28px 18px 31px 20px;
+  25px 17px 29px 19px;
 
   transform:rotate(2deg);
 
   z-index:-1;
+
 }
 
 .kids-text {
-  max-width:660px;
+
+  max-width:640px;
 
   margin-top:38px;
 
-  font-size:1.16rem;
   line-height:1.75;
+
 }
 
 .kids-actions {
+
   margin-top:44px;
+
 }
 
 
-/* =========================================================
-   LIVRE / PORTE
-========================================================= */
+/* BOOK */
 
 .book-scene {
-  min-height:570px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  min-height:560px;
+
+  perspective:1200px;
 
   position:relative;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  perspective:1200px;
 }
 
 .book {
-  position:relative;
 
-  width:min(390px,78vw);
+  width:min(390px,80vw);
 
   aspect-ratio:.72;
 
-  padding:40px 35px 35px 56px;
-
-  background:var(--cream);
-  color:var(--wine);
-
-  border-radius:
-  10px 31px 26px 11px;
+  padding:
+  40px 35px 35px 58px;
 
   display:flex;
+
   flex-direction:column;
+
   justify-content:space-between;
 
+  background:var(--cream);
+
+  color:var(--bordeaux);
+
+  border-radius:
+  10px 30px 25px 11px;
+
   box-shadow:
-  20px 22px 0 var(--wine);
+  20px 22px 0
+  var(--bordeaux);
 
-  transform:
-  rotate(3deg);
+  transform:rotate(3deg);
 
-  transition:
-  transform .4s cubic-bezier(.16,1,.3,1),
-  box-shadow .4s ease;
+  transition:.4s ease;
+
+  position:relative;
+
 }
 
 .book::before {
+
   content:"";
 
   position:absolute;
 
   left:20px;
+
   top:0;
   bottom:0;
 
   width:8px;
 
-  background:var(--coral);
+  background:var(--raspberry);
 
-  border-radius:10px;
 }
 
 .book:hover {
+
   transform:
   translateY(-15px)
-  rotateY(-9deg)
+  rotateY(-8deg)
   rotate(0deg);
 
   box-shadow:
-  27px 30px 0 var(--wine);
+  27px 30px 0
+  var(--bordeaux);
+
 }
 
 .book-small {
-  font-size:.78rem;
-  font-weight:900;
 
-  letter-spacing:.14em;
+  font-size:.72rem;
+
+  letter-spacing:.15em;
+
   text-transform:uppercase;
+
 }
 
 .book h3 {
+
   font-size:
-  clamp(2.6rem,5vw,4.4rem);
+  clamp(2.5rem,5vw,4.2rem);
 
-  line-height:.89;
+  letter-spacing:-.055em;
 
-  letter-spacing:-.065em;
+  line-height:.92;
+
 }
 
 .book-end {
-  font-weight:800;
-}
 
-.kids-doodle {
-  position:absolute;
+  font-weight:600;
 
-  font-family:"Space Grotesk",sans-serif;
-
-  font-weight:700;
-
-  user-select:none;
-
-  animation:
-  kidsFloat 5s ease-in-out infinite;
-}
-
-.kids-doodle.one {
-  right:1%;
-  top:7%;
-
-  font-size:5.5rem;
-
-  color:var(--yellow);
-}
-
-.kids-doodle.two {
-  left:-4%;
-  bottom:11%;
-
-  font-size:4.4rem;
-
-  color:var(--coral);
-
-  animation-delay:-2s;
-}
-
-.kids-doodle.three {
-  right:3%;
-  bottom:5%;
-
-  font-size:4rem;
-
-  color:var(--cream);
-
-  animation-delay:-3.5s;
-}
-
-@keyframes kidsFloat {
-  0%,100% {
-    transform:
-    translateY(0)
-    rotate(-4deg);
-  }
-
-  50% {
-    transform:
-    translateY(-24px)
-    rotate(7deg);
-  }
 }
 
 
@@ -1311,21 +1320,26 @@ nav {
 ========================================================= */
 
 .actions {
-  padding:
-  145px 28px
-  145px 80px;
 
-  background:var(--wine-dark);
+  padding:
+  150px 32px;
+
+  background:var(--bordeaux-dark);
+
 }
 
 .actions-list {
+
   margin-top:60px;
 
   border-top:
-  1px solid rgba(240,223,199,.18);
+  1px solid
+  rgba(247,237,226,.15);
+
 }
 
 .action-row {
+
   padding:38px 0;
 
   display:grid;
@@ -1335,34 +1349,43 @@ nav {
 
   gap:30px;
 
+  border-bottom:
+  1px solid
+  rgba(247,237,226,.15);
+
   align-items:center;
 
-  border-bottom:
-  1px solid rgba(240,223,199,.18);
+  transition:.3s ease;
 
-  transition:
-  padding .3s ease;
 }
 
 .action-row:hover {
-  padding-left:22px;
+
+  padding-left:20px;
+
 }
 
 .action-row strong {
-  color:var(--petrol);
 
-  font-size:.84rem;
+  color:var(--raspberry);
+
+  font-size:.8rem;
+
 }
 
 .action-row h3 {
+
   font-size:
-  clamp(1.6rem,3vw,2.7rem);
+  clamp(1.5rem,3vw,2.5rem);
+
 }
 
 .action-row p {
-  color:var(--muted);
 
-  line-height:1.65;
+  line-height:1.7;
+
+  color:var(--text-soft);
+
 }
 
 
@@ -1371,81 +1394,40 @@ nav {
 ========================================================= */
 
 .cta {
+
   min-height:85vh;
 
+  padding:120px 32px;
+
   display:flex;
+
   align-items:center;
 
-  padding:
-  120px 28px
-  120px 80px;
+  background:var(--bordeaux);
 
-  background:var(--wine);
-
-  overflow:hidden;
 }
 
 .cta-inner {
+
   max-width:1100px;
 
   margin:auto;
 
   text-align:center;
 
-  position:relative;
-
-  z-index:2;
 }
 
 .cta h2 {
+
   font-size:
-  clamp(4rem,9vw,9rem);
+  clamp(3.8rem,8vw,8rem);
 
-  line-height:.82;
+  line-height:.88;
 
-  letter-spacing:-.075em;
+  letter-spacing:-.065em;
 
   margin-bottom:55px;
-}
 
-.cta-ring {
-  position:absolute;
-
-  width:480px;
-  height:480px;
-
-  left:50%;
-  top:50%;
-
-  transform:
-  translate(-50%,-50%);
-
-  border:
-  45px solid rgba(36,120,134,.17);
-
-  border-radius:
-  48% 52% 44% 56%;
-
-  animation:
-  ringWobble 10s ease-in-out infinite;
-
-  pointer-events:none;
-}
-
-@keyframes ringWobble {
-  0%,100% {
-    transform:
-    translate(-50%,-50%)
-    rotate(0deg)
-    scale(1);
-  }
-
-  50% {
-    transform:
-    translate(-50%,-50%)
-    rotate(15deg)
-    scale(1.08);
-  }
 }
 
 
@@ -1454,45 +1436,50 @@ nav {
 ========================================================= */
 
 footer {
-  padding:
-  70px 28px
-  70px 80px;
 
-  background:#1D0102;
+  padding:70px 32px;
+
+  background:#250102;
+
 }
 
 .footer {
-  max-width:1260px;
+
+  max-width:1280px;
 
   margin:auto;
 
   display:flex;
+
   justify-content:space-between;
+
+  gap:40px;
 
   flex-wrap:wrap;
 
-  gap:40px;
 }
 
 .footer-logo {
-  font-family:"Space Grotesk",sans-serif;
 
-  font-size:2rem;
+  font-family:
+  "Libre Bodoni",
+  Georgia,
+  serif;
 
-  font-weight:700;
+  font-size:2.4rem;
 
-  letter-spacing:.13em;
-}
-
-.footer p,
-.footer-links {
-  color:#A57C75;
 }
 
 .footer-links {
+
   display:flex;
+
   gap:25px;
+
   flex-wrap:wrap;
+
+  color:#A98279;
+
 }
 
 
@@ -1502,87 +1489,70 @@ footer {
 
 @media(max-width:920px) {
 
-  #cursor,
-  .story-thread,
-  .thread-dot {
+  #cursor {
     display:none;
-  }
-
-  nav {
-    padding-left:25px;
   }
 
   .nav-links {
     display:none;
   }
 
-  .hero-inner,
-  .manifesto,
-  .understand,
-  .statement,
-  .journey,
-  .breathe,
-  .kids-portal,
-  .actions,
-  .cta,
-  footer {
-    padding-left:25px;
-    padding-right:25px;
+  .signature {
+
+    width:115vw;
+
+    right:-35%;
+
+    opacity:.4;
+
   }
 
-  .hero-title {
-    font-size:
-    clamp(4rem,18vw,7rem);
-  }
-
-  .hero-pain {
-    opacity:.25;
-  }
-
-  .d-creature {
-    opacity:.55;
-
-    right:-20px;
+  .logo-watermark {
+    display:none;
   }
 
   .cards {
+
     grid-template-columns:1fr;
+
   }
 
   .kids-inner {
+
     grid-template-columns:1fr;
 
-    gap:70px;
   }
 
   .action-row {
+
     grid-template-columns:
     45px 1fr;
+
   }
 
   .action-row p {
+
     grid-column:2;
+
   }
 
 }
 
 
-/* =========================================================
-   ACCESSIBILITÉ
-========================================================= */
+/* ACCESSIBILITY */
 
 @media(prefers-reduced-motion:reduce) {
 
   *,
   *::before,
   *::after {
-    animation-duration:.01ms !important;
-    animation-iteration-count:1 !important;
-    transition-duration:.01ms !important;
-  }
 
-  html {
-    scroll-behavior:auto;
+    animation-duration:.01ms!important;
+
+    animation-iteration-count:1!important;
+
+    transition-duration:.01ms!important;
+
   }
 
 }
@@ -1596,17 +1566,37 @@ footer {
 <div id="progress"></div>
 <div id="cursor"></div>
 
-<div class="story-thread"></div>
-<div class="thread-dot" id="threadDot">D</div>
-
 
 <header id="header">
 
 <nav>
 
-<a href="#accueil" class="logo">
-DOLORIA
+<!--
+REMPLACE logo-doloria.png
+PAR TON IMAGE DANS GITHUB
+-->
+
+<a href="#accueil">
+
+<img
+  src="logo-doloria.png"
+  alt="Doloria"
+  class="logo-image"
+  onerror="
+    this.style.display='none';
+    this.nextElementSibling.style.display='block';
+  "
+>
+
+<span
+  class="logo-text"
+  style="display:none;"
+>
+Doloria
+</span>
+
 </a>
+
 
 <div class="nav-links">
 
@@ -1614,7 +1604,7 @@ DOLORIA
 Comprendre
 </a>
 
-<a href="#petits-courageux">
+<a href="#petits">
 Petits Courageux
 </a>
 
@@ -1632,15 +1622,20 @@ Contact
 
 </div>
 
+
 <a
 href="#contact"
-class="sticker-btn magnetic">
+class="sticker-btn magnetic"
+>
+
 Nous rejoindre
+
 </a>
 
 </nav>
 
 </header>
+
 
 
 <main>
@@ -1652,33 +1647,71 @@ Nous rejoindre
 
 <section
 class="hero"
-id="accueil">
+id="accueil"
+>
 
-<div
-class="hero-pain"
-id="painWord">
-DOULEUR
-</div>
+
+<!-- SIGNATURE LINE -->
+
+<svg
+class="signature"
+viewBox="0 0 1000 600"
+>
+
+<path
+
+id="signaturePath"
+
+class="signature-path"
+
+d="
+M 20 400
+
+C 110 350,
+  150 485,
+  230 390
+
+S 340 430,
+  420 310
+
+S 490 200,
+  570 310
+
+S 660 370,
+  735 335
+
+S 810 430,
+  885 350
+
+S 950 330,
+  990 365
+"
+/>
+
+<circle
+id="signatureDot"
+class="signature-dot"
+r="14"
+/>
+
+</svg>
 
 
 <div class="hero-inner">
 
-<div class="hero-tag">
-Association suisse Doloria
+<div class="hero-label">
+
+Association suisse
+dédiée à la douleur chronique
+
 </div>
 
 
-<h1 class="hero-title">
+<h1>
 
 <span class="hero-line">
 <span>
-La douleur
-</span>
-</span>
-
-<span class="hero-line">
-<span>
-existe.
+La douleur existe.
 </span>
 </span>
 
@@ -1696,8 +1729,9 @@ Votre vie aussi.
 Doloria agit pour que les personnes vivant avec une douleur
 chronique ne soient jamais réduites à leur douleur.
 
-Informer, accompagner, représenter et créer des ressources
-pour remettre la personne, ses choix et ses projets de vie au centre.
+Informer, accompagner et faire évoluer les parcours pour
+redonner davantage de place à la personne, à ses choix
+et à ses projets de vie.
 
 </p>
 
@@ -1706,7 +1740,8 @@ pour remettre la personne, ses choix et ses projets de vie au centre.
 
 <a
 href="#comprendre"
-class="sticker-btn magnetic">
+class="sticker-btn magnetic"
+>
 
 Découvrir Doloria →
 
@@ -1717,8 +1752,10 @@ Découvrir Doloria →
 </div>
 
 
-<div class="d-creature">
-D.
+<div class="logo-watermark">
+
+Doloria
+
 </div>
 
 </section>
@@ -1738,16 +1775,20 @@ Pourquoi Doloria ?
 </div>
 
 
-<div class="manifesto-text reveal">
+<h2 class="reveal">
 
 Vivre avec une douleur chronique
 ne devrait pas signifier
 
+<br>
+
 <span class="manifesto-sticker">
+
 mettre sa vie en pause.
+
 </span>
 
-</div>
+</h2>
 
 </div>
 
@@ -1761,7 +1802,8 @@ mettre sa vie en pause.
 
 <section
 class="understand"
-id="comprendre">
+id="comprendre"
+>
 
 <div class="container">
 
@@ -1770,6 +1812,7 @@ id="comprendre">
 <div class="label reveal">
 Comprendre
 </div>
+
 
 <h2 class="reveal">
 
@@ -1794,7 +1837,7 @@ de la marge de manœuvre dans son quotidien.
 <div class="cards">
 
 
-<article class="card reveal tilt">
+<article class="card reveal">
 
 <div class="card-number">
 01
@@ -1820,7 +1863,7 @@ trop simples et de mieux saisir ce que l'on traverse.
 
 
 
-<article class="card reveal tilt">
+<article class="card reveal">
 
 <div class="card-number">
 02
@@ -1835,7 +1878,7 @@ Trouver son chemin dans les soins
 <p>
 
 Médecins, centres de la douleur, rééducation,
-psychologie, traitements : Doloria aide à rendre
+psychologie ou traitements : Doloria aide à rendre
 les parcours plus lisibles.
 
 </p>
@@ -1846,7 +1889,7 @@ les parcours plus lisibles.
 
 
 
-<article class="card reveal tilt">
+<article class="card reveal">
 
 <div class="card-number">
 03
@@ -1860,7 +1903,7 @@ Continuer à vivre
 
 <p>
 
-Travail, école, relations, loisirs et projets :
+Travail, école, relations, activités et projets :
 la vie ne devrait jamais se résumer à un score
 de douleur.
 
@@ -1885,21 +1928,22 @@ de douleur.
 
 <section class="statement">
 
-<div class="statement-mark"></div>
-
 <div class="statement-inner">
 
 <div
 class="statement-line"
-id="statement1">
+id="statement1"
+>
 
 LA DOULEUR N'EST PAS
 
 </div>
 
+
 <div
 class="statement-line second"
-id="statement2">
+id="statement2"
+>
 
 TOUTE VOTRE HISTOIRE.
 
@@ -1912,7 +1956,7 @@ TOUTE VOTRE HISTOIRE.
 
 
 <!-- =======================================================
-     PARCOURS
+     JOURNEY
 ======================================================== -->
 
 <section class="journey">
@@ -1923,6 +1967,7 @@ TOUTE VOTRE HISTOIRE.
 Le parcours
 </div>
 
+
 <h2 class="reveal">
 
 Il n'existe pas
@@ -1931,14 +1976,12 @@ un seul chemin.
 </h2>
 
 
-<p class="journey-description reveal">
+<p class="reveal">
 
 Vivre avec une douleur chronique ressemble rarement
 à une ligne droite.
 
-On avance. On cherche. On ajuste. On recommence parfois.
-
-Et quelquefois, on change complètement de direction.
+On avance, on cherche, on adapte, on recommence parfois.
 
 </p>
 
@@ -1947,32 +1990,35 @@ Et quelquefois, on change complètement de direction.
 
 <svg
 class="journey-svg"
-viewBox="0 0 1400 1050"
-preserveAspectRatio="none">
+viewBox="0 0 1400 1000"
+preserveAspectRatio="none"
+>
 
 <path
+
 id="journeyPath"
+
 d="
-M -100 820
+M -100 800
 
-C 170 600,
-  250 980,
-  470 730
+C 170 590,
+  250 950,
+  460 720
 
-S 720 320,
+S 700 330,
   930 570
 
-S 1160 890,
-  1510 270
+S 1150 870,
+  1510 280
 "
 />
 
+<circle
+id="journeyDot"
+r="17"
+/>
+
 </svg>
-
-
-<div id="traveller">
-D.
-</div>
 
 </section>
 
@@ -1984,13 +2030,12 @@ D.
 
 <section class="breathe">
 
-<div class="breathe-orbit"></div>
-
-
 <div class="breathe-inner">
 
 <div class="label reveal">
+
 Changer de perspective
+
 </div>
 
 
@@ -2002,7 +2047,10 @@ pour la douleur.
 <br>
 
 <span>
-Plus de place pour vivre.
+
+Plus de place
+pour vivre.
+
 </span>
 
 </h2>
@@ -2018,9 +2066,9 @@ Plus de place pour vivre.
 ======================================================== -->
 
 <section
-class="kids-portal"
-id="petits-courageux">
-
+class="kids"
+id="petits"
+>
 
 <div class="kids-inner">
 
@@ -2028,11 +2076,13 @@ id="petits-courageux">
 <div>
 
 <div class="kids-overline reveal">
+
 Un autre chapitre
+
 </div>
 
 
-<h2 class="kids-title reveal">
+<h2 class="reveal">
 
 Il était une fois…
 
@@ -2042,8 +2092,10 @@ une douleur qui prenait
 
 <br>
 
-<span class="kids-sticker-word">
+<span class="kids-sticker">
+
 un peu trop de place.
+
 </span>
 
 </h2>
@@ -2052,9 +2104,9 @@ un peu trop de place.
 <p class="kids-text reveal">
 
 Les Petits Courageux, c'est un univers imaginé
-pour les enfants et les adolescents qui vivent
-avec une douleur persistante — et pour toutes
-les personnes qui les accompagnent.
+pour les enfants et les adolescents vivant avec
+une douleur persistante — et pour toutes les
+personnes qui les accompagnent.
 
 Comprendre. Mettre des mots. Continuer à grandir.
 
@@ -2067,7 +2119,8 @@ Sans laisser la douleur écrire toute l'histoire.
 
 <a
 href="petits-courageux.html"
-class="sticker-btn magnetic">
+class="sticker-btn magnetic"
+>
 
 Entrer dans l'histoire →
 
@@ -2081,13 +2134,15 @@ Entrer dans l'histoire →
 
 <div class="book-scene">
 
-
 <a
 href="petits-courageux.html"
-class="book">
+class="book"
+>
 
 <div class="book-small">
+
 DOLORIA PRÉSENTE
+
 </div>
 
 
@@ -2104,24 +2159,11 @@ COURAGEUX
 
 <div class="book-end">
 
-Ouvrir le livre →
+Ouvrir l'histoire →
 
 </div>
 
 </a>
-
-
-<div class="kids-doodle one">
-✦
-</div>
-
-<div class="kids-doodle two">
-~
-</div>
-
-<div class="kids-doodle three">
-+
-</div>
 
 </div>
 
@@ -2138,7 +2180,8 @@ Ouvrir le livre →
 
 <section
 class="actions"
-id="actions">
+id="actions"
+>
 
 <div class="container">
 
@@ -2146,13 +2189,15 @@ id="actions">
 <div class="section-heading">
 
 <div class="label reveal">
+
 Nos actions
+
 </div>
+
 
 <h2 class="reveal">
 
 Doloria
-<br>
 en mouvement.
 
 </h2>
@@ -2175,7 +2220,7 @@ Cafés Doloria
 
 <p>
 
-Des espaces d'échange autour des réalités
+Des espaces d'échange autour
 du quotidien avec une douleur chronique.
 
 </p>
@@ -2191,13 +2236,15 @@ du quotidien avec une douleur chronique.
 </strong>
 
 <h3>
+
 Ressources & sensibilisation
+
 </h3>
 
 <p>
 
-Des guides, outils et contenus accessibles
-aux patients, proches et professionnels.
+Des guides, outils et contenus
+pour rendre l'information accessible.
 
 </p>
 
@@ -2212,14 +2259,15 @@ aux patients, proches et professionnels.
 </strong>
 
 <h3>
+
 Représentation
+
 </h3>
 
 <p>
 
-Porter la voix et les besoins des personnes
-concernées auprès des acteurs de santé
-et des institutions.
+Porter les besoins des personnes concernées
+auprès des acteurs de santé et des institutions.
 
 </p>
 
@@ -2234,7 +2282,9 @@ et des institutions.
 </strong>
 
 <h3>
+
 Recherche & innovation
+
 </h3>
 
 <p>
@@ -2257,35 +2307,35 @@ de penser le soin.
 
 
 <!-- =======================================================
-     CTA
+     CONTACT
 ======================================================== -->
 
 <section
 class="cta"
-id="contact">
-
-<div class="cta-ring"></div>
-
+id="contact"
+>
 
 <div class="cta-inner">
 
 <div class="label reveal">
-La suite ?
+
+Et maintenant ?
+
 </div>
 
 
 <h2 class="reveal">
 
-FAIRE BOUGER
-<br>
-LES LIGNES.
+Faire bouger
+les lignes.
 
 </h2>
 
 
 <a
 href="mailto:contact@doloria.ch"
-class="sticker-btn magnetic reveal">
+class="sticker-btn magnetic reveal"
+>
 
 Rejoindre Doloria →
 
@@ -2304,14 +2354,23 @@ Rejoindre Doloria →
 
 <div class="footer">
 
+
 <div>
 
 <div class="footer-logo">
-DOLORIA
+
+Doloria
+
 </div>
 
-<p style="margin-top:12px;">
-Association suisse dédiée à la douleur chronique.
+<p style="
+margin-top:12px;
+color:#A98279;
+">
+
+Association suisse dédiée
+à la douleur chronique.
+
 </p>
 
 </div>
@@ -2342,8 +2401,12 @@ Mentions légales
 </div>
 
 
-<div style="color:#765450;">
+<div style="
+color:#79534D;
+">
+
 © 2026 Doloria
+
 </div>
 
 </div>
@@ -2355,7 +2418,7 @@ Mentions légales
 <script>
 
 /* =========================================================
-   ELEMENTS
+   GLOBAL
 ========================================================= */
 
 const header =
@@ -2367,70 +2430,6 @@ document.getElementById("progress");
 const cursor =
 document.getElementById("cursor");
 
-const threadDot =
-document.getElementById("threadDot");
-
-const painWord =
-document.getElementById("painWord");
-
-
-/* =========================================================
-   SCROLL UI
-========================================================= */
-
-function updateScrollUI(){
-
-  header.classList.toggle(
-    "scrolled",
-    window.scrollY > 40
-  );
-
-
-  const total =
-  document.documentElement.scrollHeight -
-  window.innerHeight;
-
-
-  const pct =
-  total > 0
-  ? window.scrollY / total
-  : 0;
-
-
-  progress.style.width =
-  `${pct * 100}%`;
-
-
-  if(threadDot){
-
-    threadDot.style.transform =
-    `translateY(
-      ${pct * (window.innerHeight - 160)}px
-    )
-    rotate(
-      ${pct * 360}deg
-    )`;
-
-  }
-
-
-  /* la douleur se décale progressivement */
-
-  if(painWord){
-
-    painWord.style.transform =
-    `translate(
-      ${window.scrollY * .055}px,
-      ${window.scrollY * -.035}px
-    )
-    rotate(
-      ${window.scrollY * .006}deg
-    )`;
-
-  }
-
-}
-
 
 /* =========================================================
    REVEAL
@@ -2441,22 +2440,22 @@ new IntersectionObserver(
 
 entries=>{
 
-  entries.forEach(entry=>{
+entries.forEach(entry=>{
 
-    if(entry.isIntersecting){
+if(entry.isIntersecting){
 
-      entry.target
-      .classList
-      .add("visible");
+entry.target
+.classList
+.add("visible");
 
-    }
+}
 
-  });
+});
 
 },
 
 {
-  threshold:.12
+threshold:.12
 }
 
 );
@@ -2470,144 +2469,159 @@ el=>observer.observe(el)
 
 
 /* =========================================================
-   CURSEUR
+   CURSOR
 ========================================================= */
 
 document.addEventListener(
 "mousemove",
 e=>{
 
-  cursor.style.transform =
-  `translate(
-    ${e.clientX - 9}px,
-    ${e.clientY - 9}px
-  )`;
+cursor.style.transform =
+`translate(
+${e.clientX-7}px,
+${e.clientY-7}px
+)`;
 
 });
 
 
 document
-.querySelectorAll(
-"a,.card"
-)
+.querySelectorAll("a,.card")
 .forEach(el=>{
 
-  el.addEventListener(
-  "mouseenter",
-  ()=>cursor.classList.add("big")
-  );
+el.addEventListener(
+"mouseenter",
+()=>cursor.classList.add("big")
+);
 
-  el.addEventListener(
-  "mouseleave",
-  ()=>cursor.classList.remove("big")
-  );
+el.addEventListener(
+"mouseleave",
+()=>cursor.classList.remove("big")
+);
 
 });
 
 
 /* =========================================================
-   BOUTONS MAGNÉTIQUES
+   MAGNETIC
 ========================================================= */
 
 document
 .querySelectorAll(".magnetic")
 .forEach(button=>{
 
-  button.addEventListener(
-  "mousemove",
-  e=>{
+button.addEventListener(
+"mousemove",
+e=>{
 
-    const rect =
-    button.getBoundingClientRect();
+const rect =
+button.getBoundingClientRect();
 
+const x =
+e.clientX -
+rect.left -
+rect.width/2;
 
-    const x =
-    e.clientX -
-    rect.left -
-    rect.width/2;
-
-
-    const y =
-    e.clientY -
-    rect.top -
-    rect.height/2;
+const y =
+e.clientY -
+rect.top -
+rect.height/2;
 
 
-    button.style.transform =
-    `translate(
-      ${x*.15}px,
-      ${y*.15}px
-    )
-    rotate(-1deg)`;
+button.style.transform =
+`translate(
+${x*.14}px,
+${y*.14}px
+)
+rotate(-1deg)`;
 
-  });
+});
 
 
-  button.addEventListener(
-  "mouseleave",
-  ()=>{
+button.addEventListener(
+"mouseleave",
+()=>{
 
-    button.style.transform =
-    "translate(0,0)";
+button.style.transform =
+"translate(0,0) rotate(-1deg)";
 
-  });
+});
 
 });
 
 
 /* =========================================================
-   3D CARDS
+   HERO SIGNATURE POINT
 ========================================================= */
 
-document
-.querySelectorAll(".tilt")
-.forEach(card=>{
+const signaturePath =
+document.getElementById(
+"signaturePath"
+);
 
-  card.addEventListener(
-  "mousemove",
-  e=>{
-
-    const rect =
-    card.getBoundingClientRect();
-
-
-    const x =
-    e.clientX -
-    rect.left;
+const signatureDot =
+document.getElementById(
+"signatureDot"
+);
 
 
-    const y =
-    e.clientY -
-    rect.top;
+let signatureTime = 0;
 
 
-    const rotateY =
-    ((x/rect.width)-.5)*7;
+function animateSignature(){
+
+if(
+signaturePath &&
+signatureDot
+){
+
+const length =
+signaturePath.getTotalLength();
 
 
-    const rotateX =
-    ((y/rect.height)-.5)*-7;
+signatureTime += .0018;
 
 
-    card.style.transform =
-    `perspective(900px)
-     rotateX(${rotateX}deg)
-     rotateY(${rotateY}deg)
-     translateY(-6px)`;
+const progressValue =
+(
+Math.sin(
+signatureTime *
+Math.PI * 2
+)
++1
+)/2;
 
-  });
+
+const point =
+signaturePath
+.getPointAtLength(
+length *
+progressValue
+);
 
 
-  card.addEventListener(
-  "mouseleave",
-  ()=>{
+signatureDot.setAttribute(
+"cx",
+point.x
+);
 
-    card.style.transform =
-    "perspective(900px) rotateX(0) rotateY(0)";
 
-  });
+signatureDot.setAttribute(
+"cy",
+point.y
+);
 
-});
+}
+
+
+requestAnimationFrame(
+animateSignature
+);
+
+}
+
+
+animateSignature();
 
 
 /* =========================================================
@@ -2626,47 +2640,47 @@ document.getElementById("statement2");
 
 function updateStatement(){
 
-  if(!statement) return;
+if(!statement) return;
 
 
-  const rect =
-  statement.getBoundingClientRect();
+const rect =
+statement.getBoundingClientRect();
 
 
-  const progressValue =
-  Math.min(
-    1,
-    Math.max(
-      0,
-      (
-        window.innerHeight -
-        rect.top
-      )
-      /
-      (
-        window.innerHeight +
-        rect.height
-      )
-    )
-  );
+const progressValue =
+Math.min(
+1,
+Math.max(
+0,
+(
+window.innerHeight -
+rect.top
+)
+/
+(
+window.innerHeight +
+rect.height
+)
+)
+);
 
 
-  statement1.style.transform =
-  `translateX(
-    ${24 - progressValue*48}px
-  )`;
+statement1.style.transform =
+`translateX(
+${22-progressValue*44}px
+)`;
 
 
-  statement2.style.transform =
-  `translateX(
-    ${-24 + progressValue*48}px
-  )`;
+statement2.style.transform =
+`translateX(
+${-22+progressValue*44}px
+)`;
 
 }
 
 
 /* =========================================================
-   JOURNEY
+   JOURNEY DOT
 ========================================================= */
 
 const journey =
@@ -2675,177 +2689,132 @@ document.querySelector(".journey");
 const journeyPath =
 document.getElementById("journeyPath");
 
-const traveller =
-document.getElementById("traveller");
-
-const journeySVG =
-document.querySelector(".journey-svg");
+const journeyDot =
+document.getElementById("journeyDot");
 
 
 function updateJourney(){
 
-  if(
-    !journey ||
-    !journeyPath ||
-    !traveller
-  ) return;
+if(
+!journey ||
+!journeyPath ||
+!journeyDot
+) return;
 
 
-  const rect =
-  journey.getBoundingClientRect();
+const rect =
+journey.getBoundingClientRect();
 
 
-  const journeyProgress =
-  Math.min(
-    1,
-    Math.max(
-      0,
-      (
-        window.innerHeight -
-        rect.top
-      )
-      /
-      (
-        rect.height +
-        window.innerHeight
-      )
-    )
-  );
+const progressValue =
+Math.min(
+1,
+Math.max(
+0,
+(
+window.innerHeight -
+rect.top
+)
+/
+(
+rect.height +
+window.innerHeight
+)
+)
+);
 
 
-  const length =
-  journeyPath.getTotalLength();
+const length =
+journeyPath.getTotalLength();
 
 
-  const point =
-  journeyPath.getPointAtLength(
-    length *
-    journeyProgress
-  );
+const point =
+journeyPath.getPointAtLength(
+length *
+progressValue
+);
 
 
-  const svgRect =
-  journeySVG.getBoundingClientRect();
-
-  const viewBox =
-  journeySVG.viewBox.baseVal;
-
-
-  const x =
-  point.x /
-  viewBox.width *
-  svgRect.width;
+journeyDot.setAttribute(
+"cx",
+point.x
+);
 
 
-  const y =
-  point.y /
-  viewBox.height *
-  svgRect.height;
-
-
-  traveller.style.transform =
-  `translate(
-    ${x - 45}px,
-    ${y - 45}px
-  )
-  rotate(
-    ${journeyProgress*40 - 10}deg
-  )`;
+journeyDot.setAttribute(
+"cy",
+point.y
+);
 
 }
 
 
 /* =========================================================
-   BOOK PARALLAX
+   HEADER + PROGRESS
 ========================================================= */
 
-const book =
-document.querySelector(".book");
+function updateGeneral(){
+
+header.classList.toggle(
+"scrolled",
+window.scrollY>40
+);
 
 
-if(book){
-
-  book.addEventListener(
-  "mousemove",
-  e=>{
-
-    const rect =
-    book.getBoundingClientRect();
+const total =
+document.documentElement.scrollHeight -
+window.innerHeight;
 
 
-    const x =
-    (
-      e.clientX -
-      rect.left
-    )
-    /
-    rect.width -
-    .5;
+const pct =
+total>0
+?
+window.scrollY/total
+:
+0;
 
 
-    const y =
-    (
-      e.clientY -
-      rect.top
-    )
-    /
-    rect.height -
-    .5;
-
-
-    book.style.transform =
-    `translateY(-12px)
-     rotateX(${y*-8}deg)
-     rotateY(${x*10}deg)
-     rotate(1deg)`;
-
-  });
-
-
-  book.addEventListener(
-  "mouseleave",
-  ()=>{
-
-    book.style.transform =
-    "rotate(3deg)";
-
-  });
+progress.style.width =
+`${pct*100}%`;
 
 }
 
 
 /* =========================================================
-   SCROLL LOOP
+   SCROLL
 ========================================================= */
 
-function updateEverything(){
+function updateAll(){
 
-  updateScrollUI();
+updateGeneral();
 
-  updateStatement();
+updateStatement();
 
-  updateJourney();
+updateJourney();
 
 }
 
 
 window.addEventListener(
 "scroll",
-updateEverything,
+updateAll,
 {
-  passive:true
-});
+passive:true
+}
+);
 
 
 window.addEventListener(
 "resize",
-updateEverything
+updateAll
 );
 
 
-updateEverything();
+updateAll();
 
 </script>
 
+
 </body>
+
 </html>
