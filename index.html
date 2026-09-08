@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Doloria — Association autour de la douleur chronique</title>
+
+  <meta
+    name="description"
+    content="Doloria est une association francophone engagée pour mieux comprendre, accompagner et faire entendre les personnes vivant avec une douleur chronique."
+  >
+
+  <style>
+    :root {
+      --orange: #ef7d32;
+      --orange-clair: #fff1e7;
+      --creme: #fffaf6;
+      --violet: #493548;
+      --texte: #282328;
+      --gris: #6f676d;
+      --blanc: #ffffff;
+      --bordure: #eee5e8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--texte);
+      background: var(--blanc);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* NAVIGATION */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--bordure);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      font-size: 1.7rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--orange);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--orange);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.25s ease;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: var(--blanc);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      border: 2px solid var(--orange);
+      color: var(--orange);
+      margin-left: 10px;
+    }
+
+    /* HERO */
+
+    .hero {
+      background:
+        radial-gradient(circle at 80% 20%, #ffe4d0 0%, transparent 35%),
+        linear-gradient(135deg, var(--creme), #ffffff);
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: auto;
+      min-height: 680px;
+      padding: 90px 25px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: var(--orange-clair);
+      color: var(--orange);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      line-height: 0.98;
+      letter-spacing: -3px;
+      margin-bottom: 28px;
+      color: var(--violet);
+    }
+
+    h1 span {
+      color: var(--orange);
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 1.2rem;
+      color: var(--gris);
+      margin-bottom: 35px;
+    }
+
+    .hero-card {
+      background: var(--violet);
+      color: white;
+      padding: 45px;
+      border-radius: 30px;
+      transform: rotate(2deg);
+      box-shadow: 0 30px 70px rgba(73, 53, 72, 0.18);
+    }
+
+    .hero-card strong {
+      display: block;
+      color: #ffc39c;
+      font-size: 4rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-card h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 95px 25px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-intro {
+      max-width: 700px;
+      margin-bottom: 55px;
+    }
+
+    .section-intro small {
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 800;
+    }
+
+    h2 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      line-height: 1.05;
+      color: var(--violet);
+      margin: 15px 0 20px;
+    }
+
+    .section-intro p {
+      color: var(--gris);
+      font-size: 1.1rem;
+    }
+
+    /* CARTES */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      padding: 35px;
+      border: 1px solid var(--bordure);
+      border-radius: 25px;
+      background: white;
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 45px rgba(40, 35, 40, 0.08);
+    }
+
+    .card-icon {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      color: var(--violet);
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--gris);
+    }
+
+    /* MISSION */
+
+    .mission {
+      background: var(--violet);
+      color: white;
+    }
+
+    .mission h2 {
+      color: white;
+    }
+
+    .mission .section-intro p {
+      color: #ddd3dc;
+    }
+
+    .mission-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .mission-box {
+      padding: 35px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .mission-box span {
+      color: #ffc39c;
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+
+    .mission-box h3 {
+      margin: 10px 0;
+      font-size: 1.35rem;
+    }
+
+    /* RESSOURCES */
+
+    .resources {
+      background: var(--creme);
+    }
+
+    /* CTA */
+
+    .cta {
+      text-align: center;
+      background: var(--orange);
+      color: white;
+    }
+
+    .cta h2 {
+      color: white;
+      max-width: 800px;
+      margin: 0 auto 20px;
+    }
+
+    .cta p {
+      max-width: 700px;
+      margin: 0 auto 30px;
+      font-size: 1.1rem;
+    }
+
+    .cta .btn {
+      background: white;
+      color: var(--orange);
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 50px 25px;
+      background: #211c21;
+      color: #cfc7cd;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    footer .logo {
+      margin-bottom: 10px;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding-top: 70px;
+      }
+
+      .hero-card {
+        transform: none;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .mission-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .btn-secondary {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <a href="#accueil" class="logo">DOLORIA</a>
+
+    <div class="nav-links">
+      <a href="#comprendre">Comprendre</a>
+      <a href="#actions">Nos actions</a>
+      <a href="#ressources">Ressources</a>
+      <a href="#apropos">À propos</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <a href="#contact" class="btn btn-primary">Nous rejoindre</a>
+  </nav>
+</header>
+
+
+<main>
+
+  <!-- ACCUEIL -->
+
+  <section class="hero" id="accueil">
+    <div class="hero-inner">
+
+      <div>
+        <div class="eyebrow">Association francophone</div>
+
+        <h1>
+          La douleur existe.<br>
+          <span>Votre vie aussi.</span>
+        </h1>
+
+        <p>
+          Doloria agit pour informer, accompagner et faire entendre les personnes
+          vivant avec une douleur chronique, tout en créant des ponts entre
+          patients, proches, professionnels de santé et société.
+        </p>
+
+        <a href="#actions" class="btn btn-primary">
+          Découvrir nos actions
+        </a>
+
+        <a href="#ressources" class="btn btn-secondary">
+          Accéder aux ressources
+        </a>
+      </div>
+
+      <div class="hero-card">
+        <strong>D.</strong>
+        <h2>Remettre la vie au centre.</h2>
+        <p>
+          Parce qu'une personne ne se résume jamais à sa douleur.
+          Doloria défend une approche centrée sur l'écoute, l'autonomie,
+          l'information et les projets de vie.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- COMPRENDRE -->
+
+  <section id="comprendre">
+    <div class="container">
+
+      <div class="section-intro">
+        <small>Comprendre</small>
+        <h2>Mieux comprendre la douleur chronique.</h2>
+
+        <p>
+          La douleur chronique est complexe. Doloria souhaite rendre
+          l'information fiable, accessible et utile au quotidien.
+        </p>
+      </div>
+
+      <div class="cards">
+
+        <article class="card">
+          <div class="card-icon">🧠</div>
+          <h3>Comprendre la douleur</h3>
+          <p>
+            Découvrir les mécanismes de la douleur et mieux comprendre
+            pourquoi elle peut persister dans le temps.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🩺</div>
+          <h3>Parcours de soins</h3>
+          <p>
+            Mieux identifier les professionnels, structures et approches
+            pouvant intervenir dans la prise en charge.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">💬</div>
+          <h3>Vivre avec</h3>
+          <p>
+            Relations, activité, travail, fatigue, loisirs :
+            la douleur dépasse largement le cabinet médical.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ACTIONS -->
+
+  <section class="mission" id="actions">
+    <div class="container">
+
+      <div class="section-intro">
+        <small>Nos actions</small>
+        <h2>Informer. Relier. Défendre. Agir.</h2>
+
+        <p>
+          Doloria construit des espaces où l'expérience des patients rencontre
+          les connaissances scientifiques et professionnelles.
+        </p>
+      </div>
+
+      <div class="mission-grid">
+
+        <div class="mission-box">
+          <span>01</span>
+          <h3>Cafés Doloria</h3>
+          <p>
+            Des temps d'échange autour de thématiques liées au quotidien
+            avec une douleur chronique.
+          </p>
+        </div>
+
+        <div class="mission-box">
+          <span>02</span>
+          <h3>Information & sensibilisation</h3>
+          <p>
+            Guides, contenus pédagogiques et ressources pour mieux comprendre
+            la douleur et les parcours de soins.
+          </p>
+        </div>
+
+        <div class="mission-box">
+          <span>03</span>
+          <h3>Représentation des patients</h3>
+          <p>
+            Porter la parole et l'expérience des personnes concernées auprès
+            des acteurs de santé et de la société.
+          </p>
+        </div>
+
+        <div class="mission-box">
+          <span>04</span>
+          <h3>Projets & innovation</h3>
+          <p>
+            Participer à des projets favorisant une prise en charge plus
+            humaine, collaborative et centrée sur les objectifs de vie.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- RESSOURCES -->
+
+  <section class="resources" id="ressources">
+    <div class="container">
+
+      <div class="section-intro">
+        <small>Ressources</small>
+        <h2>Des outils pour comprendre et avancer.</h2>
+
+        <p>
+          Retrouvez progressivement les guides, documents, événements
+          et ressources proposés ou sélectionnés par Doloria.
+        </p>
+      </div>
+
+      <div class="cards">
+
+        <article class="card">
+          <div class="card-icon">📚</div>
+          <h3>Nos guides</h3>
+          <p>
+            Des contenus dédiés aux patients, proches et professionnels.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🗓️</div>
+          <h3>Agenda</h3>
+          <p>
+            Cafés Doloria, rencontres, ateliers et événements.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🌿</div>
+          <h3>Prendre soin de soi</h3>
+          <p>
+            Relaxation, activité adaptée et ressources pour soutenir
+            le quotidien.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- À PROPOS -->
+
+  <section id="apropos">
+    <div class="container">
+
+      <div class="section-intro">
+        <small>À propos</small>
+
+        <h2>Une association construite avec les personnes concernées.</h2>
+
+        <p>
+          Doloria souhaite contribuer à changer le regard porté sur la douleur
+          chronique et favoriser des parcours de santé dans lesquels les
+          personnes restent actrices de leur vie et de leurs choix.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section class="cta" id="contact">
+    <div class="container">
+
+      <h2>Construisons une autre manière de parler de la douleur.</h2>
+
+      <p>
+        Vous vivez avec une douleur chronique, êtes proche, professionnel
+        de santé ou souhaitez soutenir nos actions ?
+      </p>
+
+      <a href="mailto:contact@doloria.ch" class="btn">
+        Contacter Doloria
+      </a>
+
+    </div>
+  </section>
+
+</main>
+
+
+<footer>
+  <div class="footer-inner">
+
+    <div>
+      <div class="logo">DOLORIA</div>
+      <p>Association francophone autour de la douleur chronique.</p>
+    </div>
+
+    <div>
+      <p>© 2026 Doloria — Tous droits réservés.</p>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
