@@ -1,1579 +1,1593 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Doloria — Association suisse dédiée à la douleur chronique</title>
+<title>Doloria — Association suisse dédiée à la douleur chronique</title>
 
-  <meta
-    name="description"
-    content="Doloria est une association suisse dédiée à la douleur chronique, à l'information, à l'accompagnement et à l'amélioration des parcours de vie et de soins."
-  >
+<meta name="description"
+content="Doloria est une association suisse dédiée à la douleur chronique, à l'information, à l'accompagnement et à l'évolution des parcours de vie et de soins.">
+
+<style>
+
+/* =========================================================
+   DOLORIA V5 — SIGNATURE
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
 
-  <style>
+:root {
+  --wine:#4C0507;
+  --wine-dark:#280103;
+  --wine-soft:#681418;
 
-    /* =========================================================
-       DOLORIA — IDENTITÉ
-    ========================================================= */
+  --cream:#F0DFC7;
+  --cream-light:#F8ECDA;
 
-    :root {
-      --wine: #4C0507;
-      --wine-dark: #2D0204;
-      --wine-soft: #671216;
+  --petrol:#247886;
+  --petrol-dark:#155965;
+
+  --yellow:#E5C45D;
+  --coral:#D98268;
 
-      --cream: #F1E1CC;
-      --cream-light: #F8ECDD;
+  --muted:#D0B4A8;
+  --ink:#260203;
+}
 
-      --petrol: #287C88;
-      --petrol-dark: #155E68;
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-      --yellow: #E6C55F;
-      --coral: #D98268;
+html {
+  scroll-behavior:smooth;
+}
 
-      --ink: #260204;
+body {
+  font-family:"DM Sans",sans-serif;
+  background:var(--wine);
+  color:var(--cream);
+  overflow-x:hidden;
+}
+
+h1,h2,h3,.logo {
+  font-family:"Space Grotesk",sans-serif;
+}
+
+a {
+  color:inherit;
+  text-decoration:none;
+}
+
+::selection {
+  background:var(--yellow);
+  color:var(--wine);
+}
 
-      --muted-on-wine: #D6B9AC;
-      --muted-on-cream: #725D56;
-    }
+
+/* =========================================================
+   TEXTURE
+========================================================= */
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+body::after {
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:9998;
+  pointer-events:none;
+  opacity:.035;
 
-    html {
-      scroll-behavior: smooth;
-    }
+  background-image:
+  url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
 
-    body {
-      font-family:
-        Inter,
-        ui-sans-serif,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
 
-      background: var(--wine);
-      color: var(--cream);
+/* =========================================================
+   BARRE DE PROGRESSION
+========================================================= */
 
-      overflow-x: hidden;
-    }
+#progress {
+  position:fixed;
+  top:0;
+  left:0;
+  width:0;
+  height:5px;
+  background:var(--yellow);
+  z-index:10000;
+}
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
 
-    button {
-      font: inherit;
-    }
+/* =========================================================
+   CURSEUR
+========================================================= */
 
-    ::selection {
-      background: var(--yellow);
-      color: var(--wine);
-    }
+#cursor {
+  position:fixed;
+  top:0;
+  left:0;
+  width:18px;
+  height:18px;
+  border-radius:50%;
 
+  background:var(--yellow);
 
-    /* =========================================================
-       TEXTURE
-    ========================================================= */
+  z-index:9997;
+  pointer-events:none;
 
-    body::after {
-      content: "";
+  mix-blend-mode:difference;
 
-      position: fixed;
-      inset: 0;
+  transition:
+  width .18s ease,
+  height .18s ease;
+}
 
-      pointer-events: none;
+#cursor.big {
+  width:60px;
+  height:60px;
+}
 
-      z-index: 9998;
 
-      opacity: .035;
+/* =========================================================
+   FIL ROUGE DOLORIA
+========================================================= */
 
-      background-image:
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-    }
+.story-thread {
+  position:fixed;
+  top:0;
+  left:34px;
 
+  width:4px;
+  height:100vh;
 
-    /* =========================================================
-       PROGRESSION DU SCROLL
-    ========================================================= */
+  background:
+  repeating-linear-gradient(
+    to bottom,
+    var(--petrol) 0,
+    var(--petrol) 12px,
+    transparent 12px,
+    transparent 23px
+  );
 
-    #progress {
-      position: fixed;
+  z-index:80;
+  opacity:.65;
+  pointer-events:none;
+}
 
-      left: 0;
-      top: 0;
+.thread-dot {
+  position:fixed;
 
-      width: 0;
-      height: 5px;
+  left:21px;
+  top:100px;
 
-      background: var(--yellow);
+  width:30px;
+  height:30px;
 
-      z-index: 10000;
-    }
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
+  border-radius:50%;
 
-    /* =========================================================
-       CURSEUR DOLORIA
-    ========================================================= */
+  background:var(--cream);
+  color:var(--wine);
 
-    #cursor {
-      position: fixed;
+  font-weight:950;
 
-      left: 0;
-      top: 0;
+  border:5px solid var(--petrol);
 
-      width: 18px;
-      height: 18px;
+  z-index:90;
 
-      border-radius: 50%;
+  pointer-events:none;
 
-      background: var(--yellow);
+  transition:transform .1s linear;
+}
 
-      pointer-events: none;
 
-      z-index: 9997;
+/* =========================================================
+   HEADER
+========================================================= */
 
-      mix-blend-mode: difference;
+header {
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
 
-      transition:
-        width .2s ease,
-        height .2s ease;
-    }
+  height:88px;
 
-    #cursor.large {
-      width: 58px;
-      height: 58px;
-    }
+  z-index:1000;
 
+  transition:.3s ease;
+}
 
-    /* =========================================================
-       HEADER
-    ========================================================= */
+header.scrolled {
+  background:rgba(40,1,3,.88);
+  backdrop-filter:blur(16px);
 
-    header {
-      position: fixed;
+  border-bottom:
+  1px solid rgba(240,223,199,.1);
+}
 
-      top: 0;
-      left: 0;
-      right: 0;
+nav {
+  max-width:1320px;
 
-      height: 88px;
+  height:100%;
 
-      z-index: 1000;
+  margin:auto;
+  padding:0 28px 0 65px;
 
-      transition:
-        background .3s ease,
-        backdrop-filter .3s ease;
-    }
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
 
-    header.scrolled {
-      background: rgba(45, 2, 4, .88);
+.logo {
+  font-size:1.55rem;
+  font-weight:700;
+  letter-spacing:.14em;
+}
 
-      backdrop-filter: blur(18px);
+.nav-links {
+  display:flex;
+  align-items:center;
+  gap:27px;
 
-      border-bottom:
-        1px solid rgba(241, 225, 204, .1);
-    }
+  font-size:.9rem;
+  font-weight:700;
+}
 
-    nav {
-      max-width: 1320px;
+.nav-links a {
+  opacity:.78;
+  transition:.2s;
+}
 
-      height: 100%;
+.nav-links a:hover {
+  opacity:1;
+}
 
-      margin: auto;
 
-      padding: 0 28px;
+/* =========================================================
+   STICKER BUTTON
+========================================================= */
 
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+.sticker-btn {
+  position:relative;
 
-      gap: 30px;
-    }
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
 
-    .logo {
-      position: relative;
+  padding:14px 24px;
 
-      font-size: 1.65rem;
-      font-weight: 950;
+  background:var(--cream);
+  color:var(--wine);
 
-      letter-spacing: .14em;
-    }
+  font-weight:800;
 
-    .logo::after {
-      content: "";
+  border-radius:
+  14px 18px 12px 19px;
 
-      position: absolute;
+  z-index:1;
 
-      right: -12px;
-      bottom: -5px;
+  transition:transform .2s ease;
+}
 
-      width: 27px;
-      height: 7px;
+.sticker-btn::before {
+  content:"";
 
-      background: var(--petrol);
+  position:absolute;
+  inset:-7px;
 
-      border-radius: 80%;
+  background:var(--petrol);
 
-      transform: rotate(-8deg);
-    }
+  border-radius:
+  20px 15px 23px 16px;
 
-    .nav-links {
-      display: flex;
-      align-items: center;
+  transform:rotate(2deg);
 
-      gap: 27px;
+  z-index:-2;
+}
 
-      font-size: .9rem;
-      font-weight: 700;
-    }
+.sticker-btn::after {
+  content:"";
 
-    .nav-links a {
-      position: relative;
+  position:absolute;
+  inset:-3px;
 
-      opacity: .82;
+  background:var(--cream);
 
-      transition: opacity .2s ease;
-    }
+  border-radius:
+  15px 19px 14px 20px;
 
-    .nav-links a:hover {
-      opacity: 1;
-    }
+  z-index:-1;
+}
 
-    .nav-links a::after {
-      content: "";
+.sticker-btn:hover {
+  transform:
+  translateY(-4px)
+  rotate(1deg);
+}
 
-      position: absolute;
 
-      left: 0;
-      bottom: -7px;
+/* =========================================================
+   HERO
+========================================================= */
 
-      width: 0;
-      height: 3px;
+.hero {
+  min-height:100vh;
 
-      background: var(--petrol);
+  position:relative;
 
-      transition: width .2s ease;
-    }
+  display:flex;
+  align-items:center;
 
-    .nav-links a:hover::after {
-      width: 100%;
-    }
+  overflow:hidden;
 
+  background:
+  radial-gradient(circle at 90% 20%,#74191E 0%,transparent 34%),
+  radial-gradient(circle at 5% 90%,#250102 0%,transparent 45%),
+  var(--wine);
+}
 
-    /* =========================================================
-       BOUTONS STICKER
-    ========================================================= */
+.hero-inner {
+  width:min(1320px,100%);
 
-    .sticker-btn {
-      position: relative;
+  margin:auto;
 
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+  padding:150px 28px 100px 80px;
 
-      min-height: 50px;
+  position:relative;
 
-      padding: 13px 23px;
+  z-index:5;
+}
 
-      background: var(--cream);
+.hero-tag {
+  display:inline-block;
 
-      color: var(--wine);
+  padding:8px 14px;
+  margin-bottom:38px;
 
-      font-weight: 950;
+  background:var(--cream);
+  color:var(--wine);
 
-      border-radius:
-        13px 17px 12px 18px;
+  font-size:.75rem;
+  font-weight:900;
 
-      z-index: 1;
+  text-transform:uppercase;
+  letter-spacing:.15em;
 
-      transition:
-        transform .18s ease;
-    }
+  transform:rotate(-2deg);
 
-    .sticker-btn::before {
-      content: "";
+  box-shadow:6px 7px 0 var(--petrol);
+}
 
-      position: absolute;
 
-      inset: -7px;
+/* LA DOULEUR "PREND TROP DE PLACE" */
 
-      background: var(--petrol);
+.hero-pain {
+  position:absolute;
 
-      border-radius:
-        19px 15px 22px 16px;
+  right:-5%;
+  top:10%;
 
-      transform:
-        rotate(1.7deg);
+  font-family:"Space Grotesk",sans-serif;
 
-      z-index: -2;
-    }
+  font-size:clamp(12rem,30vw,29rem);
 
-    .sticker-btn::after {
-      content: "";
+  font-weight:700;
 
-      position: absolute;
+  line-height:.7;
 
-      inset: -3px;
+  color:#70171B;
 
-      background: var(--cream);
+  opacity:.53;
 
-      border-radius:
-        15px 18px 14px 19px;
+  letter-spacing:-.09em;
 
-      z-index: -1;
-    }
+  user-select:none;
 
-    .sticker-btn:hover {
-      transform:
-        translateY(-4px)
-        rotate(1deg);
-    }
+  z-index:0;
 
+  will-change:transform;
+}
 
-    /* =========================================================
-       HERO
-    ========================================================= */
 
-    .hero {
-      min-height: 100vh;
+.hero-title {
+  position:relative;
 
-      display: flex;
-      align-items: center;
+  max-width:1000px;
 
-      position: relative;
+  font-size:
+  clamp(4.5rem,10vw,9.2rem);
 
-      overflow: hidden;
+  line-height:.79;
 
-      background:
-        radial-gradient(
-          circle at 87% 17%,
-          #72181C 0%,
-          transparent 36%
-        ),
-        radial-gradient(
-          circle at 6% 92%,
-          #290103 0%,
-          transparent 43%
-        ),
-        var(--wine);
-    }
+  letter-spacing:-.075em;
 
-    .hero-inner {
-      width: min(1320px, 100%);
+  text-transform:uppercase;
 
-      margin: auto;
+  z-index:5;
+}
 
-      padding:
-        150px 28px
-        100px;
+.hero-line {
+  display:block;
+  overflow:hidden;
+}
 
-      position: relative;
+.hero-line span {
+  display:block;
 
-      z-index: 5;
-    }
+  transform:translateY(115%);
 
-    .hero-tag {
-      display: inline-block;
+  animation:
+  titleIn 1.1s
+  cubic-bezier(.16,1,.3,1)
+  forwards;
+}
 
-      margin-bottom: 35px;
+.hero-line:nth-child(2) span {
+  animation-delay:.12s;
+}
 
-      padding: 8px 15px;
+.hero-line:nth-child(3) span {
+  animation-delay:.24s;
+}
 
-      background: var(--cream);
+@keyframes titleIn {
+  to {
+    transform:translateY(0);
+  }
+}
 
-      color: var(--wine);
+.hero-life {
+  display:inline-block;
 
-      font-size: .78rem;
-      font-weight: 950;
+  position:relative;
 
-      text-transform: uppercase;
-      letter-spacing: .14em;
+  color:var(--yellow);
+}
 
-      box-shadow:
-        6px 6px 0
-        var(--petrol);
+.hero-life::after {
+  content:"";
 
-      transform:
-        rotate(-2deg);
-    }
+  position:absolute;
 
-    .hero-title {
-      max-width: 1100px;
+  left:0;
+  right:-3%;
+  bottom:-12px;
 
-      font-size:
-        clamp(4.5rem, 11vw, 10rem);
+  height:15px;
 
-      line-height: .78;
+  background:var(--petrol);
 
-      letter-spacing: -.075em;
+  border-radius:
+  80% 30% 70% 40%;
 
-      text-transform: uppercase;
+  transform:rotate(-2deg);
 
-      font-weight: 950;
-    }
+  z-index:-1;
+}
 
-    .hero-line {
-      display: block;
+.hero-description {
+  max-width:680px;
 
-      overflow: hidden;
-    }
+  margin-top:55px;
 
-    .hero-line > span {
-      display: block;
+  font-size:1.17rem;
+  line-height:1.75;
 
-      transform:
-        translateY(115%);
+  color:var(--muted);
+}
 
-      animation:
-        titleEntrance 1.1s
-        cubic-bezier(.16,1,.3,1)
-        forwards;
-    }
+.hero-actions {
+  margin-top:42px;
+}
 
-    .hero-line:nth-child(2) > span {
-      animation-delay: .12s;
-    }
 
-    .hero-line:nth-child(3) > span {
-      animation-delay: .24s;
-    }
+/* =========================================================
+   D. VIVANT
+========================================================= */
 
-    @keyframes titleEntrance {
-      to {
-        transform:
-          translateY(0);
-      }
-    }
+.d-creature {
+  position:absolute;
 
-    .hero-life {
-      position: relative;
+  right:10%;
+  bottom:12%;
 
-      display: inline-block;
+  width:105px;
+  height:105px;
 
-      color: var(--yellow);
-    }
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
-    .hero-life::after {
-      content: "";
+  background:var(--cream);
+  color:var(--wine);
 
-      position: absolute;
+  font-family:"Space Grotesk",sans-serif;
 
-      left: 3%;
-      right: -2%;
+  font-size:3rem;
+  font-weight:700;
 
-      bottom: -9px;
+  border-radius:
+  56% 44% 58% 42% /
+  45% 58% 42% 55%;
 
-      height: 13px;
+  border:7px solid var(--petrol);
 
-      background: var(--petrol);
+  box-shadow:9px 10px 0 var(--wine-dark);
 
-      border-radius:
-        60% 30% 80% 40%;
+  animation:
+  blobMove 5s ease-in-out infinite;
 
-      transform:
-        rotate(-1.5deg);
+  z-index:6;
+}
 
-      z-index: -1;
-    }
+@keyframes blobMove {
+  0%,100% {
+    border-radius:
+    56% 44% 58% 42% /
+    45% 58% 42% 55%;
 
-    .hero-description {
-      max-width: 690px;
+    transform:
+    translateY(0)
+    rotate(-3deg);
+  }
 
-      margin-top: 55px;
+  50% {
+    border-radius:
+    42% 58% 38% 62% /
+    58% 40% 60% 42%;
 
-      font-size: 1.17rem;
+    transform:
+    translateY(-18px)
+    rotate(4deg);
+  }
+}
 
-      line-height: 1.72;
 
-      color: var(--muted-on-wine);
-    }
+/* =========================================================
+   MANIFESTE
+========================================================= */
 
-    .hero-actions {
-      margin-top: 42px;
-    }
+.manifesto {
+  min-height:90vh;
 
+  padding:150px 28px 150px 80px;
 
-    /* =========================================================
-       HERO — STICKERS FLOTTANTS
-    ========================================================= */
+  display:flex;
+  align-items:center;
 
-    .hero-float {
-      position: absolute;
+  background:var(--wine-dark);
 
-      pointer-events: none;
+  overflow:hidden;
+}
 
-      user-select: none;
+.manifesto-inner {
+  max-width:1150px;
+  margin:auto;
+}
 
-      font-weight: 950;
+.label {
+  display:inline-block;
 
-      z-index: 2;
-    }
+  margin-bottom:25px;
 
-    .hero-float.star {
-      right: 8%;
-      top: 23%;
+  color:var(--petrol);
 
-      font-size: 6rem;
+  font-size:.78rem;
+  font-weight:900;
 
-      color: var(--petrol);
-    }
+  text-transform:uppercase;
+  letter-spacing:.2em;
+}
 
-    .hero-float.plus {
-      right: 17%;
-      bottom: 17%;
+.manifesto-text {
+  font-family:"Space Grotesk",sans-serif;
 
-      font-size: 5rem;
+  font-size:
+  clamp(3rem,6.5vw,6.3rem);
 
-      color: var(--coral);
-    }
+  font-weight:700;
 
-    .hero-float.heart {
-      right: 5%;
-      bottom: 37%;
+  line-height:.98;
 
-      font-size: 4rem;
+  letter-spacing:-.055em;
+}
 
-      color: var(--yellow);
-    }
+.manifesto-sticker {
+  position:relative;
 
+  display:inline-block;
 
-    /* =========================================================
-       MANIFESTE
-    ========================================================= */
+  padding:6px 15px;
+  margin:7px;
 
-    .manifesto {
-      min-height: 82vh;
+  background:var(--cream);
+  color:var(--wine);
 
-      display: flex;
-      align-items: center;
+  transform:rotate(-1deg);
 
-      padding:
-        150px 28px;
+  z-index:1;
+}
 
-      background:
-        var(--wine-dark);
-    }
+.manifesto-sticker::before {
+  content:"";
 
-    .manifesto-inner {
-      max-width: 1140px;
+  position:absolute;
+  inset:-7px;
 
-      margin: auto;
-    }
+  background:var(--petrol);
 
-    .label {
-      display: inline-block;
+  border-radius:
+  18px 13px 20px 12px;
 
-      margin-bottom: 26px;
+  transform:rotate(2deg);
 
-      color: var(--petrol);
+  z-index:-1;
+}
 
-      font-size: .78rem;
-      font-weight: 950;
 
-      letter-spacing: .2em;
+/* =========================================================
+   REVEALS
+========================================================= */
 
-      text-transform: uppercase;
-    }
+.reveal {
+  opacity:0;
 
-    .manifesto-text {
-      font-size:
-        clamp(3rem, 6.5vw, 6.3rem);
+  transform:
+  translateY(65px);
 
-      line-height: .98;
+  transition:
+  opacity .85s cubic-bezier(.16,1,.3,1),
+  transform .85s cubic-bezier(.16,1,.3,1);
+}
 
-      font-weight: 950;
+.reveal.visible {
+  opacity:1;
+  transform:translateY(0);
+}
 
-      letter-spacing: -.05em;
-    }
 
-    .manifesto-sticker {
-      position: relative;
+/* =========================================================
+   COMPRENDRE
+========================================================= */
 
-      display: inline-block;
+.container {
+  max-width:1260px;
+  margin:auto;
+}
 
-      margin:
-        8px 5px;
+.understand {
+  padding:
+  145px 28px
+  145px 80px;
 
-      padding:
-        6px 15px;
+  background:var(--wine);
+}
 
-      background:
-        var(--cream);
+.section-heading {
+  max-width:830px;
+  margin-bottom:75px;
+}
 
-      color:
-        var(--wine);
+.section-heading h2 {
+  font-size:
+  clamp(3.2rem,7vw,6.5rem);
 
-      transform:
-        rotate(-1.4deg);
+  line-height:.88;
 
-      z-index: 1;
-    }
+  letter-spacing:-.06em;
 
-    .manifesto-sticker::before {
-      content: "";
+  margin-bottom:28px;
+}
 
-      position: absolute;
+.section-heading p {
+  max-width:670px;
 
-      inset: -7px;
+  color:var(--muted);
 
-      background:
-        var(--petrol);
+  font-size:1.15rem;
+  line-height:1.7;
+}
 
-      border-radius:
-        18px 13px 20px 12px;
+.cards {
+  display:grid;
 
-      transform:
-        rotate(2deg);
+  grid-template-columns:
+  repeat(3,1fr);
 
-      z-index: -1;
-    }
+  gap:25px;
 
+  perspective:1200px;
+}
 
-    /* =========================================================
-       GLOBAL
-    ========================================================= */
+.card {
+  min-height:400px;
 
-    section {
-      position: relative;
-    }
+  padding:35px;
 
-    .container {
-      max-width: 1260px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
 
-      margin: auto;
-    }
+  border:
+  1px solid rgba(240,223,199,.18);
 
-    .section-heading {
-      max-width: 830px;
+  border-radius:
+  32px 22px 35px 25px;
 
-      margin-bottom: 75px;
-    }
+  position:relative;
+  overflow:hidden;
 
-    .section-heading h2 {
-      margin-bottom: 28px;
+  transform-style:preserve-3d;
 
-      font-size:
-        clamp(3.2rem, 7vw, 6.5rem);
+  transition:
+  background .3s ease,
+  transform .15s ease;
+}
 
-      line-height: .88;
+.card::after {
+  content:"";
 
-      letter-spacing: -.06em;
-    }
+  position:absolute;
 
-    .section-heading p {
-      max-width: 670px;
+  width:170px;
+  height:170px;
 
-      font-size: 1.15rem;
+  right:-80px;
+  top:-80px;
 
-      line-height: 1.7;
+  border-radius:50%;
 
-      color:
-        var(--muted-on-wine);
-    }
+  background:var(--petrol);
 
+  opacity:0;
 
-    /* =========================================================
-       REVEAL
-    ========================================================= */
+  transition:.35s ease;
+}
 
-    .reveal {
-      opacity: 0;
+.card:hover::after {
+  opacity:.18;
+  transform:scale(1.3);
+}
 
-      transform:
-        translateY(65px);
+.card:hover {
+  background:var(--wine-soft);
+}
 
-      transition:
-        opacity .85s
-        cubic-bezier(.16,1,.3,1),
+.card-number {
+  color:var(--petrol);
 
-        transform .85s
-        cubic-bezier(.16,1,.3,1);
-    }
+  font-weight:900;
+  letter-spacing:.18em;
+}
 
-    .reveal.visible {
-      opacity: 1;
+.card h3 {
+  font-size:1.8rem;
+  line-height:1.05;
 
-      transform:
-        translateY(0);
-    }
+  margin-bottom:17px;
+}
 
+.card p {
+  color:var(--muted);
+  line-height:1.65;
+}
 
-    /* =========================================================
-       COMPRENDRE
-    ========================================================= */
 
-    .understand {
-      padding:
-        145px 28px;
+/* =========================================================
+   LA DOULEUR N'EST PAS TOUTE L'HISTOIRE
+========================================================= */
 
-      background:
-        var(--wine);
-    }
+.statement {
+  position:relative;
 
-    .cards {
-      display: grid;
+  padding:
+  140px 28px
+  140px 80px;
 
-      grid-template-columns:
-        repeat(3, 1fr);
+  background:var(--cream);
 
-      gap: 25px;
+  color:var(--wine);
 
-      perspective:
-        1200px;
-    }
+  overflow:hidden;
+}
 
-    .card {
-      min-height: 390px;
+.statement-inner {
+  max-width:1320px;
+  margin:auto;
+}
 
-      padding: 35px;
+.statement-line {
+  font-family:"Space Grotesk",sans-serif;
 
-      display: flex;
-      flex-direction: column;
+  font-size:
+  clamp(3.2rem,8vw,7.7rem);
 
-      justify-content: space-between;
+  font-weight:700;
 
-      border:
-        1px solid
-        rgba(241,225,204,.17);
+  line-height:.9;
 
-      border-radius:
-        30px 24px 34px 25px;
+  letter-spacing:-.06em;
 
-      transform-style:
-        preserve-3d;
+  will-change:transform;
+}
 
-      transition:
-        background .3s ease,
-        transform .15s ease;
-    }
+.statement-line.second {
+  margin-top:12px;
 
-    .card:hover {
-      background:
-        var(--wine-soft);
-    }
+  color:var(--petrol);
+}
 
-    .card-number {
-      color:
-        var(--petrol);
+.statement-mark {
+  position:absolute;
 
-      font-weight: 950;
+  right:7%;
+  top:22%;
 
-      letter-spacing: .18em;
-    }
+  width:170px;
+  height:170px;
 
-    .card h3 {
-      margin-bottom: 17px;
+  border-radius:
+  50% 42% 57% 43%;
 
-      font-size: 1.8rem;
+  border:
+  14px solid var(--yellow);
 
-      line-height: 1.05;
-    }
+  opacity:.65;
 
-    .card p {
-      color:
-        var(--muted-on-wine);
+  animation:
+  rotateMark 15s linear infinite;
+}
 
-      line-height: 1.65;
-    }
+@keyframes rotateMark {
+  to {
+    transform:rotate(360deg);
+  }
+}
 
 
-    /* =========================================================
-       PHRASE DOLORIA
-    ========================================================= */
+/* =========================================================
+   PARCOURS
+========================================================= */
 
-    .statement {
-      padding:
-        120px 28px;
+.journey {
+  min-height:1050px;
 
-      overflow: hidden;
+  position:relative;
 
-      background:
-        var(--cream);
+  padding:
+  145px 28px
+  145px 80px;
 
-      color:
-        var(--wine);
-    }
+  background:var(--cream);
+  color:var(--wine);
 
-    .statement-inner {
-      max-width:
-        1320px;
+  overflow:hidden;
+}
 
-      margin: auto;
-    }
+.journey .label {
+  color:var(--wine);
+}
 
-    .statement-line {
-      font-size:
-        clamp(3.4rem, 8vw, 8rem);
+.journey h2 {
+  max-width:870px;
 
-      line-height: .9;
+  font-size:
+  clamp(3rem,7vw,7rem);
 
-      font-weight: 950;
+  line-height:.86;
 
-      letter-spacing: -.055em;
+  letter-spacing:-.06em;
+}
 
-      will-change:
-        transform;
-    }
+.journey-description {
+  max-width:610px;
 
-    .statement-line.second {
-      margin-top: 15px;
+  margin-top:32px;
 
-      color:
-        var(--petrol);
-    }
+  color:#715A53;
 
+  font-size:1.15rem;
+  line-height:1.7;
+}
 
-    /* =========================================================
-       PARCOURS
-    ========================================================= */
+.journey-svg {
+  position:absolute;
 
-    .journey {
-      min-height: 1000px;
+  inset:0;
 
-      padding:
-        140px 28px;
+  width:100%;
+  height:100%;
 
-      overflow: hidden;
+  pointer-events:none;
+}
 
-      background:
-        var(--cream);
+.journey-svg path {
+  fill:none;
 
-      color:
-        var(--wine);
-    }
+  stroke:var(--petrol);
 
-    .journey .label {
-      color:
-        var(--wine);
-    }
+  stroke-width:13;
 
-    .journey h2 {
-      max-width: 870px;
+  stroke-linecap:round;
 
-      font-size:
-        clamp(3rem, 7vw, 7rem);
+  stroke-dasharray:5 27;
+}
 
-      line-height: .86;
+#traveller {
+  position:absolute;
 
-      letter-spacing: -.06em;
-    }
+  width:90px;
+  height:90px;
 
-    .journey-description {
-      max-width: 610px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
-      margin-top: 32px;
+  background:var(--wine);
+  color:var(--cream);
 
-      font-size: 1.15rem;
+  border-radius:
+  50% 42% 57% 43%;
 
-      line-height: 1.7;
+  border:7px solid var(--yellow);
 
-      color:
-        var(--muted-on-cream);
-    }
+  font-family:"Space Grotesk",sans-serif;
 
-    .journey-svg {
-      position: absolute;
+  font-size:2rem;
+  font-weight:700;
 
-      inset: 0;
+  box-shadow:
+  8px 9px 0 var(--petrol);
 
-      width: 100%;
-      height: 100%;
+  z-index:10;
 
-      pointer-events: none;
-    }
+  will-change:transform;
+}
 
-    .journey-svg path {
-      fill: none;
 
-      stroke:
-        var(--petrol);
+/* =========================================================
+   RESPIRER
+========================================================= */
 
-      stroke-width: 13;
+.breathe {
+  min-height:95vh;
 
-      stroke-linecap: round;
+  position:relative;
 
-      stroke-dasharray:
-        5 27;
-    }
+  display:flex;
+  align-items:center;
 
-    #traveller {
-      position: absolute;
+  padding:
+  130px 28px
+  130px 80px;
 
-      z-index: 10;
+  background:var(--wine);
 
-      width: 100px;
-      height: 72px;
+  overflow:hidden;
+}
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+.breathe-inner {
+  max-width:1100px;
 
-      background:
-        var(--cream);
+  margin:auto;
 
-      color:
-        var(--wine);
+  position:relative;
 
-      border:
-        8px solid
-        var(--petrol);
+  z-index:2;
+}
 
-      border-radius:
-        30px 23px 32px 20px;
+.breathe h2 {
+  font-size:
+  clamp(3.8rem,9vw,8.5rem);
 
-      box-shadow:
-        8px 9px 0
-        var(--wine);
+  line-height:.84;
 
-      font-size: 2.4rem;
+  letter-spacing:-.07em;
+}
 
-      will-change:
-        transform;
-    }
+.breathe h2 span {
+  color:var(--yellow);
+}
 
+.breathe-orbit {
+  position:absolute;
 
-    /* =========================================================
-       PETITS COURAGEUX — LE PORTAIL
-    ========================================================= */
+  right:-4%;
+  top:10%;
 
-    .kids-portal {
-      min-height: 100vh;
+  width:520px;
+  height:520px;
 
-      padding:
-        145px 28px;
+  border:
+  2px solid rgba(240,223,199,.18);
 
-      display: flex;
-      align-items: center;
+  border-radius:
+  50% 42% 58% 45%;
 
-      overflow: hidden;
+  animation:
+  orbitSpin 22s linear infinite;
+}
 
-      background:
-        var(--petrol-dark);
-    }
+.breathe-orbit::after {
+  content:"";
 
-    .kids-portal-inner {
-      width:
-        min(1260px, 100%);
+  position:absolute;
 
-      margin: auto;
+  width:55px;
+  height:55px;
 
-      display: grid;
+  top:35px;
+  left:80px;
 
-      grid-template-columns:
-        1.1fr .9fr;
+  border-radius:50%;
 
-      gap: 80px;
+  background:var(--petrol);
+}
 
-      align-items: center;
+@keyframes orbitSpin {
+  to {
+    transform:rotate(360deg);
+  }
+}
 
-      position: relative;
 
-      z-index: 4;
-    }
+/* =========================================================
+   PETITS COURAGEUX — CHAPITRE
+========================================================= */
 
-    .kids-overline {
-      display: inline-block;
+.kids-portal {
+  min-height:100vh;
 
-      margin-bottom: 30px;
+  position:relative;
 
-      padding:
-        8px 15px;
+  display:flex;
+  align-items:center;
 
-      background:
-        var(--yellow);
+  padding:
+  145px 28px
+  145px 80px;
 
-      color:
-        var(--wine);
+  background:var(--petrol-dark);
 
-      font-size:
-        .8rem;
+  overflow:hidden;
+}
 
-      font-weight:
-        950;
+.kids-inner {
+  width:min(1260px,100%);
+  margin:auto;
 
-      text-transform:
-        uppercase;
+  display:grid;
 
-      letter-spacing:
-        .13em;
+  grid-template-columns:
+  1.05fr .95fr;
 
-      transform:
-        rotate(-2deg);
+  align-items:center;
 
-      box-shadow:
-        5px 6px 0
-        var(--wine);
-    }
+  gap:80px;
 
-    .kids-story-title {
-      font-size:
-        clamp(3.8rem, 8vw, 7.8rem);
+  position:relative;
 
-      line-height: .83;
+  z-index:5;
+}
 
-      letter-spacing: -.065em;
+.kids-overline {
+  display:inline-block;
 
-      font-weight: 950;
-    }
+  padding:8px 15px;
+  margin-bottom:30px;
 
-    .kids-story-title .story-sticker {
-      position: relative;
+  background:var(--yellow);
+  color:var(--wine);
 
-      display: inline-block;
+  font-size:.78rem;
+  font-weight:900;
 
-      margin-top: 12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
 
-      padding:
-        6px 17px 11px;
+  transform:rotate(-2deg);
 
-      background:
-        var(--cream);
+  box-shadow:
+  6px 6px 0 var(--wine);
+}
 
-      color:
-        var(--wine);
+.kids-title {
+  font-size:
+  clamp(3.8rem,7.7vw,7.5rem);
 
-      transform:
-        rotate(-1deg);
+  line-height:.84;
 
-      z-index: 1;
-    }
+  letter-spacing:-.065em;
+}
 
-    .kids-story-title .story-sticker::before {
-      content: "";
+.kids-sticker-word {
+  position:relative;
 
-      position: absolute;
+  display:inline-block;
 
-      inset: -10px;
+  margin-top:10px;
 
-      background:
-        var(--yellow);
+  padding:
+  7px 17px 12px;
 
-      border-radius:
-        26px 17px 31px 20px;
+  background:var(--cream);
+  color:var(--wine);
 
-      transform:
-        rotate(2deg);
+  transform:rotate(-1deg);
 
-      z-index: -1;
-    }
+  z-index:1;
+}
 
-    .kids-story-intro {
-      max-width: 660px;
+.kids-sticker-word::before {
+  content:"";
 
-      margin-top: 38px;
+  position:absolute;
 
-      font-size:
-        1.16rem;
+  inset:-10px;
 
-      line-height: 1.75;
-    }
+  background:var(--yellow);
 
-    .kids-story-actions {
-      margin-top: 43px;
-    }
+  border-radius:
+  28px 18px 31px 20px;
 
+  transform:rotate(2deg);
 
-    /* =========================================================
-       PETITS COURAGEUX — PETIT LIVRE / PORTE
-    ========================================================= */
+  z-index:-1;
+}
 
-    .story-door-wrap {
-      position: relative;
+.kids-text {
+  max-width:660px;
 
-      min-height: 550px;
+  margin-top:38px;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+  font-size:1.16rem;
+  line-height:1.75;
+}
 
-      perspective: 1000px;
-    }
+.kids-actions {
+  margin-top:44px;
+}
 
-    .story-door {
-      position: relative;
 
-      width:
-        min(390px, 80vw);
+/* =========================================================
+   LIVRE / PORTE
+========================================================= */
 
-      aspect-ratio:
-        .72;
+.book-scene {
+  min-height:570px;
 
-      padding:
-        38px;
+  position:relative;
 
-      display: flex;
-      flex-direction: column;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
-      justify-content: space-between;
+  perspective:1200px;
+}
 
-      background:
-        var(--cream);
+.book {
+  position:relative;
 
-      color:
-        var(--wine);
+  width:min(390px,78vw);
 
-      border-radius:
-        13px 30px 25px 12px;
+  aspect-ratio:.72;
 
-      box-shadow:
-        18px 20px 0
-        var(--wine);
+  padding:40px 35px 35px 56px;
 
-      transform:
-        rotate(3deg);
+  background:var(--cream);
+  color:var(--wine);
 
-      transition:
-        transform .45s
-        cubic-bezier(.16,1,.3,1),
+  border-radius:
+  10px 31px 26px 11px;
 
-        box-shadow .45s ease;
-    }
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
 
-    .story-door::before {
-      content: "";
+  box-shadow:
+  20px 22px 0 var(--wine);
 
-      position: absolute;
+  transform:
+  rotate(3deg);
 
-      left: 18px;
-      top: 0;
-      bottom: 0;
+  transition:
+  transform .4s cubic-bezier(.16,1,.3,1),
+  box-shadow .4s ease;
+}
 
-      width: 8px;
+.book::before {
+  content:"";
 
-      background:
-        var(--coral);
+  position:absolute;
 
-      border-radius: 10px;
-    }
+  left:20px;
+  top:0;
+  bottom:0;
 
-    .story-door:hover {
-      transform:
-        rotate(0deg)
-        translateY(-15px)
-        rotateY(-8deg);
+  width:8px;
 
-      box-shadow:
-        25px 28px 0
-        var(--wine);
-    }
+  background:var(--coral);
 
-    .story-door-small {
-      padding-left: 14px;
+  border-radius:10px;
+}
 
-      font-size: .8rem;
+.book:hover {
+  transform:
+  translateY(-15px)
+  rotateY(-9deg)
+  rotate(0deg);
 
-      text-transform: uppercase;
+  box-shadow:
+  27px 30px 0 var(--wine);
+}
 
-      letter-spacing: .14em;
+.book-small {
+  font-size:.78rem;
+  font-weight:900;
 
-      font-weight: 900;
-    }
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
 
-    .story-door h3 {
-      padding-left: 14px;
+.book h3 {
+  font-size:
+  clamp(2.6rem,5vw,4.4rem);
 
-      font-size:
-        clamp(2.5rem, 5vw, 4.3rem);
+  line-height:.89;
 
-      line-height: .9;
+  letter-spacing:-.065em;
+}
 
-      letter-spacing: -.06em;
-    }
+.book-end {
+  font-weight:800;
+}
 
-    .story-door-bottom {
-      padding-left: 14px;
+.kids-doodle {
+  position:absolute;
 
-      font-weight: 850;
-    }
+  font-family:"Space Grotesk",sans-serif;
 
-    .door-star {
-      position: absolute;
+  font-weight:700;
 
-      right: -18px;
-      top: 55px;
+  user-select:none;
 
-      font-size: 5.5rem;
+  animation:
+  kidsFloat 5s ease-in-out infinite;
+}
 
-      color:
-        var(--yellow);
+.kids-doodle.one {
+  right:1%;
+  top:7%;
 
-      animation:
-        doorFloat 4.5s
-        ease-in-out infinite;
-    }
+  font-size:5.5rem;
 
-    .door-heart {
-      position: absolute;
+  color:var(--yellow);
+}
 
-      left: -35px;
-      bottom: 70px;
+.kids-doodle.two {
+  left:-4%;
+  bottom:11%;
 
-      font-size: 4rem;
+  font-size:4.4rem;
 
-      color:
-        var(--coral);
+  color:var(--coral);
 
-      animation:
-        doorFloat 5s
-        ease-in-out infinite
-        -2s;
-    }
+  animation-delay:-2s;
+}
 
-    .door-plus {
-      position: absolute;
+.kids-doodle.three {
+  right:3%;
+  bottom:5%;
 
-      right: 5px;
-      bottom: 20px;
+  font-size:4rem;
 
-      font-size: 4rem;
+  color:var(--cream);
 
-      color:
-        var(--cream);
+  animation-delay:-3.5s;
+}
 
-      animation:
-        doorFloat 5.5s
-        ease-in-out infinite
-        -3s;
-    }
+@keyframes kidsFloat {
+  0%,100% {
+    transform:
+    translateY(0)
+    rotate(-4deg);
+  }
 
-    @keyframes doorFloat {
-      0%,100% {
-        transform:
-          translateY(0)
-          rotate(-5deg);
-      }
+  50% {
+    transform:
+    translateY(-24px)
+    rotate(7deg);
+  }
+}
 
-      50% {
-        transform:
-          translateY(-22px)
-          rotate(7deg);
-      }
-    }
 
+/* =========================================================
+   ACTIONS
+========================================================= */
 
-    /* =========================================================
-       MINI NARRATION KIDS
-    ========================================================= */
+.actions {
+  padding:
+  145px 28px
+  145px 80px;
 
-    .kids-caption {
-      position: absolute;
+  background:var(--wine-dark);
+}
 
-      right: 4%;
-      top: 8%;
+.actions-list {
+  margin-top:60px;
 
-      max-width: 240px;
+  border-top:
+  1px solid rgba(240,223,199,.18);
+}
 
-      padding:
-        13px 18px;
+.action-row {
+  padding:38px 0;
 
-      background:
-        var(--cream);
+  display:grid;
 
-      color:
-        var(--wine);
+  grid-template-columns:
+  80px 1fr 1fr;
 
-      font-weight: 850;
+  gap:30px;
 
-      line-height: 1.35;
+  align-items:center;
 
-      border-radius:
-        18px 14px 19px 12px;
+  border-bottom:
+  1px solid rgba(240,223,199,.18);
 
-      transform:
-        rotate(4deg);
+  transition:
+  padding .3s ease;
+}
 
-      box-shadow:
-        6px 7px 0
-        var(--yellow);
-    }
+.action-row:hover {
+  padding-left:22px;
+}
 
+.action-row strong {
+  color:var(--petrol);
 
-    /* =========================================================
-       ACTIONS
-    ========================================================= */
+  font-size:.84rem;
+}
 
-    .actions {
-      padding:
-        145px 28px;
+.action-row h3 {
+  font-size:
+  clamp(1.6rem,3vw,2.7rem);
+}
 
-      background:
-        var(--wine-dark);
-    }
+.action-row p {
+  color:var(--muted);
 
-    .actions-list {
-      margin-top:
-        60px;
+  line-height:1.65;
+}
 
-      border-top:
-        1px solid
-        rgba(241,225,204,.18);
-    }
 
-    .action-row {
-      padding:
-        37px 0;
+/* =========================================================
+   CTA
+========================================================= */
 
-      display: grid;
+.cta {
+  min-height:85vh;
 
-      grid-template-columns:
-        80px 1fr 1fr;
+  display:flex;
+  align-items:center;
 
-      gap:
-        30px;
+  padding:
+  120px 28px
+  120px 80px;
 
-      align-items:
-        center;
+  background:var(--wine);
 
-      border-bottom:
-        1px solid
-        rgba(241,225,204,.18);
+  overflow:hidden;
+}
 
-      transition:
-        padding .3s ease,
-        transform .3s ease;
-    }
+.cta-inner {
+  max-width:1100px;
 
-    .action-row:hover {
-      padding-left:
-        20px;
-    }
+  margin:auto;
 
-    .action-row strong {
-      color:
-        var(--petrol);
+  text-align:center;
 
-      font-size:
-        .85rem;
-    }
+  position:relative;
 
-    .action-row h3 {
-      font-size:
-        clamp(1.6rem, 3vw, 2.7rem);
-    }
+  z-index:2;
+}
 
-    .action-row p {
-      color:
-        var(--muted-on-wine);
+.cta h2 {
+  font-size:
+  clamp(4rem,9vw,9rem);
 
-      line-height:
-        1.65;
-    }
+  line-height:.82;
 
+  letter-spacing:-.075em;
 
-    /* =========================================================
-       CTA
-    ========================================================= */
+  margin-bottom:55px;
+}
 
-    .cta {
-      min-height: 82vh;
+.cta-ring {
+  position:absolute;
 
-      padding:
-        120px 28px;
+  width:480px;
+  height:480px;
 
-      display: flex;
-      align-items: center;
+  left:50%;
+  top:50%;
 
-      background:
-        var(--wine);
-    }
+  transform:
+  translate(-50%,-50%);
 
-    .cta-inner {
-      width:
-        min(1100px, 100%);
+  border:
+  45px solid rgba(36,120,134,.17);
 
-      margin:
-        auto;
+  border-radius:
+  48% 52% 44% 56%;
 
-      text-align:
-        center;
-    }
+  animation:
+  ringWobble 10s ease-in-out infinite;
 
-    .cta h2 {
-      margin-bottom:
-        55px;
+  pointer-events:none;
+}
 
-      font-size:
-        clamp(4rem, 9vw, 9rem);
+@keyframes ringWobble {
+  0%,100% {
+    transform:
+    translate(-50%,-50%)
+    rotate(0deg)
+    scale(1);
+  }
 
-      line-height:
-        .82;
+  50% {
+    transform:
+    translate(-50%,-50%)
+    rotate(15deg)
+    scale(1.08);
+  }
+}
 
-      letter-spacing:
-        -.07em;
-    }
 
+/* =========================================================
+   FOOTER
+========================================================= */
 
-    /* =========================================================
-       FOOTER
-    ========================================================= */
+footer {
+  padding:
+  70px 28px
+  70px 80px;
 
-    footer {
-      padding:
-        70px 28px;
+  background:#1D0102;
+}
 
-      background:
-        #210102;
-    }
+.footer {
+  max-width:1260px;
 
-    .footer-inner {
-      max-width:
-        1260px;
+  margin:auto;
 
-      margin:
-        auto;
+  display:flex;
+  justify-content:space-between;
 
-      display:
-        flex;
+  flex-wrap:wrap;
 
-      justify-content:
-        space-between;
+  gap:40px;
+}
 
-      gap:
-        40px;
+.footer-logo {
+  font-family:"Space Grotesk",sans-serif;
 
-      flex-wrap:
-        wrap;
-    }
+  font-size:2rem;
 
-    .footer-logo {
-      font-size:
-        2rem;
+  font-weight:700;
 
-      font-weight:
-        950;
+  letter-spacing:.13em;
+}
 
-      letter-spacing:
-        .12em;
-    }
+.footer p,
+.footer-links {
+  color:#A57C75;
+}
 
-    .footer-text {
-      margin-top:
-        12px;
+.footer-links {
+  display:flex;
+  gap:25px;
+  flex-wrap:wrap;
+}
 
-      color:
-        #B99087;
-    }
 
-    .footer-nav {
-      display:
-        flex;
+/* =========================================================
+   MOBILE
+========================================================= */
 
-      gap:
-        25px;
+@media(max-width:920px) {
 
-      flex-wrap:
-        wrap;
+  #cursor,
+  .story-thread,
+  .thread-dot {
+    display:none;
+  }
 
-      color:
-        #B99087;
-    }
+  nav {
+    padding-left:25px;
+  }
 
-    .copyright {
-      color:
-        #825D59;
-    }
+  .nav-links {
+    display:none;
+  }
 
+  .hero-inner,
+  .manifesto,
+  .understand,
+  .statement,
+  .journey,
+  .breathe,
+  .kids-portal,
+  .actions,
+  .cta,
+  footer {
+    padding-left:25px;
+    padding-right:25px;
+  }
 
-    /* =========================================================
-       MOBILE
-    ========================================================= */
+  .hero-title {
+    font-size:
+    clamp(4rem,18vw,7rem);
+  }
 
-    @media(max-width: 920px) {
+  .hero-pain {
+    opacity:.25;
+  }
 
-      #cursor {
-        display: none;
-      }
+  .d-creature {
+    opacity:.55;
 
-      .nav-links {
-        display: none;
-      }
+    right:-20px;
+  }
 
-      .hero-title {
-        font-size:
-          clamp(4rem,18vw,7rem);
-      }
+  .cards {
+    grid-template-columns:1fr;
+  }
 
-      .cards {
-        grid-template-columns:
-          1fr;
-      }
+  .kids-inner {
+    grid-template-columns:1fr;
 
-      .kids-portal-inner {
-        grid-template-columns:
-          1fr;
+    gap:70px;
+  }
 
-        gap:
-          70px;
-      }
+  .action-row {
+    grid-template-columns:
+    45px 1fr;
+  }
 
-      .story-door-wrap {
-        min-height:
-          470px;
-      }
+  .action-row p {
+    grid-column:2;
+  }
 
-      .kids-caption {
-        display:
-          none;
-      }
+}
 
-      .action-row {
-        grid-template-columns:
-          45px 1fr;
-      }
 
-      .action-row p {
-        grid-column:
-          2;
-      }
+/* =========================================================
+   ACCESSIBILITÉ
+========================================================= */
 
-      .hero-float {
-        opacity:
-          .35;
-      }
+@media(prefers-reduced-motion:reduce) {
 
-      .statement-line {
-        font-size:
-          clamp(3rem, 13vw, 5.5rem);
-      }
+  *,
+  *::before,
+  *::after {
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+  }
 
-    }
+  html {
+    scroll-behavior:auto;
+  }
 
+}
 
-    /* =========================================================
-       REDUCED MOTION
-    ========================================================= */
-
-    @media(prefers-reduced-motion:reduce) {
-
-      *,
-      *::before,
-      *::after {
-        animation-duration:
-          .01ms !important;
-
-        animation-iteration-count:
-          1 !important;
-
-        transition-duration:
-          .01ms !important;
-      }
-
-      html {
-        scroll-behavior:
-          auto;
-      }
-
-    }
-
-  </style>
+</style>
 </head>
 
 
@@ -1582,727 +1596,757 @@
 <div id="progress"></div>
 <div id="cursor"></div>
 
+<div class="story-thread"></div>
+<div class="thread-dot" id="threadDot">D</div>
+
 
 <header id="header">
 
-  <nav>
+<nav>
 
-    <a
-      class="logo"
-      href="#accueil"
-    >
-      DOLORIA
-    </a>
+<a href="#accueil" class="logo">
+DOLORIA
+</a>
 
+<div class="nav-links">
 
-    <div class="nav-links">
+<a href="#comprendre">
+Comprendre
+</a>
 
-      <a href="#comprendre">
-        Comprendre
-      </a>
+<a href="#petits-courageux">
+Petits Courageux
+</a>
 
-      <a href="#petits-courageux">
-        Petits Courageux
-      </a>
+<a href="#actions">
+Nos actions
+</a>
 
-      <a href="#actions">
-        Nos actions
-      </a>
+<a href="#">
+Ressources
+</a>
 
-      <a href="#">
-        Ressources
-      </a>
+<a href="#contact">
+Contact
+</a>
 
-      <a href="#contact">
-        Contact
-      </a>
+</div>
 
-    </div>
+<a
+href="#contact"
+class="sticker-btn magnetic">
+Nous rejoindre
+</a>
 
-
-    <a
-      href="#contact"
-      class="sticker-btn magnetic"
-    >
-      Nous rejoindre
-    </a>
-
-  </nav>
+</nav>
 
 </header>
-
 
 
 <main>
 
 
-  <!-- =======================================================
-       HERO
-  ======================================================== -->
+<!-- =======================================================
+     HERO
+======================================================== -->
 
-  <section
-    class="hero"
-    id="accueil"
-  >
+<section
+class="hero"
+id="accueil">
 
-    <div class="hero-inner">
+<div
+class="hero-pain"
+id="painWord">
+DOULEUR
+</div>
 
-      <div class="hero-tag">
-        Association suisse Doloria
-      </div>
 
+<div class="hero-inner">
 
-      <h1 class="hero-title">
+<div class="hero-tag">
+Association suisse Doloria
+</div>
 
-        <span class="hero-line">
-          <span>
-            La douleur
-          </span>
-        </span>
 
-        <span class="hero-line">
-          <span>
-            existe.
-          </span>
-        </span>
+<h1 class="hero-title">
 
-        <span class="hero-line">
-          <span class="hero-life">
-            Votre vie aussi.
-          </span>
-        </span>
+<span class="hero-line">
+<span>
+La douleur
+</span>
+</span>
 
-      </h1>
+<span class="hero-line">
+<span>
+existe.
+</span>
+</span>
 
+<span class="hero-line">
+<span class="hero-life">
+Votre vie aussi.
+</span>
+</span>
 
-      <p
-        class="hero-description reveal"
-      >
-        Doloria agit pour que les personnes vivant avec
-        une douleur chronique ne soient jamais réduites
-        à leur douleur.
+</h1>
 
-        Informer, accompagner, représenter et créer des
-        ressources pour remettre la personne, ses choix
-        et ses projets de vie au centre.
-      </p>
 
+<p class="hero-description reveal">
 
-      <div
-        class="hero-actions reveal"
-      >
+Doloria agit pour que les personnes vivant avec une douleur
+chronique ne soient jamais réduites à leur douleur.
 
-        <a
-          href="#comprendre"
-          class="sticker-btn magnetic"
-        >
-          Découvrir Doloria →
-        </a>
+Informer, accompagner, représenter et créer des ressources
+pour remettre la personne, ses choix et ses projets de vie au centre.
 
-      </div>
+</p>
 
-    </div>
 
+<div class="hero-actions reveal">
 
-    <div
-      class="hero-float star"
-    >
-      ✦
-    </div>
+<a
+href="#comprendre"
+class="sticker-btn magnetic">
 
-    <div
-      class="hero-float plus"
-    >
-      +
-    </div>
+Découvrir Doloria →
 
-    <div
-      class="hero-float heart"
-    >
-      ♥
-    </div>
+</a>
 
-  </section>
+</div>
 
+</div>
 
 
-  <!-- =======================================================
-       MANIFESTE
-  ======================================================== -->
+<div class="d-creature">
+D.
+</div>
 
-  <section class="manifesto">
+</section>
 
-    <div class="manifesto-inner">
 
-      <span class="label reveal">
-        Pourquoi Doloria ?
-      </span>
 
+<!-- =======================================================
+     MANIFESTE
+======================================================== -->
 
-      <div
-        class="manifesto-text reveal"
-      >
+<section class="manifesto">
 
-        Vivre avec une douleur chronique
-        ne devrait pas signifier
+<div class="manifesto-inner">
 
-        <span class="manifesto-sticker">
-          mettre sa vie en pause.
-        </span>
+<div class="label reveal">
+Pourquoi Doloria ?
+</div>
 
-      </div>
 
-    </div>
+<div class="manifesto-text reveal">
 
-  </section>
+Vivre avec une douleur chronique
+ne devrait pas signifier
 
+<span class="manifesto-sticker">
+mettre sa vie en pause.
+</span>
 
+</div>
 
-  <!-- =======================================================
-       COMPRENDRE
-  ======================================================== -->
+</div>
 
-  <section
-    class="understand"
-    id="comprendre"
-  >
+</section>
 
-    <div class="container">
 
 
-      <div class="section-heading">
+<!-- =======================================================
+     COMPRENDRE
+======================================================== -->
 
-        <span class="label reveal">
-          Comprendre
-        </span>
+<section
+class="understand"
+id="comprendre">
 
-        <h2 class="reveal">
-          Comprendre.<br>
-          Choisir.<br>
-          Avancer.
-        </h2>
+<div class="container">
 
-        <p class="reveal">
-          Mieux comprendre ce qui se passe permet de
-          sortir du flou, de participer aux décisions
-          et de retrouver progressivement de la marge
-          de manœuvre dans son quotidien.
-        </p>
+<div class="section-heading">
 
-      </div>
+<div class="label reveal">
+Comprendre
+</div>
 
+<h2 class="reveal">
 
-      <div class="cards">
+Comprendre.<br>
+Choisir.<br>
+Avancer.
 
+</h2>
 
-        <article
-          class="card reveal tilt"
-        >
 
-          <div class="card-number">
-            01
-          </div>
+<p class="reveal">
 
-          <div>
+Mieux comprendre ce qui se passe permet de sortir du flou,
+de participer aux décisions et de retrouver progressivement
+de la marge de manœuvre dans son quotidien.
 
-            <h3>
-              Comprendre ce qui se passe
-            </h3>
+</p>
 
-            <p>
-              La douleur chronique implique des mécanismes
-              complexes. Nos ressources permettent de mieux
-              comprendre la douleur sans culpabiliser ni
-              réduire l'expérience à une seule cause.
-            </p>
+</div>
 
-          </div>
 
-        </article>
+<div class="cards">
 
 
+<article class="card reveal tilt">
 
-        <article
-          class="card reveal tilt"
-        >
+<div class="card-number">
+01
+</div>
 
-          <div class="card-number">
-            02
-          </div>
+<div>
 
-          <div>
+<h3>
+Comprendre ce qui se passe
+</h3>
 
-            <h3>
-              Trouver son chemin dans les soins
-            </h3>
+<p>
 
-            <p>
-              Spécialistes, centres de la douleur,
-              rééducation, psychologie, traitements :
-              Doloria aide à rendre les parcours plus
-              lisibles.
-            </p>
+La douleur chronique implique des mécanismes complexes.
+Comprendre ces mécanismes permet de sortir des explications
+trop simples et de mieux saisir ce que l'on traverse.
 
-          </div>
+</p>
 
-        </article>
+</div>
 
+</article>
 
 
-        <article
-          class="card reveal tilt"
-        >
 
-          <div class="card-number">
-            03
-          </div>
+<article class="card reveal tilt">
 
-          <div>
+<div class="card-number">
+02
+</div>
 
-            <h3>
-              Continuer à vivre
-            </h3>
+<div>
 
-            <p>
-              Travail, école, relations, activités,
-              projets : la vie ne devrait pas se résumer
-              à un score de douleur.
-            </p>
+<h3>
+Trouver son chemin dans les soins
+</h3>
 
-          </div>
+<p>
 
-        </article>
+Médecins, centres de la douleur, rééducation,
+psychologie, traitements : Doloria aide à rendre
+les parcours plus lisibles.
 
+</p>
 
-      </div>
+</div>
 
-    </div>
+</article>
 
-  </section>
 
 
+<article class="card reveal tilt">
 
-  <!-- =======================================================
-       PHRASE ANIMÉE
-  ======================================================== -->
+<div class="card-number">
+03
+</div>
 
-  <section class="statement">
+<div>
 
-    <div class="statement-inner">
+<h3>
+Continuer à vivre
+</h3>
 
-      <div
-        class="statement-line"
-        id="statement1"
-      >
-        LA DOULEUR N'EST PAS
-      </div>
+<p>
 
-      <div
-        class="statement-line second"
-        id="statement2"
-      >
-        TOUTE VOTRE HISTOIRE.
-      </div>
+Travail, école, relations, loisirs et projets :
+la vie ne devrait jamais se résumer à un score
+de douleur.
 
-    </div>
+</p>
 
-  </section>
+</div>
 
+</article>
 
 
-  <!-- =======================================================
-       PARCOURS
-  ======================================================== -->
+</div>
 
-  <section class="journey">
+</div>
 
-    <div class="container">
+</section>
 
-      <span class="label reveal">
-        Le parcours
-      </span>
 
-      <h2 class="reveal">
-        Il n'existe pas
-        un seul chemin.
-      </h2>
 
-      <p
-        class="journey-description reveal"
-      >
-        Vivre avec une douleur chronique ressemble
-        rarement à une ligne droite.
+<!-- =======================================================
+     STATEMENT
+======================================================== -->
 
-        On avance, on cherche, on ajuste, on recommence
-        parfois. Et quelquefois, on change complètement
-        de direction.
-      </p>
+<section class="statement">
 
-    </div>
+<div class="statement-mark"></div>
 
+<div class="statement-inner">
 
-    <svg
-      class="journey-svg"
-      viewBox="0 0 1400 1000"
-      preserveAspectRatio="none"
-    >
+<div
+class="statement-line"
+id="statement1">
 
-      <path
-        id="journeyPath"
-        d="
-        M -100 800
-        C 170 590,
-          250 950,
-          460 720
+LA DOULEUR N'EST PAS
 
-        S 700 330,
-          930 570
+</div>
 
-        S 1150 870,
-          1510 280
-        "
-      />
+<div
+class="statement-line second"
+id="statement2">
 
-    </svg>
+TOUTE VOTRE HISTOIRE.
 
+</div>
 
-    <div id="traveller">
-      ✦
-    </div>
+</div>
 
-  </section>
+</section>
 
 
 
-  <!-- =======================================================
-       LES PETITS COURAGEUX — PORTAIL
-  ======================================================== -->
+<!-- =======================================================
+     PARCOURS
+======================================================== -->
 
-  <section
-    class="kids-portal"
-    id="petits-courageux"
-  >
+<section class="journey">
 
+<div class="container">
 
-    <div class="kids-caption">
-      Une autre histoire
-      commence ici ✦
-    </div>
+<div class="label reveal">
+Le parcours
+</div>
 
+<h2 class="reveal">
 
-    <div class="kids-portal-inner">
+Il n'existe pas
+un seul chemin.
 
+</h2>
 
-      <div>
 
-        <span
-          class="kids-overline reveal"
-        >
-          Douleur pédiatrique
-        </span>
+<p class="journey-description reveal">
 
+Vivre avec une douleur chronique ressemble rarement
+à une ligne droite.
 
-        <h2
-          class="kids-story-title reveal"
-        >
+On avance. On cherche. On ajuste. On recommence parfois.
 
-          Il était une fois…
+Et quelquefois, on change complètement de direction.
 
-          <br>
+</p>
 
-          une douleur qui prenait
+</div>
 
-          <span class="story-sticker">
-            un peu trop de place.
-          </span>
 
-        </h2>
+<svg
+class="journey-svg"
+viewBox="0 0 1400 1050"
+preserveAspectRatio="none">
 
+<path
+id="journeyPath"
+d="
+M -100 820
 
-        <p
-          class="kids-story-intro reveal"
-        >
-          Les Petits Courageux, c'est un univers imaginé
-          pour les enfants et les adolescents qui vivent
-          avec une douleur persistante — et pour toutes
-          les personnes qui les accompagnent.
+C 170 600,
+  250 980,
+  470 730
 
-          Comprendre ce qui se passe, trouver les bons
-          mots, apprendre à avancer… sans laisser la
-          douleur écrire toute l'histoire.
-        </p>
+S 720 320,
+  930 570
 
+S 1160 890,
+  1510 270
+"
+/>
 
-        <div
-          class="kids-story-actions reveal"
-        >
+</svg>
 
-          <a
-            href="petits-courageux.html"
-            class="sticker-btn magnetic"
-          >
-            Entrer dans l'univers ✦
-          </a>
 
-        </div>
+<div id="traveller">
+D.
+</div>
 
-      </div>
+</section>
 
 
 
-      <div class="story-door-wrap">
+<!-- =======================================================
+     RESPIRER
+======================================================== -->
 
+<section class="breathe">
 
-        <a
-          href="petits-courageux.html"
-          class="story-door interactive"
-        >
+<div class="breathe-orbit"></div>
 
-          <span class="story-door-small">
-            DOLORIA PRÉSENTE
-          </span>
 
+<div class="breathe-inner">
 
-          <h3>
-            Les Petits
-            <br>
-            Courageux
-          </h3>
+<div class="label reveal">
+Changer de perspective
+</div>
 
 
-          <span class="story-door-bottom">
-            L'histoire commence ici →
-          </span>
+<h2 class="reveal">
 
-        </a>
+Moins de place
+pour la douleur.
 
+<br>
 
-        <div class="door-star">
-          ★
-        </div>
+<span>
+Plus de place pour vivre.
+</span>
 
-        <div class="door-heart">
-          ♥
-        </div>
+</h2>
 
-        <div class="door-plus">
-          +
-        </div>
+</div>
 
-      </div>
+</section>
 
 
-    </div>
 
-  </section>
+<!-- =======================================================
+     PETITS COURAGEUX
+======================================================== -->
 
+<section
+class="kids-portal"
+id="petits-courageux">
 
 
-  <!-- =======================================================
-       ACTIONS
-  ======================================================== -->
+<div class="kids-inner">
 
-  <section
-    class="actions"
-    id="actions"
-  >
 
-    <div class="container">
+<div>
 
+<div class="kids-overline reveal">
+Un autre chapitre
+</div>
 
-      <div class="section-heading">
 
-        <span class="label reveal">
-          Nos actions
-        </span>
+<h2 class="kids-title reveal">
 
-        <h2 class="reveal">
-          Doloria<br>
-          en mouvement.
-        </h2>
+Il était une fois…
 
-      </div>
+<br>
 
+une douleur qui prenait
 
-      <div class="actions-list">
+<br>
 
+<span class="kids-sticker-word">
+un peu trop de place.
+</span>
 
-        <div class="action-row reveal">
+</h2>
 
-          <strong>
-            01
-          </strong>
 
-          <h3>
-            Cafés Doloria
-          </h3>
+<p class="kids-text reveal">
 
-          <p>
-            Des espaces d'échange autour des réalités
-            du quotidien avec une douleur chronique.
-          </p>
+Les Petits Courageux, c'est un univers imaginé
+pour les enfants et les adolescents qui vivent
+avec une douleur persistante — et pour toutes
+les personnes qui les accompagnent.
 
-        </div>
+Comprendre. Mettre des mots. Continuer à grandir.
 
+Sans laisser la douleur écrire toute l'histoire.
 
+</p>
 
-        <div class="action-row reveal">
 
-          <strong>
-            02
-          </strong>
+<div class="kids-actions reveal">
 
-          <h3>
-            Ressources & sensibilisation
-          </h3>
+<a
+href="petits-courageux.html"
+class="sticker-btn magnetic">
 
-          <p>
-            Guides, outils et contenus pédagogiques
-            pour rendre l'information plus accessible.
-          </p>
+Entrer dans l'histoire →
 
-        </div>
+</a>
 
+</div>
 
+</div>
 
-        <div class="action-row reveal">
 
-          <strong>
-            03
-          </strong>
 
-          <h3>
-            Représentation
-          </h3>
+<div class="book-scene">
 
-          <p>
-            Porter la parole et les besoins des
-            personnes concernées auprès des acteurs
-            de santé et des institutions.
-          </p>
 
-        </div>
+<a
+href="petits-courageux.html"
+class="book">
 
+<div class="book-small">
+DOLORIA PRÉSENTE
+</div>
 
 
-        <div class="action-row reveal">
+<h3>
 
-          <strong>
-            04
-          </strong>
+LES PETITS
 
-          <h3>
-            Recherche & innovation
-          </h3>
+<br>
 
-          <p>
-            Participer à l'évolution des parcours
-            et soutenir de nouvelles manières de
-            penser le soin.
-          </p>
+COURAGEUX
 
-        </div>
+</h3>
 
 
-      </div>
+<div class="book-end">
 
-    </div>
+Ouvrir le livre →
 
-  </section>
+</div>
 
+</a>
 
 
-  <!-- =======================================================
-       CONTACT
-  ======================================================== -->
+<div class="kids-doodle one">
+✦
+</div>
 
-  <section
-    class="cta"
-    id="contact"
-  >
+<div class="kids-doodle two">
+~
+</div>
 
-    <div class="cta-inner">
+<div class="kids-doodle three">
++
+</div>
 
-      <span class="label reveal">
-        Et maintenant ?
-      </span>
+</div>
 
-      <h2 class="reveal">
-        Faire bouger<br>
-        les lignes.
-      </h2>
 
+</div>
 
-      <a
-        href="mailto:contact@doloria.ch"
-        class="sticker-btn magnetic reveal"
-      >
-        Rejoindre Doloria →
-      </a>
+</section>
 
-    </div>
 
-  </section>
+
+<!-- =======================================================
+     ACTIONS
+======================================================== -->
+
+<section
+class="actions"
+id="actions">
+
+<div class="container">
+
+
+<div class="section-heading">
+
+<div class="label reveal">
+Nos actions
+</div>
+
+<h2 class="reveal">
+
+Doloria
+<br>
+en mouvement.
+
+</h2>
+
+</div>
+
+
+<div class="actions-list">
+
+
+<div class="action-row reveal">
+
+<strong>
+01
+</strong>
+
+<h3>
+Cafés Doloria
+</h3>
+
+<p>
+
+Des espaces d'échange autour des réalités
+du quotidien avec une douleur chronique.
+
+</p>
+
+</div>
+
+
+
+<div class="action-row reveal">
+
+<strong>
+02
+</strong>
+
+<h3>
+Ressources & sensibilisation
+</h3>
+
+<p>
+
+Des guides, outils et contenus accessibles
+aux patients, proches et professionnels.
+
+</p>
+
+</div>
+
+
+
+<div class="action-row reveal">
+
+<strong>
+03
+</strong>
+
+<h3>
+Représentation
+</h3>
+
+<p>
+
+Porter la voix et les besoins des personnes
+concernées auprès des acteurs de santé
+et des institutions.
+
+</p>
+
+</div>
+
+
+
+<div class="action-row reveal">
+
+<strong>
+04
+</strong>
+
+<h3>
+Recherche & innovation
+</h3>
+
+<p>
+
+Participer à l'évolution des parcours
+et imaginer de nouvelles manières
+de penser le soin.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =======================================================
+     CTA
+======================================================== -->
+
+<section
+class="cta"
+id="contact">
+
+<div class="cta-ring"></div>
+
+
+<div class="cta-inner">
+
+<div class="label reveal">
+La suite ?
+</div>
+
+
+<h2 class="reveal">
+
+FAIRE BOUGER
+<br>
+LES LIGNES.
+
+</h2>
+
+
+<a
+href="mailto:contact@doloria.ch"
+class="sticker-btn magnetic reveal">
+
+Rejoindre Doloria →
+
+</a>
+
+</div>
+
+</section>
 
 
 </main>
 
 
 
-<!-- =======================================================
-     FOOTER
-======================================================== -->
-
 <footer>
 
-  <div class="footer-inner">
+<div class="footer">
+
+<div>
+
+<div class="footer-logo">
+DOLORIA
+</div>
+
+<p style="margin-top:12px;">
+Association suisse dédiée à la douleur chronique.
+</p>
+
+</div>
 
 
-    <div>
+<div class="footer-links">
 
-      <div class="footer-logo">
-        DOLORIA
-      </div>
+<a href="#">
+À propos
+</a>
 
-      <p class="footer-text">
-        Association suisse dédiée
-        à la douleur chronique.
-      </p>
+<a href="#">
+L'équipe
+</a>
 
-    </div>
+<a href="#">
+Ressources
+</a>
 
+<a href="#">
+Partenaires
+</a>
 
-    <div class="footer-nav">
+<a href="#">
+Mentions légales
+</a>
 
-      <a href="#">
-        À propos
-      </a>
-
-      <a href="#">
-        L'équipe
-      </a>
-
-      <a href="#">
-        Ressources
-      </a>
-
-      <a href="#">
-        Partenaires
-      </a>
-
-      <a href="#">
-        Mentions légales
-      </a>
-
-    </div>
+</div>
 
 
-    <div class="copyright">
-      © 2026 Doloria
-    </div>
+<div style="color:#765450;">
+© 2026 Doloria
+</div>
 
-
-  </div>
+</div>
 
 </footer>
 
@@ -2310,591 +2354,498 @@
 
 <script>
 
-  /* =========================================================
-     ELEMENTS
-  ========================================================= */
+/* =========================================================
+   ELEMENTS
+========================================================= */
 
-  const header =
-    document.getElementById("header");
+const header =
+document.getElementById("header");
 
-  const progress =
-    document.getElementById("progress");
+const progress =
+document.getElementById("progress");
 
-  const cursor =
-    document.getElementById("cursor");
+const cursor =
+document.getElementById("cursor");
 
+const threadDot =
+document.getElementById("threadDot");
 
-  /* =========================================================
-     HEADER + PROGRESSION
-  ========================================================= */
-
-  function updateHeaderAndProgress() {
-
-    header.classList.toggle(
-      "scrolled",
-      window.scrollY > 40
-    );
+const painWord =
+document.getElementById("painWord");
 
 
-    const scrollable =
-      document.documentElement.scrollHeight -
-      window.innerHeight;
+/* =========================================================
+   SCROLL UI
+========================================================= */
 
+function updateScrollUI(){
 
-    const percentage =
-      scrollable > 0
-      ? window.scrollY / scrollable * 100
-      : 0;
-
-
-    progress.style.width =
-      percentage + "%";
-
-  }
-
-
-  /* =========================================================
-     REVEAL
-  ========================================================= */
-
-  const revealObserver =
-    new IntersectionObserver(
-
-      entries => {
-
-        entries.forEach(
-          entry => {
-
-            if (
-              entry.isIntersecting
-            ) {
-
-              entry.target
-                .classList
-                .add("visible");
-
-            }
-
-          }
-        );
-
-      },
-
-      {
-        threshold: .12
-      }
-
-    );
-
-
-  document
-    .querySelectorAll(".reveal")
-    .forEach(
-      element => {
-
-        revealObserver.observe(element);
-
-      }
-    );
-
-
-  /* =========================================================
-     CURSEUR
-  ========================================================= */
-
-  document.addEventListener(
-    "mousemove",
-    event => {
-
-      cursor.style.transform =
-        `translate(
-          ${event.clientX - 9}px,
-          ${event.clientY - 9}px
-        )`;
-
-    }
+  header.classList.toggle(
+    "scrolled",
+    window.scrollY > 40
   );
 
 
-  document
-    .querySelectorAll(
-      "a, .card, .interactive"
+  const total =
+  document.documentElement.scrollHeight -
+  window.innerHeight;
+
+
+  const pct =
+  total > 0
+  ? window.scrollY / total
+  : 0;
+
+
+  progress.style.width =
+  `${pct * 100}%`;
+
+
+  if(threadDot){
+
+    threadDot.style.transform =
+    `translateY(
+      ${pct * (window.innerHeight - 160)}px
     )
-    .forEach(
-      element => {
-
-        element.addEventListener(
-          "mouseenter",
-          () => {
-
-            cursor.classList.add(
-              "large"
-            );
-
-          }
-        );
-
-
-        element.addEventListener(
-          "mouseleave",
-          () => {
-
-            cursor.classList.remove(
-              "large"
-            );
-
-          }
-        );
-
-      }
-    );
-
-
-  /* =========================================================
-     BOUTONS MAGNÉTIQUES
-  ========================================================= */
-
-  document
-    .querySelectorAll(".magnetic")
-    .forEach(
-      button => {
-
-        button.addEventListener(
-          "mousemove",
-          event => {
-
-            const rect =
-              button.getBoundingClientRect();
-
-
-            const x =
-              event.clientX -
-              rect.left -
-              rect.width / 2;
-
-
-            const y =
-              event.clientY -
-              rect.top -
-              rect.height / 2;
-
-
-            button.style.transform =
-              `translate(
-                ${x * .16}px,
-                ${y * .16}px
-              )
-              rotate(-1deg)`;
-
-          }
-        );
-
-
-        button.addEventListener(
-          "mouseleave",
-          () => {
-
-            button.style.transform =
-              "translate(0,0) rotate(-1deg)";
-
-          }
-        );
-
-      }
-    );
-
-
-  /* =========================================================
-     PARALLAX HERO
-  ========================================================= */
-
-  const heroObjects =
-    document.querySelectorAll(
-      ".hero-float"
-    );
-
-
-  document.addEventListener(
-    "mousemove",
-    event => {
-
-      const mouseX =
-        event.clientX /
-        window.innerWidth -
-        .5;
-
-
-      const mouseY =
-        event.clientY /
-        window.innerHeight -
-        .5;
-
-
-      heroObjects.forEach(
-        (element, index) => {
-
-          const strength =
-            20 + index * 14;
-
-
-          element.style.transform =
-            `translate(
-              ${mouseX * strength}px,
-              ${mouseY * strength}px
-            )
-            rotate(
-              ${mouseX * 12}deg
-            )`;
-
-        }
-      );
-
-    }
-  );
-
-
-  /* =========================================================
-     CARTES 3D
-  ========================================================= */
-
-  document
-    .querySelectorAll(".tilt")
-    .forEach(
-      card => {
-
-        card.addEventListener(
-          "mousemove",
-          event => {
-
-            const rect =
-              card.getBoundingClientRect();
-
-
-            const localX =
-              event.clientX -
-              rect.left;
-
-
-            const localY =
-              event.clientY -
-              rect.top;
-
-
-            const rotateY =
-              (
-                localX /
-                rect.width -
-                .5
-              ) * 7;
-
-
-            const rotateX =
-              (
-                localY /
-                rect.height -
-                .5
-              ) * -7;
-
-
-            card.style.transform =
-              `perspective(900px)
-               rotateX(${rotateX}deg)
-               rotateY(${rotateY}deg)
-               translateY(-5px)`;
-
-          }
-        );
-
-
-        card.addEventListener(
-          "mouseleave",
-          () => {
-
-            card.style.transform =
-              "perspective(900px) rotateX(0) rotateY(0)";
-
-          }
-        );
-
-      }
-    );
-
-
-  /* =========================================================
-     PHRASE ANIMÉE — MAIS ENTIÈREMENT LISIBLE
-  ========================================================= */
-
-  const statement1 =
-    document.getElementById(
-      "statement1"
-    );
-
-  const statement2 =
-    document.getElementById(
-      "statement2"
-    );
-
-
-  const statementSection =
-    document.querySelector(
-      ".statement"
-    );
-
-
-  function updateStatement() {
-
-    if (
-      !statementSection ||
-      !statement1 ||
-      !statement2
-    ) return;
-
-
-    const rect =
-      statementSection
-        .getBoundingClientRect();
-
-
-    const progressValue =
-      Math.min(
-        1,
-        Math.max(
-          0,
-          (
-            window.innerHeight -
-            rect.top
-          )
-          /
-          (
-            window.innerHeight +
-            rect.height
-          )
-        )
-      );
-
-
-    statement1.style.transform =
-      `translateX(
-        ${28 - progressValue * 56}px
-      )`;
-
-
-    statement2.style.transform =
-      `translateX(
-        ${-28 + progressValue * 56}px
-      )`;
+    rotate(
+      ${pct * 360}deg
+    )`;
 
   }
 
 
-  /* =========================================================
-     VOYAGE DOLORIA
-  ========================================================= */
+  /* la douleur se décale progressivement */
 
-  const journey =
-    document.querySelector(
-      ".journey"
-    );
+  if(painWord){
 
+    painWord.style.transform =
+    `translate(
+      ${window.scrollY * .055}px,
+      ${window.scrollY * -.035}px
+    )
+    rotate(
+      ${window.scrollY * .006}deg
+    )`;
 
-  const journeyPath =
-    document.getElementById(
-      "journeyPath"
-    );
+  }
 
-
-  const traveller =
-    document.getElementById(
-      "traveller"
-    );
+}
 
 
-  const journeySVG =
-    document.querySelector(
-      ".journey-svg"
-    );
+/* =========================================================
+   REVEAL
+========================================================= */
+
+const observer =
+new IntersectionObserver(
+
+entries=>{
+
+  entries.forEach(entry=>{
+
+    if(entry.isIntersecting){
+
+      entry.target
+      .classList
+      .add("visible");
+
+    }
+
+  });
+
+},
+
+{
+  threshold:.12
+}
+
+);
 
 
-  function updateJourney() {
+document
+.querySelectorAll(".reveal")
+.forEach(
+el=>observer.observe(el)
+);
 
-    if (
-      !journey ||
-      !journeyPath ||
-      !traveller ||
-      !journeySVG
-    ) return;
 
+/* =========================================================
+   CURSEUR
+========================================================= */
+
+document.addEventListener(
+"mousemove",
+e=>{
+
+  cursor.style.transform =
+  `translate(
+    ${e.clientX - 9}px,
+    ${e.clientY - 9}px
+  )`;
+
+});
+
+
+document
+.querySelectorAll(
+"a,.card"
+)
+.forEach(el=>{
+
+  el.addEventListener(
+  "mouseenter",
+  ()=>cursor.classList.add("big")
+  );
+
+  el.addEventListener(
+  "mouseleave",
+  ()=>cursor.classList.remove("big")
+  );
+
+});
+
+
+/* =========================================================
+   BOUTONS MAGNÉTIQUES
+========================================================= */
+
+document
+.querySelectorAll(".magnetic")
+.forEach(button=>{
+
+  button.addEventListener(
+  "mousemove",
+  e=>{
 
     const rect =
-      journey
-        .getBoundingClientRect();
-
-
-    const progressValue =
-      Math.min(
-        1,
-        Math.max(
-          0,
-          (
-            window.innerHeight -
-            rect.top
-          )
-          /
-          (
-            rect.height +
-            window.innerHeight
-          )
-        )
-      );
-
-
-    const pathLength =
-      journeyPath
-        .getTotalLength();
-
-
-    const point =
-      journeyPath
-        .getPointAtLength(
-          pathLength *
-          progressValue
-        );
-
-
-    const svgRect =
-      journeySVG
-        .getBoundingClientRect();
-
-
-    const viewBox =
-      journeySVG
-        .viewBox
-        .baseVal;
+    button.getBoundingClientRect();
 
 
     const x =
-      point.x /
-      viewBox.width *
-      svgRect.width;
+    e.clientX -
+    rect.left -
+    rect.width/2;
 
 
     const y =
-      point.y /
-      viewBox.height *
-      svgRect.height;
+    e.clientY -
+    rect.top -
+    rect.height/2;
 
 
-    traveller.style.transform =
-      `translate(
-        ${x - 50}px,
-        ${y - 36}px
+    button.style.transform =
+    `translate(
+      ${x*.15}px,
+      ${y*.15}px
+    )
+    rotate(-1deg)`;
+
+  });
+
+
+  button.addEventListener(
+  "mouseleave",
+  ()=>{
+
+    button.style.transform =
+    "translate(0,0)";
+
+  });
+
+});
+
+
+/* =========================================================
+   3D CARDS
+========================================================= */
+
+document
+.querySelectorAll(".tilt")
+.forEach(card=>{
+
+  card.addEventListener(
+  "mousemove",
+  e=>{
+
+    const rect =
+    card.getBoundingClientRect();
+
+
+    const x =
+    e.clientX -
+    rect.left;
+
+
+    const y =
+    e.clientY -
+    rect.top;
+
+
+    const rotateY =
+    ((x/rect.width)-.5)*7;
+
+
+    const rotateX =
+    ((y/rect.height)-.5)*-7;
+
+
+    card.style.transform =
+    `perspective(900px)
+     rotateX(${rotateX}deg)
+     rotateY(${rotateY}deg)
+     translateY(-6px)`;
+
+  });
+
+
+  card.addEventListener(
+  "mouseleave",
+  ()=>{
+
+    card.style.transform =
+    "perspective(900px) rotateX(0) rotateY(0)";
+
+  });
+
+});
+
+
+/* =========================================================
+   STATEMENT
+========================================================= */
+
+const statement =
+document.querySelector(".statement");
+
+const statement1 =
+document.getElementById("statement1");
+
+const statement2 =
+document.getElementById("statement2");
+
+
+function updateStatement(){
+
+  if(!statement) return;
+
+
+  const rect =
+  statement.getBoundingClientRect();
+
+
+  const progressValue =
+  Math.min(
+    1,
+    Math.max(
+      0,
+      (
+        window.innerHeight -
+        rect.top
       )
-      rotate(
-        ${progressValue * 34 - 12}deg
-      )`;
-
-  }
-
-
-  /* =========================================================
-     LIVRE PETITS COURAGEUX — PARALLAX
-  ========================================================= */
-
-  const storyDoor =
-    document.querySelector(
-      ".story-door"
-    );
-
-
-  if (storyDoor) {
-
-    storyDoor.addEventListener(
-      "mousemove",
-      event => {
-
-        const rect =
-          storyDoor
-            .getBoundingClientRect();
-
-
-        const x =
-          (
-            event.clientX -
-            rect.left
-          )
-          /
-          rect.width -
-          .5;
-
-
-        const y =
-          (
-            event.clientY -
-            rect.top
-          )
-          /
-          rect.height -
-          .5;
-
-
-        storyDoor.style.transform =
-          `translateY(-12px)
-           rotateX(${y * -8}deg)
-           rotateY(${x * 10}deg)
-           rotate(1deg)`;
-
-      }
-    );
-
-
-    storyDoor.addEventListener(
-      "mouseleave",
-      () => {
-
-        storyDoor.style.transform =
-          "rotate(3deg)";
-
-      }
-    );
-
-  }
-
-
-  /* =========================================================
-     BOUCLE SCROLL
-  ========================================================= */
-
-  function updateOnScroll() {
-
-    updateHeaderAndProgress();
-
-    updateStatement();
-
-    updateJourney();
-
-  }
-
-
-  window.addEventListener(
-    "scroll",
-    updateOnScroll,
-    {
-      passive: true
-    }
+      /
+      (
+        window.innerHeight +
+        rect.height
+      )
+    )
   );
 
 
-  window.addEventListener(
-    "resize",
-    updateOnScroll
+  statement1.style.transform =
+  `translateX(
+    ${24 - progressValue*48}px
+  )`;
+
+
+  statement2.style.transform =
+  `translateX(
+    ${-24 + progressValue*48}px
+  )`;
+
+}
+
+
+/* =========================================================
+   JOURNEY
+========================================================= */
+
+const journey =
+document.querySelector(".journey");
+
+const journeyPath =
+document.getElementById("journeyPath");
+
+const traveller =
+document.getElementById("traveller");
+
+const journeySVG =
+document.querySelector(".journey-svg");
+
+
+function updateJourney(){
+
+  if(
+    !journey ||
+    !journeyPath ||
+    !traveller
+  ) return;
+
+
+  const rect =
+  journey.getBoundingClientRect();
+
+
+  const journeyProgress =
+  Math.min(
+    1,
+    Math.max(
+      0,
+      (
+        window.innerHeight -
+        rect.top
+      )
+      /
+      (
+        rect.height +
+        window.innerHeight
+      )
+    )
   );
 
 
-  updateOnScroll();
+  const length =
+  journeyPath.getTotalLength();
+
+
+  const point =
+  journeyPath.getPointAtLength(
+    length *
+    journeyProgress
+  );
+
+
+  const svgRect =
+  journeySVG.getBoundingClientRect();
+
+  const viewBox =
+  journeySVG.viewBox.baseVal;
+
+
+  const x =
+  point.x /
+  viewBox.width *
+  svgRect.width;
+
+
+  const y =
+  point.y /
+  viewBox.height *
+  svgRect.height;
+
+
+  traveller.style.transform =
+  `translate(
+    ${x - 45}px,
+    ${y - 45}px
+  )
+  rotate(
+    ${journeyProgress*40 - 10}deg
+  )`;
+
+}
+
+
+/* =========================================================
+   BOOK PARALLAX
+========================================================= */
+
+const book =
+document.querySelector(".book");
+
+
+if(book){
+
+  book.addEventListener(
+  "mousemove",
+  e=>{
+
+    const rect =
+    book.getBoundingClientRect();
+
+
+    const x =
+    (
+      e.clientX -
+      rect.left
+    )
+    /
+    rect.width -
+    .5;
+
+
+    const y =
+    (
+      e.clientY -
+      rect.top
+    )
+    /
+    rect.height -
+    .5;
+
+
+    book.style.transform =
+    `translateY(-12px)
+     rotateX(${y*-8}deg)
+     rotateY(${x*10}deg)
+     rotate(1deg)`;
+
+  });
+
+
+  book.addEventListener(
+  "mouseleave",
+  ()=>{
+
+    book.style.transform =
+    "rotate(3deg)";
+
+  });
+
+}
+
+
+/* =========================================================
+   SCROLL LOOP
+========================================================= */
+
+function updateEverything(){
+
+  updateScrollUI();
+
+  updateStatement();
+
+  updateJourney();
+
+}
+
+
+window.addEventListener(
+"scroll",
+updateEverything,
+{
+  passive:true
+});
+
+
+window.addEventListener(
+"resize",
+updateEverything
+);
+
+
+updateEverything();
 
 </script>
 
-
 </body>
-
 </html>
