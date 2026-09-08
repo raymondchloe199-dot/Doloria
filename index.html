@@ -40,7 +40,7 @@
 .door-leaf{overflow:hidden;transform-origin:0 50%;transition:transform .85s cubic-bezier(.2,.65,.3,1);backface-visibility:hidden}
 .door-leaf img{position:absolute!important;width:1694.9153%!important;height:757.5758%!important;max-width:none!important;left:-1344.0678%;top:-216.6667%;object-fit:fill!important;aspect-ratio:auto!important}
 .entering .door-leaf{transform:rotateY(-105deg)}
-.entering .walking-child{opacity:0;transition:opacity .55s .2s}
+.entering .walking-child{left:79.3%;top:32%;transform:translate(-50%,-100%) scale(.20) rotate(-4deg);opacity:0;transition:left .85s cubic-bezier(.2,.65,.3,1),top .85s cubic-bezier(.2,.65,.3,1),transform .85s cubic-bezier(.2,.65,.3,1),opacity .55s .22s}
 .forest-invitation{padding:21px 6px 0;display:flex;align-items:center;justify-content:space-between;gap:20px;color:var(--wine)}
 .forest-hint{font:italic 1.1rem/1.4 Georgia,serif}
 .forest-link{font-size:.94rem;min-height:48px;padding:10px 0;text-decoration:underline;text-underline-offset:5px}
@@ -77,6 +77,7 @@
 .contact .pill::after{content:'';position:absolute;inset:0;background:var(--cream);border-radius:inherit;z-index:-1}
 .contact .pill:hover{background:var(--cream);color:var(--wine);transform:rotate(0)}
 footer{background:#250102}
+#petits>.season-journey{display:none}
 @media(max-width:760px){.pause-display{gap:22px}.pause-word{font-size:17vw}.moving .pause-word{font-size:17vw}.moving .pause-medallion,.pause-medallion{width:17vw}.journey{padding-bottom:50px}.journey-line{width:calc(100% + 44px);margin-inline:-22px;min-height:240px}.contact{min-height:70svh;padding-block:85px}.contact h2{font-size:clamp(3.3rem,12vw,5rem);margin-bottom:45px}.contact .pill{margin-top:0}}
 @media print{.contact,.pause-section{background:white;color:var(--wine)}.contact{min-height:0}.journey-line{break-inside:avoid}}
 
@@ -231,7 +232,6 @@ addEventListener('scroll',schedule,{passive:true});addEventListener('resize',sch
 document.querySelectorAll('.door-enter').forEach(link=>link.addEventListener('click',event=>{
  if(event.ctrlKey||event.metaKey||event.shiftKey||event.altKey||event.button!==0||!allowed())return;
  event.preventDefault();if(entering)return;entering=true;
- child.style.left='82.2%';child.style.top='43%';child.style.transform='translate(-50%,-100%) scale(.44)';
  stage.classList.add('entering');hint.textContent='Bienvenue chez les Petits Courageux…';
  timer=setTimeout(()=>{location.href=link.href;},950);
 }));
