@@ -1,8 +1,8 @@
 (() => {
  const preview=new URLSearchParams(location.search).get('apercu')==='1';
  const base=new URL('.',document.currentScript.src);
- async function read(name){const res=await fetch(new URL(`cms-${name}.json`,base),{cache:'no-cache',credentials:'omit'});if(!res.ok)throw new Error('Content unavailable');return res.json();}
- const published=data=>(Array.isArray(data.elements)?data.elements:[]).filter(x=>x&&typeof x==='object'&&(preview||x.publie===true));
+ async function read(name){const res=await fetch(new URL(`cms-${name}.json`,base),{cache:'no-cache',credentials:'omit'});if(!res.ok)throw new Error('Content unavailable');const text=await res.text();return text.trim()?JSON.parse(text):{};}
+ const published=data=>(Array.isArray(data?.elements)?data.elements:[]).filter(x=>x&&typeof x==='object'&&(preview||x.publie===true));
  function safe(value){try{if(typeof value!=='string'||!value.trim())return null;const url=new URL(value,base);return ['https:','http:'].includes(url.protocol)?url.href:null;}catch(_){return null;}}
  function element(tag,text){const el=document.createElement(tag);if(text!=null)el.textContent=text;return el;}
  if(preview){const banner=element('p','APERÇU — Les contenus non publiés sont visibles ici. Cet aperçu et les fichiers du dépôt sont publics.');banner.style.cssText='margin:0;padding:18px;background:#f7ede2;color:#570204;border:3px solid #bf1246;';banner.setAttribute('role','status');document.body.prepend(banner);}
