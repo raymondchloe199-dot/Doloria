@@ -1,1 +1,32 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Contacter l’Association Suisse Doloria."><title>Nous écrire — Doloria</title><link rel="stylesheet" href="info-pages.css"></head><body><header><nav class="wrap"><a href="index.html">Doloria</a><a href="index.html">← Accueil</a></nav></header><main class="page"><div class="wrap"><div class="eyebrow">Écrire à Doloria</div><h1>Une question,<br><em>une idée, une envie d’échanger ?</em></h1><p class="lead">Tu peux nous écrire à ton rythme. Dis-nous simplement ce que tu cherches ou ce que tu aimerais voir exister.</p><div class="contact-box"><h2>Contact</h2><p>Pour une première prise de contact, une proposition de partenariat, une question sur les actions ou le pôle enfants :</p><a href="mailto:contact@doloria.ch">contact@doloria.ch ↗</a></div><div class="note">Évite d’envoyer par email des documents médicaux complets, des numéros d’assurance ou d’autres informations très sensibles. Cet email ne remplace pas un suivi médical et n’est pas destiné aux urgences.</div></div></main><footer><div class="wrap"><span>© 2026 Association Suisse Doloria (ASD)</span><a href="index.html">Retour à Doloria</a></div></footer></body></html>
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Contacter l’Association Suisse Doloria."><title>Nous écrire — Doloria</title><link rel="stylesheet" href="info-pages.css"><style>
+/* Shared keyboard, reading and touch affordances. */
+:where(a,button,summary):focus-visible{outline:3px solid #fff!important;outline-offset:3px!important;box-shadow:0 0 0 7px #570204!important}
+main:focus{outline:none}
+.skip{position:fixed!important;top:10px!important;left:10px;z-index:1000;background:#f7ede2;color:#570204;padding:12px 20px;transform:translateY(-200%)}
+.skip:focus{transform:none}
+:where(p,h1,h2,h3,a,summary){overflow-wrap:anywhere}
+:where(.grid,.steps,.section-intro,.journey-bottom,.action-row)>*{min-width:0}
+:where(header nav,footer .wrap){flex-wrap:wrap}
+:where(header nav a,footer a){display:inline-flex;align-items:center;min-height:44px}
+summary{min-height:44px}
+p a{text-decoration:underline;text-underline-offset:.2em}
+.accessibility-controls{padding:12px 22px;background:#570204;color:#f7ede2;text-align:right}
+.accessibility-controls button{font:inherit;font-size:.875rem;min-height:44px;padding:8px 16px;border:1px solid currentColor;border-radius:24px;background:transparent;color:inherit;cursor:pointer}
+.accessibility-controls[hidden]{display:none}
+html.no-motion{scroll-behavior:auto!important}
+.no-motion *,.no-motion *::before,.no-motion *::after{animation:none!important;transition:none!important}
+.forest-door::before{content:'';position:absolute;left:50%;top:50%;width:max(100%,44px);height:max(100%,44px);transform:translate(-50%,-50%)}
+.forest-door:focus-visible::after{opacity:1}
+@media(max-width:760px){
+ .js .nav-links{max-height:calc(100dvh - var(--header,78px));overflow-y:auto}
+ .nav{column-gap:8px}
+ .motion{max-width:145px}
+}
+@media(forced-colors:active){
+ :where(a,button,summary):focus-visible{outline:3px solid Highlight!important;box-shadow:none!important}
+ .pill,.button,.motion,.menu-toggle,.forest-door{border:2px solid ButtonText}
+ .forest-door{background:ButtonFace}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation:none!important;transition:none!important}}
+
+</style></head><body><a class="skip" href="#contenu">Aller au contenu</a><header><nav class="wrap" aria-label="Navigation principale"><a href="index.html">Doloria</a><a href="index.html">← Accueil</a></nav></header><div class="accessibility-controls" hidden><button id="reading-motion" type="button" aria-pressed="false">Réduire les animations</button></div><main class="page" id="contenu" tabindex="-1"><div class="wrap"><div class="eyebrow">Écrire à Doloria</div><h1>Une question,<br><em>une idée, une envie d’échanger ?</em></h1><p class="lead">Tu peux nous écrire à ton rythme. Dis-nous simplement ce que tu cherches ou ce que tu aimerais voir exister.</p><div class="contact-box"><h2>Contact</h2><p>Pour une première prise de contact, une proposition de partenariat, une question sur les actions ou le pôle enfants :</p><a href="mailto:contact@doloria.ch">contact@doloria.ch ↗</a></div><div class="note">Évite d’envoyer par email des documents médicaux complets, des numéros d’assurance ou d’autres informations très sensibles. Cet email ne remplace pas un suivi médical et n’est pas destiné aux urgences.</div></div></main><footer><div class="wrap"><span>© 2026 Association Suisse Doloria (ASD)</span><a href="index.html">Retour à Doloria</a></div></footer><script src="accessibility.js" defer></script></body></html>
