@@ -1,3 +1,12 @@
 {
-  "elements": []
+  "elements": [
+    {
+      "publie": true,
+      "titre": "Témoignages Patients ",
+      "date": "2026-09-09",
+      "texte": "assaidasudhasoijdsoihsdibisbaiz",
+      "photo": "/Doloria/media/2.png",
+      "descriptionPhoto": "Chloé Fondatrice doloria"
+    }
+  ]
 }
