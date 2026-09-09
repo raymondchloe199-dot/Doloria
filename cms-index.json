@@ -1,4 +1,6 @@
 {
+  "titre_page": "Doloria — La douleur existe. Votre vie aussi.",
+  "description_page": "Association Suisse Doloria (ASD), association à but non lucratif dédiée à la douleur chronique. Découvrez aussi son pôle enfants, Les Petits Courageux.",
   "t001": "Association suisse dédiée aux personnes vivant avec une douleur chronique",
   "t002": "La douleur",
   "t003": "existe.",
@@ -23,7 +25,7 @@
   "t022": "Médecins, centres de la douleur, rééducation, psychologie ou traitements : rendre les parcours plus lisibles et les échanges plus faciles.",
   "t023": "03 — Garder sa place",
   "t024": "Continuer à vivre",
-  "t025": "Travail, école, relations, activités et projets : la vie ne devrait jamais se résumer à un score de douleur.",
+  "t025": "Travail, école, relations, vie sociale, activités et projets : la vie ne devrait jamais se résumer à un score de douleur.",
   "t026": "Le parcours",
   "t027": "La douleur ne raconte pas",
   "t028": "toute votre histoire.",
@@ -87,7 +89,5 @@
   "t086": "Faire bouger",
   "t087": "les lignes.",
   "t088": "Ensemble.",
-  "t089": "Rejoindre Doloria ",
-  "titre_page": "Doloria — La douleur existe. Votre vie aussi.",
-  "description_page": "Association Suisse Doloria (ASD), association à but non lucratif dédiée à la douleur chronique. Découvrez aussi son pôle enfants, Les Petits Courageux."
+  "t089": "Rejoindre Doloria "
 }
