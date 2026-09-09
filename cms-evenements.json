@@ -1,3 +1,13 @@
 {
-  "elements": []
+  "elements": [
+    {
+      "publie": true,
+      "titre": "Rencontre entre adhérent ",
+      "date": "2026-09-11",
+      "heure": "10H30 à 11H30 ",
+      "lieu": "1205 Genève ",
+      "public": "Pour tous les adhérents ou curieux de découvrir l'association ",
+      "tarif": "Gratuit"
+    }
+  ]
 }
