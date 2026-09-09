@@ -1,4 +1,5 @@
-(() => {
+(async () => {
+await window.doloriaDataReady;
 const data=window.DOLORIA_CONTENUS||{},events=Array.isArray(data.evenements)?data.evenements:[],news=Array.isArray(data.nouvelles)?data.nouvelles:[];
 const $=id=>document.getElementById(id),today=new Date();let year=today.getFullYear(),month=today.getMonth(),selected=null;
 const pad=n=>String(n).padStart(2,'0'),key=(y,m,d)=>`${y}-${pad(m+1)}-${pad(d)}`;
@@ -21,6 +22,7 @@ function render(){
 $('previous').addEventListener('click',()=>{const d=new Date(year,month-1,1);year=d.getFullYear();month=d.getMonth();render();});$('next').addEventListener('click',()=>{const d=new Date(year,month+1,1);year=d.getFullYear();month=d.getMonth();render();});$('all-events').addEventListener('click',()=>{selected=null;render();showEvents();});
 $('agenda-interactive').hidden=false;render();showEvents();
 const stories=$('stories');const validNews=news.filter(n=>n&&date(n.date)&&typeof n.titre==='string').sort((a,b)=>b.date.localeCompare(a.date));
+if(data.erreur)$('event-status').textContent='Le chargement des rendez-vous est momentanément indisponible. Réessayez ou contactez Doloria.';
 if(!validNews.length)stories.append(node('p','Les premières nouvelles et photos de l’association seront partagées ici.', 'empty'));
-for(const n of validNews){const article=node('article',null,'story'),url=safeURL(n.photo);if(url&&!url.startsWith('mailto:')){const img=node('img');img.src=url;img.alt=n.descriptionPhoto||'';img.loading='lazy';img.addEventListener('error',()=>{img.remove();});article.append(img);}const time=node('time',label(n.date));time.dateTime=n.date;article.append(time,node('h3',n.titre),node('p',n.texte||''));stories.append(article);}
+for(const n of validNews){const article=node('article',null,'story'),url=safeURL(n.photo);if(url&&!url.startsWith('mailto:')){const img=node('img');img.src=url;img.alt=n.descriptionPhoto||'';img.loading='lazy';img.addEventListener('error',()=>{img.remove();});article.append(img);}const time=node('time',label(n.date));time.dateTime=n.date;article.append(time,node('h3',n.titre),node('p',n.texte||''));for(const photo of Array.isArray(n.galerie)?n.galerie:[]){const source=safeURL(photo.photo);if(source&&!source.startsWith('mailto:')){const img=node('img');img.src=source;img.alt=photo.descriptionPhoto||'';img.loading='lazy';article.append(img);}}stories.append(article);}
 })();

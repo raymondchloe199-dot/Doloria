@@ -1,0 +1,1662 @@
+{
+  "media": {
+    "input": "media",
+    "output": "/Doloria/media",
+    "extensions": [
+      "jpg",
+      "jpeg",
+      "png",
+      "webp",
+      "pdf"
+    ],
+    "rename": "safe"
+  },
+  "content": [
+    {
+      "name": "infographies",
+      "label": "Ressources · Infographies",
+      "type": "file",
+      "path": "cms-infographies.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "elements",
+          "label": "Ressources · Infographies",
+          "type": "object",
+          "list": {
+            "collapsible": {
+              "collapsed": true,
+              "summary": "{titre}"
+            }
+          },
+          "fields": [
+            {
+              "name": "publie",
+              "label": "Afficher sur le site",
+              "type": "boolean",
+              "default": false,
+              "description": "Désactivé : visible seulement en aperçu. Un brouillon enregistré reste dans le dépôt public : aucun contenu confidentiel."
+            },
+            {
+              "name": "titre",
+              "label": "Titre",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "description",
+              "label": "Présentation",
+              "type": "text"
+            },
+            {
+              "name": "image",
+              "label": "Aperçu de l’infographie",
+              "type": "image",
+              "options": {
+                "extensions": [
+                  "jpg",
+                  "jpeg",
+                  "png",
+                  "webp"
+                ]
+              }
+            },
+            {
+              "name": "descriptionImage",
+              "label": "Description courte de l’image",
+              "type": "string"
+            },
+            {
+              "name": "fichier",
+              "label": "Image ou PDF à consulter",
+              "type": "file",
+              "options": {
+                "extensions": [
+                  "pdf",
+                  "jpg",
+                  "jpeg",
+                  "png",
+                  "webp"
+                ]
+              }
+            },
+            {
+              "name": "transcription",
+              "label": "Version texte accessible du contenu de l’infographie",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "sources",
+              "label": "Sources et références",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "nouvelles",
+      "label": "Nouvelles · Photos et récits",
+      "type": "file",
+      "path": "cms-nouvelles.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "elements",
+          "label": "Nouvelles · Photos et récits",
+          "type": "object",
+          "list": {
+            "collapsible": {
+              "collapsed": true,
+              "summary": "{titre}"
+            }
+          },
+          "fields": [
+            {
+              "name": "publie",
+              "label": "Afficher sur le site",
+              "type": "boolean",
+              "default": false,
+              "description": "Désactivé : visible seulement en aperçu. Un brouillon enregistré reste dans le dépôt public : aucun contenu confidentiel."
+            },
+            {
+              "name": "titre",
+              "label": "Titre",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "date",
+              "label": "Date",
+              "type": "date",
+              "required": true,
+              "options": {
+                "format": "yyyy-MM-dd",
+                "time": false
+              }
+            },
+            {
+              "name": "texte",
+              "label": "Votre récit",
+              "type": "text"
+            },
+            {
+              "name": "photo",
+              "label": "Photo",
+              "type": "image",
+              "options": {
+                "extensions": [
+                  "jpg",
+                  "jpeg",
+                  "png",
+                  "webp"
+                ]
+              }
+            },
+            {
+              "name": "descriptionPhoto",
+              "label": "Description de la photo pour les lecteurs d’écran",
+              "type": "string"
+            },
+            {
+              "name": "galerie",
+              "label": "Autres photos",
+              "type": "object",
+              "list": {
+                "collapsible": {
+                  "collapsed": true,
+                  "summary": "{descriptionPhoto}"
+                }
+              },
+              "fields": [
+                {
+                  "name": "photo",
+                  "label": "Photo",
+                  "type": "image",
+                  "options": {
+                    "extensions": [
+                      "jpg",
+                      "jpeg",
+                      "png",
+                      "webp"
+                    ]
+                  }
+                },
+                {
+                  "name": "descriptionPhoto",
+                  "label": "Description de la photo",
+                  "type": "string",
+                  "required": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "evenements",
+      "label": "Agenda · Ateliers et événements",
+      "type": "file",
+      "path": "cms-evenements.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "elements",
+          "label": "Agenda · Ateliers et événements",
+          "type": "object",
+          "list": {
+            "collapsible": {
+              "collapsed": true,
+              "summary": "{titre}"
+            }
+          },
+          "fields": [
+            {
+              "name": "publie",
+              "label": "Afficher sur le site",
+              "type": "boolean",
+              "default": false,
+              "description": "Désactivé : visible seulement en aperçu. Un brouillon enregistré reste dans le dépôt public : aucun contenu confidentiel."
+            },
+            {
+              "name": "titre",
+              "label": "Titre",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "date",
+              "label": "Date",
+              "type": "date",
+              "required": true,
+              "options": {
+                "format": "yyyy-MM-dd",
+                "time": false
+              }
+            },
+            {
+              "name": "heure",
+              "label": "Horaires",
+              "type": "string"
+            },
+            {
+              "name": "lieu",
+              "label": "Lieu et adresse",
+              "type": "string"
+            },
+            {
+              "name": "description",
+              "label": "Présentation",
+              "type": "text"
+            },
+            {
+              "name": "public",
+              "label": "À qui s’adresse ce rendez-vous ?",
+              "type": "text"
+            },
+            {
+              "name": "accessibilite",
+              "label": "Accès, repos et adaptations",
+              "type": "text"
+            },
+            {
+              "name": "tarif",
+              "label": "Prix ou gratuité",
+              "type": "string"
+            },
+            {
+              "name": "lien",
+              "label": "Lien d’information ou d’inscription",
+              "type": "string"
+            },
+            {
+              "name": "lienTexte",
+              "label": "Texte du lien",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "index",
+      "label": "Textes · Accueil",
+      "type": "file",
+      "path": "cms-index.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "titre_page",
+          "label": "Titre de l’onglet",
+          "type": "string"
+        },
+        {
+          "name": "description_page",
+          "label": "Description pour les moteurs de recherche",
+          "type": "text"
+        },
+        {
+          "name": "t001",
+          "label": "Association suisse dédiée aux personnes vivant avec une douleur chronique",
+          "type": "text"
+        },
+        {
+          "name": "t002",
+          "label": "La douleur",
+          "type": "text"
+        },
+        {
+          "name": "t003",
+          "label": "existe.",
+          "type": "text"
+        },
+        {
+          "name": "t004",
+          "label": "Votre vie",
+          "type": "text"
+        },
+        {
+          "name": "t005",
+          "label": "aussi.",
+          "type": "text"
+        },
+        {
+          "name": "t006",
+          "label": "Doloria existe pour que la douleur ne prenne jamais toute la place.",
+          "type": "text"
+        },
+        {
+          "name": "t007",
+          "label": "Pour que les personnes vivant avec une douleur chronique puissent continuer à choisir, décider,…",
+          "type": "text"
+        },
+        {
+          "name": "t008",
+          "label": "Pourquoi Doloria ?",
+          "type": "text"
+        },
+        {
+          "name": "t009",
+          "label": "Vivre avec une douleur chronique",
+          "type": "text"
+        },
+        {
+          "name": "t010",
+          "label": "ne devrait pas signifier",
+          "type": "text"
+        },
+        {
+          "name": "t011",
+          "label": "mettre sa vie en",
+          "type": "text"
+        },
+        {
+          "name": "t012",
+          "label": "pause.",
+          "type": "text"
+        },
+        {
+          "name": "t013",
+          "label": "01 / Comprendre",
+          "type": "text"
+        },
+        {
+          "name": "t014",
+          "label": "Comprendre.",
+          "type": "text"
+        },
+        {
+          "name": "t015",
+          "label": "Choisir. Avancer.",
+          "type": "text"
+        },
+        {
+          "name": "t016",
+          "label": "Mieux comprendre ce que l’on traverse, participer aux décisions et retrouver de la marge de man…",
+          "type": "text"
+        },
+        {
+          "name": "t017",
+          "label": "01 — Mettre du sens",
+          "type": "text"
+        },
+        {
+          "name": "t018",
+          "label": "Comprendre ce qui se passe",
+          "type": "text"
+        },
+        {
+          "name": "t019",
+          "label": "Sortir des raccourcis. Trouver des mots et des repères pour mieux comprendre son expérience de …",
+          "type": "text"
+        },
+        {
+          "name": "t020",
+          "label": "02 — Trouver des repères",
+          "type": "text"
+        },
+        {
+          "name": "t021",
+          "label": "Trouver son chemin dans les soins",
+          "type": "text"
+        },
+        {
+          "name": "t022",
+          "label": "Médecins, centres de la douleur, rééducation, psychologie ou traitements : rendre les parcours …",
+          "type": "text"
+        },
+        {
+          "name": "t023",
+          "label": "03 — Garder sa place",
+          "type": "text"
+        },
+        {
+          "name": "t024",
+          "label": "Continuer à vivre",
+          "type": "text"
+        },
+        {
+          "name": "t025",
+          "label": "Travail, école, relations, activités et projets : la vie ne devrait jamais se résumer à un scor…",
+          "type": "text"
+        },
+        {
+          "name": "t026",
+          "label": "Le parcours",
+          "type": "text"
+        },
+        {
+          "name": "t027",
+          "label": "La douleur ne raconte pas",
+          "type": "text"
+        },
+        {
+          "name": "t028",
+          "label": "toute votre histoire.",
+          "type": "text"
+        },
+        {
+          "name": "t029",
+          "label": "La douleur en commun.",
+          "type": "text"
+        },
+        {
+          "name": "t030",
+          "label": "Dix mille chemins de vie.",
+          "type": "text"
+        },
+        {
+          "name": "t031",
+          "label": "Vivre avec une douleur chronique ressemble rarement à une ligne droite.",
+          "type": "text"
+        },
+        {
+          "name": "t032",
+          "label": "On avance. Parfois, on a l’impression de reculer. Certaines expériences peuvent se ressembler, …",
+          "type": "text"
+        },
+        {
+          "name": "t033",
+          "label": "Il n’existe pas une bonne manière d’avancer : chacun construit son chemin, à son rythme.",
+          "type": "text"
+        },
+        {
+          "name": "t034",
+          "label": "Changer de perspective",
+          "type": "text"
+        },
+        {
+          "name": "t035",
+          "label": "Moins de place pour la douleur.",
+          "type": "text"
+        },
+        {
+          "name": "t036",
+          "label": "Plus de place pour vivre.",
+          "type": "text"
+        },
+        {
+          "name": "t037",
+          "label": "Doloria ouvre un autre chapitre",
+          "type": "text"
+        },
+        {
+          "name": "t038",
+          "label": "Les Petits",
+          "type": "text"
+        },
+        {
+          "name": "t039",
+          "label": "Courageux.",
+          "type": "text"
+        },
+        {
+          "name": "t040",
+          "label": "Entre. Tu as ta place.",
+          "type": "text"
+        },
+        {
+          "name": "t041",
+          "label": "Les Petits Courageux préparent des aventures adaptées aux enfants et adolescents vivant avec un…",
+          "type": "text"
+        },
+        {
+          "name": "t042",
+          "label": "Des séjours et des expériences pensés pour leur permettre de rencontrer d’autres jeunes, partag…",
+          "type": "text"
+        },
+        {
+          "name": "t043",
+          "label": "Ici, on vient d’abord vivre quelque chose ensemble.",
+          "type": "text"
+        },
+        {
+          "name": "t044",
+          "label": "Ouvre la porte des Petits Courageux",
+          "type": "text"
+        },
+        {
+          "name": "t045",
+          "label": "L’histoire ne s’arrête pas ici",
+          "type": "text"
+        },
+        {
+          "name": "t046",
+          "label": "Il y a une place",
+          "type": "text"
+        },
+        {
+          "name": "t047",
+          "label": "pour chacun.",
+          "type": "text"
+        },
+        {
+          "name": "t048",
+          "label": "Derrière cette porte se trouvent des rencontres, des expériences et des aventures à vivre à son…",
+          "type": "text"
+        },
+        {
+          "name": "t049",
+          "label": "Enseignant, éducateur, animateur, professionnel de santé, association, institution ou structure…",
+          "type": "text"
+        },
+        {
+          "name": "t050",
+          "label": "Entrer dans Les Petits Courageux",
+          "type": "text"
+        },
+        {
+          "name": "t051",
+          "label": "Enfants & ados · Familles · Accompagnants · Structures",
+          "type": "text"
+        },
+        {
+          "name": "t052",
+          "label": "À chacun son entrée",
+          "type": "text"
+        },
+        {
+          "name": "t053",
+          "label": "Pour toi :",
+          "type": "text"
+        },
+        {
+          "name": "t054",
+          "label": "un projet de séjours où tes envies et ton rythme ont leur place.",
+          "type": "text"
+        },
+        {
+          "name": "t055",
+          "label": "Pour les parents et les proches :",
+          "type": "text"
+        },
+        {
+          "name": "t056",
+          "label": "les intentions du projet et les questions à préparer ensemble avant un séjour.",
+          "type": "text"
+        },
+        {
+          "name": "t057",
+          "label": "Pour les personnes qui accompagnent des jeunes :",
+          "type": "text"
+        },
+        {
+          "name": "t058",
+          "label": "contribuer à leur place dans les activités, l’école, les loisirs et la vie collective.",
+          "type": "text"
+        },
+        {
+          "name": "t059",
+          "label": "Pour les structures :",
+          "type": "text"
+        },
+        {
+          "name": "t060",
+          "label": "écoles, parascolaire, associations, institutions et structures jeunesse : échangeons sur vos be…",
+          "type": "text"
+        },
+        {
+          "name": "t061",
+          "label": "Pour participer à la suite de cette aventure,",
+          "type": "text"
+        },
+        {
+          "name": "t062",
+          "label": "écrivez à Doloria",
+          "type": "text"
+        },
+        {
+          "name": "t063",
+          "label": "pour en parler.",
+          "type": "text"
+        },
+        {
+          "name": "t064",
+          "label": "Le même fil, à chaque âge",
+          "type": "text"
+        },
+        {
+          "name": "t065",
+          "label": "Les histoires changent.",
+          "type": "text"
+        },
+        {
+          "name": "t066",
+          "label": "Le besoin d’être entendu reste.",
+          "type": "text"
+        },
+        {
+          "name": "t067",
+          "label": "02 / Nos actions",
+          "type": "text"
+        },
+        {
+          "name": "t068",
+          "label": "Doloria en mouvement.",
+          "type": "text"
+        },
+        {
+          "name": "t069",
+          "label": "01",
+          "type": "text"
+        },
+        {
+          "name": "t070",
+          "label": "Rencontres & ateliers",
+          "type": "text"
+        },
+        {
+          "name": "t071",
+          "label": "Se retrouver, partager des expériences et explorer ensemble des activités adaptées au rythme de…",
+          "type": "text"
+        },
+        {
+          "name": "t072",
+          "label": "Découvrir les ateliers et rendez-vous ↗",
+          "type": "text"
+        },
+        {
+          "name": "t073",
+          "label": "02",
+          "type": "text"
+        },
+        {
+          "name": "t074",
+          "label": "Ressources & sensibilisation",
+          "type": "text"
+        },
+        {
+          "name": "t075",
+          "label": "Des infographies et des repères pour mieux comprendre la douleur chronique et partager l’inform…",
+          "type": "text"
+        },
+        {
+          "name": "t076",
+          "label": "Explorer les ressources ↗",
+          "type": "text"
+        },
+        {
+          "name": "t077",
+          "label": "03",
+          "type": "text"
+        },
+        {
+          "name": "t078",
+          "label": "Droits & démarches",
+          "type": "text"
+        },
+        {
+          "name": "t079",
+          "label": "Une question sur l’assurance-invalidité (AI), une demande d’aide ou une démarche administrative…",
+          "type": "text"
+        },
+        {
+          "name": "t080",
+          "label": "Nous contacter pour une démarche ↗",
+          "type": "text"
+        },
+        {
+          "name": "t081",
+          "label": "04",
+          "type": "text"
+        },
+        {
+          "name": "t082",
+          "label": "Recherche & innovation",
+          "type": "text"
+        },
+        {
+          "name": "t083",
+          "label": "Participer à l’évolution des parcours et imaginer de nouvelles manières de penser le soin. Vous…",
+          "type": "text"
+        },
+        {
+          "name": "t084",
+          "label": "Échanger sur un projet ↗",
+          "type": "text"
+        },
+        {
+          "name": "t085",
+          "label": "Et maintenant ?",
+          "type": "text"
+        },
+        {
+          "name": "t086",
+          "label": "Faire bouger",
+          "type": "text"
+        },
+        {
+          "name": "t087",
+          "label": "les lignes.",
+          "type": "text"
+        },
+        {
+          "name": "t088",
+          "label": "Ensemble.",
+          "type": "text"
+        },
+        {
+          "name": "t089",
+          "label": "Rejoindre Doloria",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "petits-courageux",
+      "label": "Textes · Les Petits Courageux",
+      "type": "file",
+      "path": "cms-petits-courageux.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "titre_page",
+          "label": "Titre de l’onglet",
+          "type": "string"
+        },
+        {
+          "name": "description_page",
+          "label": "Description pour les moteurs de recherche",
+          "type": "text"
+        },
+        {
+          "name": "t001",
+          "label": "Les Petits Courageux · Les séjours, au cœur du projet",
+          "type": "text"
+        },
+        {
+          "name": "t002",
+          "label": "Entre.",
+          "type": "text"
+        },
+        {
+          "name": "t003",
+          "label": "Tu as ta place.",
+          "type": "text"
+        },
+        {
+          "name": "t004",
+          "label": "Les Petits Courageux préparent des aventures adaptées aux enfants et adolescents vivant avec un…",
+          "type": "text"
+        },
+        {
+          "name": "t005",
+          "label": "Ici, on vient d’abord vivre quelque chose ensemble.",
+          "type": "text"
+        },
+        {
+          "name": "t006",
+          "label": "Je suis enfant / ado",
+          "type": "text"
+        },
+        {
+          "name": "t007",
+          "label": "J’accompagne mon enfant",
+          "type": "text"
+        },
+        {
+          "name": "t008",
+          "label": "J’accompagne des jeunes",
+          "type": "text"
+        },
+        {
+          "name": "t009",
+          "label": "Je représente une structure",
+          "type": "text"
+        },
+        {
+          "name": "t010",
+          "label": "Notre raison d’être",
+          "type": "text"
+        },
+        {
+          "name": "t011",
+          "label": "Des séjours pour vivre",
+          "type": "text"
+        },
+        {
+          "name": "t012",
+          "label": "l’aventure ensemble.",
+          "type": "text"
+        },
+        {
+          "name": "t013",
+          "label": "Les Petits Courageux est le pôle enfants et adolescents de l’Association Suisse Doloria (ASD).",
+          "type": "text"
+        },
+        {
+          "name": "t014",
+          "label": "Son projet part d’une conviction simple : un enfant ou un adolescent vivant avec une maladie ch…",
+          "type": "text"
+        },
+        {
+          "name": "t015",
+          "label": "Les Petits Courageux construit des séjours adaptés pour que ces jeunes puissent trouver leur pl…",
+          "type": "text"
+        },
+        {
+          "name": "t016",
+          "label": "sans que la maladie ou la douleur définisse toute l’expérience.",
+          "type": "text"
+        },
+        {
+          "name": "t017",
+          "label": "Ici, l’objectif n’est pas de créer un séjour « autour de la maladie ». C’est de permettre à cha…",
+          "type": "text"
+        },
+        {
+          "name": "t018",
+          "label": "vivre une vraie aventure, avec les autres.",
+          "type": "text"
+        },
+        {
+          "name": "t019",
+          "label": "Se rencontrer.",
+          "type": "text"
+        },
+        {
+          "name": "t020",
+          "label": "Partager des moments avec d’autres jeunes, créer des liens, rire, découvrir, participer à la vi…",
+          "type": "text"
+        },
+        {
+          "name": "t021",
+          "label": "Les Petits Courageux veut offrir un espace où chacun peut être là",
+          "type": "text"
+        },
+        {
+          "name": "t022",
+          "label": "comme enfant ou adolescent avant tout",
+          "type": "text"
+        },
+        {
+          "name": "t023",
+          "label": ", sans avoir à raconter ou justifier son histoire médicale pour trouver sa place.",
+          "type": "text"
+        },
+        {
+          "name": "t024",
+          "label": "Parce que l’inclusion, ce n’est pas seulement pouvoir participer.",
+          "type": "text"
+        },
+        {
+          "name": "t025",
+          "label": "C’est pouvoir appartenir au groupe, vivre les mêmes moments et repartir avec des souvenirs à so…",
+          "type": "text"
+        },
+        {
+          "name": "t026",
+          "label": "Explorer à son rythme.",
+          "type": "text"
+        },
+        {
+          "name": "t027",
+          "label": "Imaginer des activités avec plusieurs manières de participer, des temps de repos et la possibil…",
+          "type": "text"
+        },
+        {
+          "name": "t028",
+          "label": "Préparer ensemble.",
+          "type": "text"
+        },
+        {
+          "name": "t029",
+          "label": "Construire le projet avec les enfants, les familles et les professionnels pour tenir compte des…",
+          "type": "text"
+        },
+        {
+          "name": "t030",
+          "label": "Le projet se construit.",
+          "type": "text"
+        },
+        {
+          "name": "t031",
+          "label": "Aucun séjour n’est annoncé sur cette page et les inscriptions ne sont pas ouvertes. Les dates, …",
+          "type": "text"
+        },
+        {
+          "name": "t032",
+          "label": "Échanger sur le projet de séjours ↗",
+          "type": "text"
+        },
+        {
+          "name": "t033",
+          "label": "Pour les enfants & les ados",
+          "type": "text"
+        },
+        {
+          "name": "t034",
+          "label": "L’aventure commence",
+          "type": "text"
+        },
+        {
+          "name": "t035",
+          "label": "aussi avec toi !",
+          "type": "text"
+        },
+        {
+          "name": "t036",
+          "label": "En attendant les prochaines aventures des Petits Courageux, voici quelques invitations à explor…",
+          "type": "text"
+        },
+        {
+          "name": "t037",
+          "label": "Ce ne sont pas les activités d’un séjour annoncé, mais de petites idées à vivre seul, en famill…",
+          "type": "text"
+        },
+        {
+          "name": "t038",
+          "label": "à ton rythme et selon tes envies.",
+          "type": "text"
+        },
+        {
+          "name": "t039",
+          "label": "Parce qu’une aventure peut commencer n’importe où.",
+          "type": "text"
+        },
+        {
+          "name": "t040",
+          "label": "L’automne — Qu’y a-t-il dans ton sac ?",
+          "type": "text"
+        },
+        {
+          "name": "t041",
+          "label": "Imagine un sac qui peut contenir autre chose que des objets. Tu peux y mettre une chanson, une …",
+          "type": "text"
+        },
+        {
+          "name": "t042",
+          "label": "Sur une feuille, dessine ou écris trois choses que tu aimerais emporter. Tu peux aussi simpleme…",
+          "type": "text"
+        },
+        {
+          "name": "t043",
+          "label": "L’hiver — Une cabane à ton idée",
+          "type": "text"
+        },
+        {
+          "name": "t044",
+          "label": "Dans cette cabane, c’est toi qui choisis : de la lumière ou de la pénombre, du calme ou une mus…",
+          "type": "text"
+        },
+        {
+          "name": "t045",
+          "label": "Qu’est-ce qui te ferait du bien maintenant ? Si tu veux, tu peux le dire à une personne qui t’a…",
+          "type": "text"
+        },
+        {
+          "name": "t046",
+          "label": "Le printemps — Des mots, même inventés",
+          "type": "text"
+        },
+        {
+          "name": "t047",
+          "label": "Parfois, « ça va » et « ça ne va pas » ne racontent pas tout. Si ta journée était un paysage, à…",
+          "type": "text"
+        },
+        {
+          "name": "t048",
+          "label": "Raconte, dessine ou invente ton propre mot. Il n’y a pas de mauvaise réponse, et tu peux choisi…",
+          "type": "text"
+        },
+        {
+          "name": "t049",
+          "label": "L’été — Une envie à ta taille",
+          "type": "text"
+        },
+        {
+          "name": "t050",
+          "label": "Écouter une histoire, envoyer un message à quelqu’un, regarder dehors… Quelle petite chose te f…",
+          "type": "text"
+        },
+        {
+          "name": "t051",
+          "label": "Tu peux imaginer une version plus courte, la faire avec de l’aide, ou la garder pour une autre …",
+          "type": "text"
+        },
+        {
+          "name": "t052",
+          "label": "On s’appelle",
+          "type": "text"
+        },
+        {
+          "name": "t053",
+          "label": "Les Petits Courageux",
+          "type": "text"
+        },
+        {
+          "name": "t054",
+          "label": ", mais tu n’as pas à être courageux tout le temps. Tu peux demander de l’aide et dire stop.",
+          "type": "text"
+        },
+        {
+          "name": "t055",
+          "label": "Parents & proches",
+          "type": "text"
+        },
+        {
+          "name": "t056",
+          "label": "Préparer un départ.",
+          "type": "text"
+        },
+        {
+          "name": "t057",
+          "label": "Avec vous, avec lui.",
+          "type": "text"
+        },
+        {
+          "name": "t058",
+          "label": "Un séjour adapté se prépare avec l’enfant et ses proches. Avant toute inscription, il faudra po…",
+          "type": "text"
+        },
+        {
+          "name": "t059",
+          "label": "Proposer.",
+          "type": "text"
+        },
+        {
+          "name": "t060",
+          "label": "Qu’aimerait-il vivre pendant un séjour ? Qu’est-ce qui lui donnerait envie de partir, et qu’est…",
+          "type": "text"
+        },
+        {
+          "name": "t061",
+          "label": "Écouter.",
+          "type": "text"
+        },
+        {
+          "name": "t062",
+          "label": "Repérer ensemble ce qui aide au quotidien : les pauses, les repères rassurants, la manière de d…",
+          "type": "text"
+        },
+        {
+          "name": "t063",
+          "label": "Adapter.",
+          "type": "text"
+        },
+        {
+          "name": "t064",
+          "label": "Vérifier avec l’équipe les possibilités concrètes d’accueil et d’accompagnement, avant de décid…",
+          "type": "text"
+        },
+        {
+          "name": "t065",
+          "label": "Pour un premier contact, présentez simplement votre demande. Les informations de santé détaillé…",
+          "type": "text"
+        },
+        {
+          "name": "t066",
+          "label": "J’accompagne des jeunes",
+          "type": "text"
+        },
+        {
+          "name": "t067",
+          "label": "Construire des séjours",
+          "type": "text"
+        },
+        {
+          "name": "t068",
+          "label": "qui font une place à chacun.",
+          "type": "text"
+        },
+        {
+          "name": "t069",
+          "label": "Vous travaillez dans la santé, l’éducation, l’animation, le social ou l’accompagnement des enfa…",
+          "type": "text"
+        },
+        {
+          "name": "t070",
+          "label": "Vous accueillez un jeune vivant avec une douleur chronique ou une maladie chronique et vous ne …",
+          "type": "text"
+        },
+        {
+          "name": "t071",
+          "label": "Doloria prépare une offre d’accompagnement.",
+          "type": "text"
+        },
+        {
+          "name": "t072",
+          "label": "L’association souhaite transmettre des repères concrets pour mieux comprendre la douleur chroni…",
+          "type": "text"
+        },
+        {
+          "name": "t073",
+          "label": "Ce projet est en préparation : les accompagnements, temps de sensibilisation et formations ne s…",
+          "type": "text"
+        },
+        {
+          "name": "t074",
+          "label": "Échanger avec Doloria ↗",
+          "type": "text"
+        },
+        {
+          "name": "t075",
+          "label": "Je représente une structure",
+          "type": "text"
+        },
+        {
+          "name": "t076",
+          "label": "Rendre l’aventure accessible.",
+          "type": "text"
+        },
+        {
+          "name": "t077",
+          "label": "Construire les réponses ensemble.",
+          "type": "text"
+        },
+        {
+          "name": "t078",
+          "label": "Écoles, structures parascolaires, associations, institutions, camps et structures jeunesse : vo…",
+          "type": "text"
+        },
+        {
+          "name": "t079",
+          "label": "Les expériences de vos équipes peuvent nourrir la future offre de Doloria. Échangeons sur les o…",
+          "type": "text"
+        },
+        {
+          "name": "t080",
+          "label": "L’accompagnement et les formations sont en préparation. Leurs modalités seront définies avec le…",
+          "type": "text"
+        },
+        {
+          "name": "t081",
+          "label": "Parler de notre projet ↗",
+          "type": "text"
+        },
+        {
+          "name": "t082",
+          "label": "Un petit pas, une grande pause,",
+          "type": "text"
+        },
+        {
+          "name": "t083",
+          "label": "un détour… L’histoire reste la tienne.",
+          "type": "text"
+        },
+        {
+          "name": "t084",
+          "label": "← Retrouver Doloria",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "a-propos",
+      "label": "Textes · À propos",
+      "type": "file",
+      "path": "cms-a-propos.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "titre_page",
+          "label": "Titre de l’onglet",
+          "type": "string"
+        },
+        {
+          "name": "description_page",
+          "label": "Description pour les moteurs de recherche",
+          "type": "text"
+        },
+        {
+          "name": "t001",
+          "label": "Association Suisse Doloria · ASD",
+          "type": "text"
+        },
+        {
+          "name": "t002",
+          "label": "Redonner du pouvoir d’agir",
+          "type": "text"
+        },
+        {
+          "name": "t003",
+          "label": "aux personnes concernées.",
+          "type": "text"
+        },
+        {
+          "name": "t004",
+          "label": "L’ASD est une association suisse à but non lucratif d’intérêt général. Elle agit pour améliorer…",
+          "type": "text"
+        },
+        {
+          "name": "t005",
+          "label": "01 — Notre manière d’agir",
+          "type": "text"
+        },
+        {
+          "name": "t006",
+          "label": "Écouter l’expérience.",
+          "type": "text"
+        },
+        {
+          "name": "t007",
+          "label": "La douleur chronique peut toucher la vie sociale, professionnelle, scolaire et familiale. Dolor…",
+          "type": "text"
+        },
+        {
+          "name": "t008",
+          "label": "02 — Notre cap",
+          "type": "text"
+        },
+        {
+          "name": "t009",
+          "label": "Faire une place aux choix.",
+          "type": "text"
+        },
+        {
+          "name": "t010",
+          "label": "Informer, orienter, soutenir et créer des espaces où les personnes concernées peuvent participe…",
+          "type": "text"
+        },
+        {
+          "name": "t011",
+          "label": "03 — Nos membres",
+          "type": "text"
+        },
+        {
+          "name": "t012",
+          "label": "Des vécus différents.",
+          "type": "text"
+        },
+        {
+          "name": "t013",
+          "label": "L’association peut réunir des personnes concernées, des aidants, des professionnels de santé et…",
+          "type": "text"
+        },
+        {
+          "name": "t014",
+          "label": "04 — Le pôle enfants",
+          "type": "text"
+        },
+        {
+          "name": "t015",
+          "label": "Les Petits Courageux.",
+          "type": "text"
+        },
+        {
+          "name": "t016",
+          "label": "Le pôle LPC propose des actions adaptées aux enfants et aux adolescents vivant avec une maladie…",
+          "type": "text"
+        },
+        {
+          "name": "t017",
+          "label": "Les informations présentées ici reprennent le but et l’organisation prévus par les statuts de l…",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "actions",
+      "label": "Textes · Nos actions",
+      "type": "file",
+      "path": "cms-actions.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "titre_page",
+          "label": "Titre de l’onglet",
+          "type": "string"
+        },
+        {
+          "name": "description_page",
+          "label": "Description pour les moteurs de recherche",
+          "type": "text"
+        },
+        {
+          "name": "t001",
+          "label": "Les axes de l’ASD",
+          "type": "text"
+        },
+        {
+          "name": "t002",
+          "label": "Quatre façons",
+          "type": "text"
+        },
+        {
+          "name": "t003",
+          "label": "de faire avancer les choses.",
+          "type": "text"
+        },
+        {
+          "name": "t004",
+          "label": "Les actions de Doloria sont organisées autour de quatre axes. Leur forme se précisera avec les …",
+          "type": "text"
+        },
+        {
+          "name": "t005",
+          "label": "01",
+          "type": "text"
+        },
+        {
+          "name": "t006",
+          "label": "Information & prévention",
+          "type": "text"
+        },
+        {
+          "name": "t007",
+          "label": "Améliorer la compréhension de la douleur chronique, prévenir l’errance médicale, sensibiliser a…",
+          "type": "text"
+        },
+        {
+          "name": "t008",
+          "label": "02",
+          "type": "text"
+        },
+        {
+          "name": "t009",
+          "label": "Défense & accompagnement",
+          "type": "text"
+        },
+        {
+          "name": "t010",
+          "label": "Informer les patients sur leurs droits et orienter dans les démarches administratives. Soutenir…",
+          "type": "text"
+        },
+        {
+          "name": "t011",
+          "label": "03",
+          "type": "text"
+        },
+        {
+          "name": "t012",
+          "label": "Soutien & ateliers",
+          "type": "text"
+        },
+        {
+          "name": "t013",
+          "label": "Mieux comprendre la douleur, développer des stratégies d’adaptation et favoriser le partage d’e…",
+          "type": "text"
+        },
+        {
+          "name": "t014",
+          "label": "04",
+          "type": "text"
+        },
+        {
+          "name": "t015",
+          "label": "Les Petits Courageux",
+          "type": "text"
+        },
+        {
+          "name": "t016",
+          "label": "Créer des camps et séjours adaptés pour les enfants et adolescents vivant avec une maladie chro…",
+          "type": "text"
+        },
+        {
+          "name": "t017",
+          "label": "Entrer dans l’univers LPC ↗",
+          "type": "text"
+        },
+        {
+          "name": "t018",
+          "label": "Les ateliers et accompagnements proposés seront présentés comme des actions associatives. Ils n…",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "ressources",
+      "label": "Textes · Ressources",
+      "type": "file",
+      "path": "cms-ressources.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "titre_page",
+          "label": "Titre de l’onglet",
+          "type": "string"
+        },
+        {
+          "name": "description_page",
+          "label": "Description pour les moteurs de recherche",
+          "type": "text"
+        },
+        {
+          "name": "t001",
+          "label": "Ressources & sensibilisation",
+          "type": "text"
+        },
+        {
+          "name": "t002",
+          "label": "Des repères pour",
+          "type": "text"
+        },
+        {
+          "name": "t003",
+          "label": "sortir du flou.",
+          "type": "text"
+        },
+        {
+          "name": "t004",
+          "label": "Cette page accueillera progressivement des contenus pour mieux comprendre la douleur chronique,…",
+          "type": "text"
+        },
+        {
+          "name": "t005",
+          "label": "À venir",
+          "type": "text"
+        },
+        {
+          "name": "t006",
+          "label": "La douleur en images",
+          "type": "text"
+        },
+        {
+          "name": "t007",
+          "label": "Les infographies de Doloria seront réunies ici pour mieux comprendre la douleur chronique, trou…",
+          "type": "text"
+        },
+        {
+          "name": "t008",
+          "label": "À venir",
+          "type": "text"
+        },
+        {
+          "name": "t009",
+          "label": "Parcours & droits",
+          "type": "text"
+        },
+        {
+          "name": "t010",
+          "label": "Des repères pour préparer un rendez-vous, comprendre les démarches et identifier les questions …",
+          "type": "text"
+        },
+        {
+          "name": "t011",
+          "label": "À venir",
+          "type": "text"
+        },
+        {
+          "name": "t012",
+          "label": "Pour l’école & le travail",
+          "type": "text"
+        },
+        {
+          "name": "t013",
+          "label": "Des ressources pour parler des adaptations possibles et rendre les échanges plus simples avec l…",
+          "type": "text"
+        },
+        {
+          "name": "t014",
+          "label": "À venir",
+          "type": "text"
+        },
+        {
+          "name": "t015",
+          "label": "Pour les proches",
+          "type": "text"
+        },
+        {
+          "name": "t016",
+          "label": "Des pistes pour écouter, soutenir et préserver une place pour la personne au-delà de la douleur…",
+          "type": "text"
+        },
+        {
+          "name": "t017",
+          "label": "Les ressources seront ajoutées après vérification de leur qualité, de leur actualité et de leur…",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "contact",
+      "label": "Textes · Contact",
+      "type": "file",
+      "path": "cms-contact.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "titre_page",
+          "label": "Titre de l’onglet",
+          "type": "string"
+        },
+        {
+          "name": "description_page",
+          "label": "Description pour les moteurs de recherche",
+          "type": "text"
+        },
+        {
+          "name": "t001",
+          "label": "Écrire à Doloria",
+          "type": "text"
+        },
+        {
+          "name": "t002",
+          "label": "Une question,",
+          "type": "text"
+        },
+        {
+          "name": "t003",
+          "label": "une idée, une envie d’échanger ?",
+          "type": "text"
+        },
+        {
+          "name": "t004",
+          "label": "Tu peux nous écrire à ton rythme. Dis-nous simplement ce que tu cherches ou ce que tu aimerais …",
+          "type": "text"
+        },
+        {
+          "name": "t005",
+          "label": "Contact",
+          "type": "text"
+        },
+        {
+          "name": "t006",
+          "label": "Pour une première prise de contact, une proposition de partenariat, une question sur les action…",
+          "type": "text"
+        },
+        {
+          "name": "t007",
+          "label": "contact@doloria.ch ↗",
+          "type": "text"
+        },
+        {
+          "name": "t008",
+          "label": "Évite d’envoyer par email des documents médicaux complets, des numéros d’assurance ou d’autres …",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "vie-doloria",
+      "label": "Textes · La vie de Doloria",
+      "type": "file",
+      "path": "cms-vie-doloria.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "titre_page",
+          "label": "Titre de l’onglet",
+          "type": "string"
+        },
+        {
+          "name": "description_page",
+          "label": "Description pour les moteurs de recherche",
+          "type": "text"
+        },
+        {
+          "name": "t001",
+          "label": "Se retrouver · Participer · Partager",
+          "type": "text"
+        },
+        {
+          "name": "t002",
+          "label": "La vie de",
+          "type": "text"
+        },
+        {
+          "name": "t003",
+          "label": "Doloria.",
+          "type": "text"
+        },
+        {
+          "name": "t004",
+          "label": "Des moments pour se rencontrer, des ateliers à découvrir et des nouvelles à partager. Retrouvez…",
+          "type": "text"
+        },
+        {
+          "name": "t005",
+          "label": "Les prochains rendez-vous",
+          "type": "text"
+        },
+        {
+          "name": "t006",
+          "label": "Les nouvelles & photos",
+          "type": "text"
+        },
+        {
+          "name": "t007",
+          "label": "À votre rythme",
+          "type": "text"
+        },
+        {
+          "name": "t008",
+          "label": "On se retrouve ?",
+          "type": "text"
+        },
+        {
+          "name": "t009",
+          "label": "Ateliers, rencontres et événements : choisissez une date pour découvrir les rendez-vous proposé…",
+          "type": "text"
+        },
+        {
+          "name": "t010",
+          "label": "Les dates encadrées indiquent un rendez-vous.",
+          "type": "text"
+        },
+        {
+          "name": "t011",
+          "label": "Les moments qui nous rassemblent",
+          "type": "text"
+        },
+        {
+          "name": "t012",
+          "label": "Les nouvelles de l’association.",
+          "type": "text"
+        },
+        {
+          "name": "t013",
+          "label": "Des images, des souvenirs et les étapes du projet, pour suivre l’aventure avec nous.",
+          "type": "text"
+        },
+        {
+          "name": "t014",
+          "label": "Une envie de participer ?",
+          "type": "text"
+        },
+        {
+          "name": "t015",
+          "label": "Une question sur un atelier, un besoin d’adaptation ou une idée à partager ? Écrivez-nous pour …",
+          "type": "text"
+        },
+        {
+          "name": "t016",
+          "label": "Échanger avec Doloria ↗",
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
