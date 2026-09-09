@@ -159,7 +159,25 @@ html.no-motion{scroll-behavior:auto!important}
 
 @media(min-width:761px) and (max-width:1200px){.nav{flex-wrap:wrap}.nav-links{order:3;width:100%;justify-content:center;padding-bottom:15px}.nav-links .nav-contact{display:block}}
 .action-row p a{display:inline-block;margin-top:12px;min-height:44px;padding-block:8px;text-decoration:underline;text-underline-offset:4px}
-</style></head>
+</style><style>
+/* Entrée Doloria : une place qui se libère. */
+#doloria-intro{position:fixed;inset:0;width:100%;max-width:none;height:100%;max-height:none;margin:0;padding:0;border:0;background:var(--wine,#570204);color:var(--cream,#f7ede2);overflow:hidden}
+#doloria-intro::backdrop{background:#570204}
+.intro-stage{height:100%;display:grid;place-content:center;text-align:center;padding:28px;isolation:isolate}
+.intro-pain{position:absolute;inset:0;display:grid;place-content:center;font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:clamp(4rem,19vw,24rem);letter-spacing:-.075em;color:var(--rose,#e8aab8);opacity:.7;animation:intro-release 3.6s cubic-bezier(.2,.7,.2,1) both;z-index:-1}
+.intro-life{font-size:clamp(2.3rem,7vw,6.8rem);font-weight:600;line-height:1.05;letter-spacing:-.06em;animation:intro-life 3.6s ease both}
+.intro-life span{color:var(--rose,#e8aab8)}
+.intro-thread{width:min(72vw,640px);height:80px;margin:28px auto 0;overflow:visible;animation:intro-life 3.6s ease both}
+.intro-thread path{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-dasharray:750;stroke-dashoffset:750;animation:intro-line 2s .9s ease forwards}
+.intro-thread circle{fill:var(--rose,#e8aab8);filter:drop-shadow(0 0 9px #e8aab8)}
+.intro-skip{position:absolute;bottom:max(28px,env(safe-area-inset-bottom));right:clamp(24px,5vw,80px);min-height:48px;padding:10px 20px;border:1px solid currentColor;border-radius:30px;background:transparent;color:inherit;font-size:.95rem}
+@keyframes intro-release{0%,15%{transform:scale(1.06);opacity:.7;filter:blur(0)}65%,100%{transform:scale(1.35) translateY(-12%);opacity:0;filter:blur(8px)}}
+@keyframes intro-life{0%,22%{opacity:0;transform:translateY(16px)}58%,100%{opacity:1;transform:none}}
+@keyframes intro-line{to{stroke-dashoffset:0}}
+@media(prefers-reduced-motion:reduce){#doloria-intro{display:none!important}}
+@media print{#doloria-intro{display:none!important}}
+</style>
+</head>
 <body data-cms-page="index">
 <a class="skip" href="#contenu">Aller au contenu</a>
 <header><nav class="nav wrap" aria-label="Navigation principale">
@@ -334,5 +352,39 @@ draw();
 })();
 
 </script>
-<script src="cms-public.js" defer></script><script src="accessibility.js" defer></script></body>
+<script src="cms-public.js" defer></script><script src="accessibility.js" defer></script>
+<dialog id="doloria-intro" aria-label="Bienvenue chez Doloria">
+<div class="intro-stage"><div class="intro-pain" aria-hidden="true">DOULEUR</div>
+<p class="intro-life">La douleur existe.<br><span>Votre vie aussi.</span></p>
+<svg class="intro-thread" viewBox="0 0 640 80" aria-hidden="true"><path d="M5 45 C100 45 115 10 190 32 S285 75 350 40 S455 10 515 35 S590 50 635 35"/><circle cx="635" cy="35" r="5"/></svg>
+<button type="button" class="intro-skip" autofocus>Passer l’introduction →</button></div>
+</dialog>
+<script>
+(()=>{
+ const intro=document.getElementById('doloria-intro');
+ const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+ let seen=false,manualReduced=false;
+ try{seen=sessionStorage.getItem('doloria-intro-seen')==='1';manualReduced=localStorage.getItem('doloria-reduced-motion')==='true';}catch(_){}
+ if(seen||manualReduced||reduced.matches||location.hash||!intro.showModal){intro.remove();return;}
+ const previousOverflow=document.documentElement.style.overflow;
+ let timer;
+ function finish(){
+  clearTimeout(timer);
+  document.documentElement.style.overflow=previousOverflow;
+  if(intro.open)intro.close();
+  intro.remove();
+  try{sessionStorage.setItem('doloria-intro-seen','1');}catch(_){}
+  const title=document.getElementById('hero-title');
+  if(title){title.setAttribute('tabindex','-1');title.focus({preventScroll:true});title.addEventListener('blur',()=>title.removeAttribute('tabindex'),{once:true});}
+ }
+ intro.querySelector('button').addEventListener('click',finish);
+ intro.addEventListener('cancel',event=>{event.preventDefault();finish();});
+ reduced.addEventListener('change',()=>{if(reduced.matches)finish();});
+ intro.showModal();
+ document.documentElement.style.overflow='hidden';
+ timer=setTimeout(finish,3600);
+})();
+</script>
+
+</body>
 </html>
