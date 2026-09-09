@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>La vie de Doloria — Agenda et nouvelles</title><meta name="description" content="Retrouvez les ateliers, rencontres, événements et nouvelles de l’association Doloria."><link rel="stylesheet" href="info-pages.css"><link rel="stylesheet" href="vie-doloria.css"><style>/* Shared keyboard, reading and touch affordances. */
+:where(a,button,summary):focus-visible{outline:3px solid #fff!important;outline-offset:3px!important;box-shadow:0 0 0 7px #570204!important}
+main:focus{outline:none}
+.skip{position:fixed!important;top:10px!important;left:10px;z-index:1000;background:#f7ede2;color:#570204;padding:12px 20px;transform:translateY(-200%)}
+.skip:focus{transform:none}
+:where(p,h1,h2,h3,a,summary){overflow-wrap:anywhere}
+:where(.grid,.steps,.section-intro,.journey-bottom,.action-row)>*{min-width:0}
+:where(header nav,footer .wrap){flex-wrap:wrap}
+:where(header nav a,footer a){display:inline-flex;align-items:center;min-height:44px}
+summary{min-height:44px}
+p a{text-decoration:underline;text-underline-offset:.2em}
+.accessibility-controls{padding:12px 22px;background:#570204;color:#f7ede2;text-align:right}
+.accessibility-controls button{font:inherit;font-size:.875rem;min-height:44px;padding:8px 16px;border:1px solid currentColor;border-radius:24px;background:transparent;color:inherit;cursor:pointer}
+.accessibility-controls[hidden]{display:none}
+html.no-motion{scroll-behavior:auto!important}
+.no-motion *,.no-motion *::before,.no-motion *::after{animation:none!important;transition:none!important}
+.forest-door::before{content:'';position:absolute;left:50%;top:50%;width:max(100%,44px);height:max(100%,44px);transform:translate(-50%,-50%)}
+.forest-door:focus-visible::after{opacity:1}
+@media(max-width:760px){
+ .js .nav-links{max-height:calc(100dvh - var(--header,78px));overflow-y:auto}
+ .nav{column-gap:8px}
+ .motion{max-width:145px}
+}
+@media(forced-colors:active){
+ :where(a,button,summary):focus-visible{outline:3px solid Highlight!important;box-shadow:none!important}
+ .pill,.button,.motion,.menu-toggle,.forest-door{border:2px solid ButtonText}
+ .forest-door{background:ButtonFace}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation:none!important;transition:none!important}}
+</style></head>
+<body><a class="skip" href="#contenu">Aller au contenu</a><header><nav class="wrap" aria-label="Navigation principale"><a href="index.html">Doloria</a><a href="vie-doloria.html" aria-current="page">La vie de Doloria</a><a href="index.html">← Accueil</a></nav></header>
+<div class="accessibility-controls" hidden><button id="reading-motion" type="button" aria-pressed="false">Réduire les animations</button></div>
+<main id="contenu" tabindex="-1"><section class="opening wrap"><div class="eyebrow">Se retrouver · Participer · Partager</div><h1>La vie de<br><em>Doloria.</em></h1><p>Des moments pour se rencontrer, des ateliers à découvrir et des nouvelles à partager. Retrouvez ici ce qui se prépare et ce qui fait vivre l’association.</p><div class="anchors"><a href="#agenda">Les prochains rendez-vous</a><a href="#nouvelles">Les nouvelles & photos</a></div></section>
+<section id="agenda" class="agenda"><div class="wrap"><div class="eyebrow">À votre rythme</div><h2>On se retrouve ?</h2><p>Ateliers, rencontres et événements : choisissez une date pour découvrir les rendez-vous proposés.</p><noscript><p>Activez JavaScript pour consulter le calendrier et les nouvelles, ou <a href="contact.html">contactez-nous pour connaître les rendez-vous</a>.</p></noscript>
+<div class="agenda-layout" id="agenda-interactive" hidden><div class="calendar"><div class="calendar-tools"><button id="previous" type="button" aria-label="Mois précédent">←</button><h3 id="month" aria-live="polite" aria-atomic="true"></h3><button id="next" type="button" aria-label="Mois suivant">→</button></div><table aria-labelledby="month"><thead><tr><th scope="col"><abbr title="Lundi">L</abbr></th><th scope="col"><abbr title="Mardi">M</abbr></th><th scope="col"><abbr title="Mercredi">M</abbr></th><th scope="col"><abbr title="Jeudi">J</abbr></th><th scope="col"><abbr title="Vendredi">V</abbr></th><th scope="col"><abbr title="Samedi">S</abbr></th><th scope="col"><abbr title="Dimanche">D</abbr></th></tr></thead><tbody id="days"></tbody></table><p class="legend">Les dates encadrées indiquent un rendez-vous.</p><button id="all-events" type="button">Tous les rendez-vous à venir</button></div><div><h3 id="results-title">Les prochains rendez-vous</h3><p id="event-status" role="status" aria-atomic="true"></p><div id="events"></div></div></div></div></section>
+<section id="nouvelles" class="news wrap"><div class="eyebrow">Les moments qui nous rassemblent</div><h2>Les nouvelles de l’association.</h2><p>Des images, des souvenirs et les étapes du projet, pour suivre l’aventure avec nous.</p><div id="stories"></div></section>
+<section class="closing wrap"><h2>Une envie de participer ?</h2><p>Une question sur un atelier, un besoin d’adaptation ou une idée à partager ? Écrivez-nous pour en parler.</p><a href="contact.html">Échanger avec Doloria ↗</a></section></main><footer><div class="wrap"><span>© 2026 Association Suisse Doloria (ASD)</span><a href="contact.html">Contact</a><a href="index.html">Retour à Doloria</a></div></footer>
+<script src="contenus-doloria.js" defer></script><script src="vie-doloria.js" defer></script><script src="accessibility.js" defer></script></body></html>
