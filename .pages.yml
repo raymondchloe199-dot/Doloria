@@ -1469,16 +1469,6 @@
       "format": "json",
       "fields": [
         {
-          "name": "titre_page",
-          "label": "Titre de l’onglet",
-          "type": "string"
-        },
-        {
-          "name": "description_page",
-          "label": "Description pour les moteurs de recherche",
-          "type": "text"
-        },
-        {
           "name": "t001",
           "label": "Ressources & sensibilisation",
           "type": "text"
@@ -1494,73 +1484,73 @@
           "type": "text"
         },
         {
-          "name": "t004",
-          "label": "Cette page accueillera progressivement des contenus pour mieux comprendre la douleur chronique,…",
+          "name": "intro_1",
+          "label": "Bienvenue dans l’espace ressources de Doloria.",
           "type": "text"
         },
         {
-          "name": "t005",
-          "label": "À venir",
+          "name": "intro_2",
+          "label": "Que vous viviez avec une douleur chronique, que vous soyez un proche, un professionnel de ",
           "type": "text"
         },
         {
-          "name": "t006",
-          "label": "La douleur en images",
+          "name": "intro_3",
+          "label": "Contenus visuels, repères, informations pratiques et outils : cet espace a été pensé pour ",
           "type": "text"
         },
         {
-          "name": "t007",
-          "label": "Les infographies de Doloria seront réunies ici pour mieux comprendre la douleur chronique, trou…",
+          "name": "intro_4",
+          "label": "Pour les personnes concernées, ces ressources peuvent aider à mieux comprendre ce qu’elles",
           "type": "text"
         },
         {
-          "name": "t008",
-          "label": "À venir",
+          "name": "intro_5",
+          "label": "Pour les professionnels, les étudiants ou les personnes simplement curieuses, elles offren",
           "type": "text"
         },
         {
-          "name": "t009",
-          "label": "Parcours & droits",
+          "name": "intro_6",
+          "label": "Parce que mieux comprendre, c’est aussi mieux communiquer, mieux accompagner, mieux choisi",
           "type": "text"
         },
         {
-          "name": "t010",
-          "label": "Des repères pour préparer un rendez-vous, comprendre les démarches et identifier les questions …",
+          "name": "infographies_titre",
+          "label": "Les infographies de Doloria",
           "type": "text"
         },
         {
-          "name": "t011",
-          "label": "À venir",
+          "name": "lectures_titre",
+          "label": "Livres & magazines",
           "type": "text"
         },
         {
-          "name": "t012",
-          "label": "Pour l’école & le travail",
+          "name": "livrets_titre",
+          "label": "Les livrets de Doloria",
           "type": "text"
         },
         {
-          "name": "t013",
-          "label": "Des ressources pour parler des adaptations possibles et rendre les échanges plus simples avec l…",
+          "name": "livrets_intro",
+          "label": "Des livrets consacrés à la neurostimulation médullaire et à la douleur neuropathique.",
           "type": "text"
         },
         {
-          "name": "t014",
-          "label": "À venir",
+          "name": "contact_titre",
+          "label": "Vous cherchez une autre ressource ?",
           "type": "text"
         },
         {
-          "name": "t015",
-          "label": "Pour les proches",
+          "name": "contact_texte",
+          "label": "Écrivez-nous : nous pourrons vous orienter selon votre demande.",
           "type": "text"
         },
         {
-          "name": "t016",
-          "label": "Des pistes pour écouter, soutenir et préserver une place pour la personne au-delà de la douleur…",
+          "name": "titre_page",
+          "label": "Ressources — Doloria",
           "type": "text"
         },
         {
-          "name": "t017",
-          "label": "Les ressources seront ajoutées après vérification de leur qualité, de leur actualité et de leur…",
+          "name": "description_page",
+          "label": "Infographies, livres, magazines et livrets pour mieux comprendre la douleur chronique — Do",
           "type": "text"
         }
       ]
@@ -1720,6 +1710,180 @@
           "name": "t016",
           "label": "Échanger avec Doloria ↗",
           "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "lectures",
+      "label": "Ressources · Livres et magazines",
+      "type": "file",
+      "path": "cms-lectures.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "elements",
+          "label": "Ressources · Livres et magazines",
+          "type": "object",
+          "list": {
+            "collapsible": {
+              "collapsed": true,
+              "summary": "{titre}"
+            }
+          },
+          "fields": [
+            {
+              "name": "publie",
+              "label": "Afficher sur le site",
+              "type": "boolean",
+              "default": false,
+              "description": "Désactivé : visible seulement en aperçu. Un brouillon enregistré reste dans le dépôt public : aucun contenu confidentiel."
+            },
+            {
+              "name": "titre",
+              "label": "Titre",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "description",
+              "label": "Présentation",
+              "type": "text"
+            },
+            {
+              "name": "image",
+              "label": "Couverture du document",
+              "type": "image",
+              "options": {
+                "extensions": [
+                  "jpg",
+                  "jpeg",
+                  "png",
+                  "webp"
+                ]
+              }
+            },
+            {
+              "name": "descriptionImage",
+              "label": "Description courte de l’image",
+              "type": "string"
+            },
+            {
+              "name": "fichier",
+              "label": "Image ou PDF à consulter",
+              "type": "file",
+              "options": {
+                "extensions": [
+                  "pdf",
+                  "jpg",
+                  "jpeg",
+                  "png",
+                  "webp"
+                ]
+              }
+            },
+            {
+              "name": "transcription",
+              "label": "Version texte ou présentation détaillée",
+              "type": "text"
+            },
+            {
+              "name": "sources",
+              "label": "Sources et références",
+              "type": "text"
+            },
+            {
+              "name": "lien",
+              "label": "Lien de consultation ou page du livre",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "livrets",
+      "label": "Ressources · Livrets",
+      "type": "file",
+      "path": "cms-livrets.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "elements",
+          "label": "Ressources · Livrets",
+          "type": "object",
+          "list": {
+            "collapsible": {
+              "collapsed": true,
+              "summary": "{titre}"
+            }
+          },
+          "fields": [
+            {
+              "name": "publie",
+              "label": "Afficher sur le site",
+              "type": "boolean",
+              "default": false,
+              "description": "Désactivé : visible seulement en aperçu. Un brouillon enregistré reste dans le dépôt public : aucun contenu confidentiel."
+            },
+            {
+              "name": "titre",
+              "label": "Titre",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "description",
+              "label": "Présentation",
+              "type": "text"
+            },
+            {
+              "name": "image",
+              "label": "Couverture du document",
+              "type": "image",
+              "options": {
+                "extensions": [
+                  "jpg",
+                  "jpeg",
+                  "png",
+                  "webp"
+                ]
+              }
+            },
+            {
+              "name": "descriptionImage",
+              "label": "Description courte de l’image",
+              "type": "string"
+            },
+            {
+              "name": "fichier",
+              "label": "Image ou PDF à consulter",
+              "type": "file",
+              "options": {
+                "extensions": [
+                  "pdf",
+                  "jpg",
+                  "jpeg",
+                  "png",
+                  "webp"
+                ]
+              }
+            },
+            {
+              "name": "transcription",
+              "label": "Version texte ou présentation détaillée",
+              "type": "text"
+            },
+            {
+              "name": "sources",
+              "label": "Sources et références",
+              "type": "text"
+            },
+            {
+              "name": "lien",
+              "label": "Lien de consultation ou page du livre",
+              "type": "string"
+            }
+          ]
         }
       ]
     }
