@@ -1191,98 +1191,163 @@
       "format": "json",
       "fields": [
         {
-          "name": "titre_page",
-          "label": "Titre de l’onglet",
-          "type": "string"
-        },
-        {
-          "name": "description_page",
-          "label": "Description pour les moteurs de recherche",
-          "type": "text"
-        },
-        {
-          "name": "t001",
+          "name": "intro_label",
           "label": "Association Suisse Doloria · ASD",
           "type": "text"
         },
         {
-          "name": "t002",
-          "label": "Redonner du pouvoir d’agir",
+          "name": "but_titre",
+          "label": "Améliorer la qualité de vie.",
           "type": "text"
         },
         {
-          "name": "t003",
-          "label": "aux personnes concernées.",
+          "name": "but_suite",
+          "label": "Faire une place à ce qui compte pour vous.",
           "type": "text"
         },
         {
-          "name": "t004",
-          "label": "L’ASD est une association suisse à but non lucratif d’intérêt général. Elle agit pour améliorer…",
+          "name": "but_texte",
+          "label": "L’ASD est une association suisse à but non lucratif. Elle agit pour améliorer la qualité d",
           "type": "text"
         },
         {
-          "name": "t005",
-          "label": "01 — Notre manière d’agir",
+          "name": "valeurs_label",
+          "label": "Nos valeurs",
           "type": "text"
         },
         {
-          "name": "t006",
-          "label": "Écouter l’expérience.",
+          "name": "valeurs_titre",
+          "label": "Commencez là où vous êtes.",
           "type": "text"
         },
         {
-          "name": "t007",
-          "label": "La douleur chronique peut toucher la vie sociale, professionnelle, scolaire et familiale. Dolor…",
+          "name": "valeur_1_titre",
+          "label": "Respect",
           "type": "text"
         },
         {
-          "name": "t008",
-          "label": "02 — Notre cap",
+          "name": "valeur_1_texte",
+          "label": "Accueillir chaque personne telle qu’elle est, là où elle en est, avec son histoire, ses li",
           "type": "text"
         },
         {
-          "name": "t009",
-          "label": "Faire une place aux choix.",
+          "name": "valeur_2_titre",
+          "label": "Autodétermination",
           "type": "text"
         },
         {
-          "name": "t010",
-          "label": "Informer, orienter, soutenir et créer des espaces où les personnes concernées peuvent participe…",
+          "name": "valeur_2_texte",
+          "label": "Chacun reste acteur de sa vie et de ses décisions. Doloria défend le droit de comprendre, ",
           "type": "text"
         },
         {
-          "name": "t011",
-          "label": "03 — Nos membres",
+          "name": "valeur_3_titre",
+          "label": "Co-construction",
           "type": "text"
         },
         {
-          "name": "t012",
-          "label": "Des vécus différents.",
+          "name": "valeur_3_texte",
+          "label": "Les réponses ne se construisent pas à la place des personnes concernées, mais avec elles. ",
           "type": "text"
         },
         {
-          "name": "t013",
-          "label": "L’association peut réunir des personnes concernées, des aidants, des professionnels de santé et…",
+          "name": "valeur_4_titre",
+          "label": "Singularité",
           "type": "text"
         },
         {
-          "name": "t014",
-          "label": "04 — Le pôle enfants",
+          "name": "valeur_4_texte",
+          "label": "Il n’existe pas une seule façon de vivre avec la douleur. Chaque parcours est unique, tout",
           "type": "text"
         },
         {
-          "name": "t015",
-          "label": "Les Petits Courageux.",
+          "name": "valeur_5_titre",
+          "label": "Accessibilité",
           "type": "text"
         },
         {
-          "name": "t016",
-          "label": "Le pôle LPC propose des actions adaptées aux enfants et aux adolescents vivant avec une maladie…",
+          "name": "valeur_5_texte",
+          "label": "L’information et les ressources doivent pouvoir être comprises et utilisées par tous. Dolo",
           "type": "text"
         },
         {
-          "name": "t017",
-          "label": "Les informations présentées ici reprennent le but et l’organisation prévus par les statuts de l…",
+          "name": "valeur_6_titre",
+          "label": "La vie avant la douleur",
+          "type": "text"
+        },
+        {
+          "name": "valeur_6_texte",
+          "label": "La douleur peut bouleverser une existence, mais elle ne définit pas une personne. Doloria ",
+          "type": "text"
+        },
+        {
+          "name": "histoire_label",
+          "label": "À l’origine de Doloria",
+          "type": "text"
+        },
+        {
+          "name": "histoire_titre",
+          "label": "Doloria est née d’une histoire vécue",
+          "type": "text"
+        },
+        {
+          "name": "histoire_1",
+          "label": "Pendant longtemps, la douleur a occupé une place immense dans ma vie.",
+          "type": "text"
+        },
+        {
+          "name": "histoire_2",
+          "label": "Avec elle sont venus les rendez-vous, les examens, les traitements, les professionnels, le",
+          "type": "text"
+        },
+        {
+          "name": "histoire_3",
+          "label": "Pourtant, derrière un patient, il y a toujours quelqu’un.",
+          "type": "text"
+        },
+        {
+          "name": "histoire_4",
+          "label": "Quelqu’un qui a des envies, des relations, des projets, des rêves, des limites aussi. Quel",
+          "type": "text"
+        },
+        {
+          "name": "histoire_5",
+          "label": "Au fil de mon propre parcours, de mes rencontres avec d’autres personnes concernées et de ",
+          "type": "text"
+        },
+        {
+          "name": "histoire_6",
+          "label": "C’est de cette conviction qu’est née Doloria.",
+          "type": "text"
+        },
+        {
+          "name": "histoire_7",
+          "label": "Doloria veut créer un espace où l’on peut arriver avec son histoire, ses questions, ses do",
+          "type": "text"
+        },
+        {
+          "name": "histoire_8",
+          "label": "Parce qu’une personne ne se résume jamais à sa douleur.",
+          "type": "text"
+        },
+        {
+          "name": "histoire_9",
+          "label": "Et parce qu’avant de parler de douleur, nous voulons d’abord parler de vous.",
+          "type": "text"
+        },
+        {
+          "name": "signature",
+          "label": "Chloé Raymond, fondatrice de Doloria",
+          "type": "text"
+        },
+        {
+          "name": "titre_page",
+          "label": "À propos — Doloria",
+          "type": "text"
+        },
+        {
+          "name": "description_page",
+          "label": "Le but de Doloria, ses six valeurs et l’histoire de Chloé Raymond, sa fondatrice.",
           "type": "text"
         }
       ]
