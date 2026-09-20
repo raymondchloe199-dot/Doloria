@@ -176,7 +176,18 @@ html.no-motion{scroll-behavior:auto!important}
 @media(prefers-reduced-motion:reduce){#doloria-intro{display:none!important}}
 @media print{#doloria-intro{display:none!important}}
 </style>
-<style id="professional-menu">@media(min-width:761px) and (max-width:1280px){.menu-toggle{display:block;background:none;border:1px solid #f7ede259;color:var(--cream);border-radius:30px;min-height:44px;padding:8px 15px}.nav-links{position:absolute;top:100%;left:0;right:0;background:var(--wine);padding:18px 25px;display:flex;flex-direction:column;align-items:stretch;gap:0;font-size:1rem;max-height:calc(100dvh - var(--header));overflow-y:auto}.js .nav-links:not(.open){display:none}.nav-links a{padding:13px 0}.nav-links .nav-contact{display:block}.motion{margin-left:auto}html:not(.js) header{position:relative}html:not(.js) .nav{flex-wrap:wrap}html:not(.js) .nav-links{position:static;flex-basis:100%}}</style></head>
+<style id="professional-menu">@media(min-width:761px) and (max-width:1280px){.menu-toggle{display:block;background:none;border:1px solid #f7ede259;color:var(--cream);border-radius:30px;min-height:44px;padding:8px 15px}.nav-links{position:absolute;top:100%;left:0;right:0;background:var(--wine);padding:18px 25px;display:flex;flex-direction:column;align-items:stretch;gap:0;font-size:1rem;max-height:calc(100dvh - var(--header));overflow-y:auto}.js .nav-links:not(.open){display:none}.nav-links a{padding:13px 0}.nav-links .nav-contact{display:block}.motion{margin-left:auto}html:not(.js) header{position:relative}html:not(.js) .nav{flex-wrap:wrap}html:not(.js) .nav-links{position:static;flex-basis:100%}}</style><style id="mountain-intro">
+/* Paysage de l'introduction : essai réversible. */
+#doloria-intro .intro-landscape{position:absolute;inset:0;pointer-events:none;overflow:hidden;background:#334653}
+.intro-landscape>img{width:100%;height:100%;object-fit:cover;object-position:center;transform:scale(1.04);will-change:transform}
+.intro-landscape::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#111b2d70,#15202f40 45%,#20132180)}
+#doloria-intro .intro-scroll{position:relative;z-index:1;scroll-snap-type:y proximity}
+#doloria-intro .intro-screen p{text-shadow:0 2px 22px #071522c0;font-size:clamp(2rem,5.5vw,5.6rem);line-height:1.12;letter-spacing:-.04em}
+#doloria-intro .intro-screen p em{color:#ffe0e7}
+#doloria-intro .intro-skip,#doloria-intro .intro-enter{background:#351723a6;color:#fff5ed;backdrop-filter:blur(8px)}
+#doloria-intro .intro-hint{text-shadow:0 2px 8px #071522;opacity:1}
+.intro-birds{position:absolute;inset:0;width:100%;height:100%;fill:#263542;pointer-events:none;z-index:1}.intro-bird{opacity:0}
+</style></head>
 <body data-cms-page="index">
 <a class="skip" href="#contenu">Aller au contenu</a>
 <header><nav class="nav wrap" aria-label="Navigation principale">
@@ -352,6 +363,7 @@ draw();
 </script>
 <script src="cms-public.js" defer></script><script src="accessibility.js" defer></script>
 <dialog id="doloria-intro" aria-label="Bienvenue chez Doloria">
+<div class="intro-landscape" aria-hidden="true"><img src="intro-montagnes.webp" alt="" fetchpriority="high"><svg class="intro-birds" viewBox="0 0 1400 900" preserveAspectRatio="none"><g class="intro-bird"><path d="M-28 3Q-14-12 0 0Q14-12 28 3L12-1 0 4-12-1Z"/><path d="M0 0L-3 10 0 7 3 10Z"/></g><g class="intro-bird"><path d="M-28 3Q-14-12 0 0Q14-12 28 3L12-1 0 4-12-1Z"/><path d="M0 0L-3 10 0 7 3 10Z"/></g><g class="intro-bird"><path d="M-28 3Q-14-12 0 0Q14-12 28 3L12-1 0 4-12-1Z"/><path d="M0 0L-3 10 0 7 3 10Z"/></g></svg></div>
 <div class="intro-scroll">
 <section class="intro-screen"><p>Avant de parler de douleur,<br><em>parlons de vous.</em></p></section>
 <section class="intro-screen"><p>De votre quotidien.</p></section>
@@ -369,14 +381,16 @@ draw();
  const intro=document.getElementById('doloria-intro');
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
  let seen=false,manualReduced=false;
- try{seen=sessionStorage.getItem('doloria-intro-seen')==='1';manualReduced=localStorage.getItem('doloria-reduced-motion')==='true';}catch(_){}
+ try{seen=sessionStorage.getItem('doloria-intro-mountains-seen-v1')==='1';manualReduced=localStorage.getItem('doloria-reduced-motion')==='true';}catch(_){}
  if(seen||manualReduced||reduced.matches||location.hash||!intro.showModal){intro.remove();return;}
+ let mountainFrame=0;
  const previousOverflow=document.documentElement.style.overflow;
  function finish(){
+  cancelAnimationFrame(mountainFrame);
   document.documentElement.style.overflow=previousOverflow;
   if(intro.open)intro.close();
   intro.remove();
-  try{sessionStorage.setItem('doloria-intro-seen','1');}catch(_){}
+  try{sessionStorage.setItem('doloria-intro-mountains-seen-v1','1');}catch(_){}
   const title=document.getElementById('hero-title');
   if(title){title.setAttribute('tabindex','-1');title.focus({preventScroll:true});title.addEventListener('blur',()=>title.removeAttribute('tabindex'),{once:true});}
  }
@@ -386,6 +400,21 @@ draw();
  reduced.addEventListener('change',()=>{if(reduced.matches)finish();});
  intro.showModal();
  document.documentElement.style.overflow='hidden';
+
+ const scroller=intro.querySelector('.intro-scroll'),landscape=intro.querySelector('.intro-landscape>img'),birds=[...intro.querySelectorAll('.intro-bird')];
+ let progress=0,last=performance.now();
+ const clamp=x=>Math.max(0,Math.min(1,x));
+ function animateMountains(now){
+  if(!intro.isConnected||!intro.open)return;
+  const dt=Math.min(.05,(now-last)/1000);last=now;
+  const target=clamp(scroller.scrollTop/Math.max(1,scroller.scrollHeight-scroller.clientHeight));
+  progress+=(target-progress)*(1-Math.exp(-dt*4));
+  landscape.style.transform=`scale(${1.04+progress*.15})`;
+  birds.forEach((bird,i)=>{const u=clamp((progress-(.12+i*.13))/.37),fade=Math.min(1,u/.12,(1-u)/.14);const size=.45+i*.15;bird.style.opacity=fade*.8;bird.setAttribute('transform',`translate(${-80+u*1580} ${250+i*60-Math.sin(u*Math.PI)*115}) rotate(${-8+16*u}) scale(${size} ${size*(.76+Math.sin(u*36)*.12)})`)});
+  mountainFrame=requestAnimationFrame(animateMountains);
+ }
+ mountainFrame=requestAnimationFrame(animateMountains);
+
 })();
 </script>
 
