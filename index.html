@@ -187,16 +187,10 @@ html.no-motion{scroll-behavior:auto!important}
 #doloria-intro .intro-skip,#doloria-intro .intro-enter{background:#351723a6;color:#fff5ed;backdrop-filter:blur(8px)}
 #doloria-intro .intro-hint{text-shadow:0 2px 8px #071522;opacity:1}
 .intro-birds{position:absolute;inset:0;width:100%;height:100%;fill:#263542;pointer-events:none;z-index:1}.intro-bird{opacity:0}
-</style></head>
+</style><link rel="stylesheet" href="navigation.css?v=1"></head>
 <body data-cms-page="index">
 <a class="skip" href="#contenu">Aller au contenu</a>
-<header><nav class="nav wrap" aria-label="Navigation principale">
-<a class="brand" href="#accueil" aria-label="Doloria, accueil"><img src="media/site-564880e612cbc043.webp" alt="Doloria, logo avec ligne ondulée et point lumineux" width="86" height="86"></a>
-<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation" hidden>Menu</button>
-<div class="nav-links" id="navigation"><a href="a-propos.html">À propos</a><a href="vie-doloria.html">La vie de Doloria</a><a href="index.html#actions">Nos actions</a><a href="ressources.html">Ressources</a><a href="professionnels.html">Espace professionnels</a><a href="#petits">Les Petits Courageux</a><a class="nav-contact" href="contact.html">Contact</a></div>
-<button class="motion" id="motion" type="button" aria-pressed="false" hidden>Réduire les animations</button>
-
-</nav></header>
+<header id="site-header"><nav id="site-navigation" aria-label="Navigation principale"><a class="site-logo" href="index.html" aria-label="Doloria, accueil"><img src="media/site-564880e612cbc043.webp" alt="Doloria" width="72" height="72"></a><button id="site-menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" hidden>Menu</button><div id="site-menu"><a href="a-propos.html">À propos</a><a href="vie-doloria.html">La vie de Doloria</a><a href="index.html#actions">Nos actions</a><a href="ressources.html">Ressources</a><a href="professionnels.html">Espace professionnels</a><a href="petits-courageux.html">Les Petits Courageux</a><a href="contact.html">Contact</a></div><button class="site-motion" id="motion" type="button" aria-pressed="false">Réduire les animations</button></nav></header>
 <main id="contenu" tabindex="-1">
 <section class="hero" id="accueil" aria-labelledby="hero-title">
 <div class="hero-watermark" aria-hidden="true">DOULEUR</div>
@@ -295,13 +289,6 @@ function applyMotion(){
 motionButton.addEventListener('click',()=>{userReduced=!userReduced;try{localStorage.setItem('doloria-reduced-motion',String(userReduced));}catch(_){}applyMotion();});
 systemMotion.addEventListener('change',applyMotion);shortScreen.addEventListener('change',applyMotion);
 addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule,{passive:true});
-const menu=document.querySelector('.menu-toggle'),nav=document.getElementById('navigation');
-menu.hidden=false;
-function closeMenu(){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');}
-menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';nav.classList.toggle('open',open);menu.setAttribute('aria-expanded',String(open));if(open)nav.querySelector('a').focus();});
-nav.addEventListener('click',e=>{if(e.target.closest('a'))closeMenu();});
-nav.addEventListener('focusout',()=>{requestAnimationFrame(()=>{if(!nav.contains(document.activeElement)&&document.activeElement!==menu)closeMenu();});});
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){closeMenu();menu.focus();}});
 // Future page: set this URL only once that page is published.
 const KIDS_PAGE_URL='petits-courageux.html'; // Example: 'petits-courageux.html'
 const entry=document.getElementById('kids-entry'),details=document.getElementById('espace-petits');
@@ -418,5 +405,5 @@ draw();
 })();
 </script>
 
-</body>
+<script src="navigation.js?v=1"></script></body>
 </html>
