@@ -17,7 +17,7 @@
  }
  function move(step){
   const cards=[...track.children],target=cards[Math.max(0,Math.min(cards.length-1,index+step))];
-  if(target)track.scrollBy({left:target.getBoundingClientRect().left-track.getBoundingClientRect().left-4,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+  if(target)track.scrollBy({left:target.getBoundingClientRect().left-track.getBoundingClientRect().left-4,behavior:(matchMedia('(prefers-reduced-motion: reduce)').matches||document.documentElement.classList.contains('no-motion'))?'instant':'smooth'});
  }
  prev.addEventListener('click',()=>move(-1));next.addEventListener('click',()=>move(1));
  track.addEventListener('keydown',e=>{if(e.target===track&&['ArrowLeft','ArrowRight'].includes(e.key)){e.preventDefault();move(e.key==='ArrowLeft'?-1:1);}});

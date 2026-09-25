@@ -19,7 +19,21 @@
  }):Promise.resolve();
  if(slug==='ressources')read('infographies').then(data=>{
   const items=published(data),target=document.getElementById('cms-resources');document.getElementById('resources-status').textContent=items.length?`${items.length} ressource(s) disponible(s).`:'Les premières infographies seront publiées ici.';
-  for(const item of items){const card=element('article');card.className='card';card.append(element('h3',item.titre||'Infographie'));if(item.description)card.append(element('p',item.description));const image=safe(item.image);if(image){const img=element('img');img.src=image;img.alt=item.descriptionImage||'';img.loading='lazy';img.style.cssText='display:block;max-width:100%;height:auto;margin-block:20px';card.append(img);}const file=safe(item.fichier);if(file){const a=element('a','Consulter le document');a.href=file;a.style.cssText='display:inline-flex;min-height:44px;align-items:center';card.append(a);}if(item.transcription){const details=element('details'),summary=element('summary','Lire la version texte');const text=element('p',item.transcription);text.style.whiteSpace='pre-line';details.append(summary,text);card.append(details);}if(item.sources)card.append(element('p','Sources : '+item.sources));target.append(card);}
+  for(const item of items){
+   const title=item.titre||'Infographie',card=element('article');card.className='card';card.append(element('h3',title));
+   const image=safe(item.image),file=safe(item.fichier);
+   if(image){
+    const a=element('a');a.href=image;a.target='_blank';a.rel='noopener';a.className='infographic-preview';a.setAttribute('aria-label',`Ouvrir en grand : ${title} (nouvel onglet)`);
+    const img=element('img');img.src=image;img.alt=item.descriptionImage||title;img.loading='lazy';a.append(img);card.append(a);
+   }
+   const actions=element('div');actions.className='infographic-actions';
+   if(image){const a=element('a','Ouvrir l’image en grand ↗');a.href=image;a.target='_blank';a.rel='noopener';a.setAttribute('aria-label',`Ouvrir l’image en grand : ${title} (nouvel onglet)`);actions.append(a);}
+   if(file){const a=element('a','Consulter le document →');a.href=file;actions.append(a);}
+   if(actions.childNodes.length)card.append(actions);
+   if(item.description){const d=element('details');d.append(element('summary','À propos de cette infographie'),element('p',item.description));card.append(d);}
+   if(item.transcription){const d=element('details');d.append(element('summary','Lire la version texte'),element('p',item.transcription));card.append(d);}
+   if(item.sources)card.append(element('p','Sources : '+item.sources));target.append(card);
+  }
  }).catch(()=>{document.getElementById('resources-status').textContent='Les ressources ne peuvent pas être chargées pour le moment. Réessayez ou contactez Doloria.';});
  window.doloriaDataReady=Promise.all([texts,dynamic]);
 })();
