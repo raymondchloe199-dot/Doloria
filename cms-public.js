@@ -32,7 +32,12 @@
    if(actions.childNodes.length)card.append(actions);
    if(item.description){const d=element('details');d.append(element('summary','À propos de cette infographie'),element('p',item.description));card.append(d);}
    if(item.transcription){const d=element('details');d.append(element('summary','Lire la version texte'),element('p',item.transcription));card.append(d);}
-   if(item.sources)card.append(element('p','Sources : '+item.sources));target.append(card);
+   if(item.auteur)card.append(element('p','Auteur / autrice : '+item.auteur));
+   if(item.dateCreation)card.append(element('p','Création : '+item.dateCreation));
+   if(item.dateRevision)card.append(element('p','Dernière révision : '+item.dateRevision));
+   if(item.sources)card.append(element('p','Crédits : '+item.sources));
+   if(item.references){const d=element('details');d.append(element('summary','Références utilisées'),element('p',item.references));card.append(d);}
+   target.append(card);
   }
  }).catch(()=>{document.getElementById('resources-status').textContent='Les ressources ne peuvent pas être chargées pour le moment. Réessayez ou contactez Doloria.';});
  window.doloriaDataReady=Promise.all([texts,dynamic]);

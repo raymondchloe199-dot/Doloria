@@ -88,8 +88,32 @@
             },
             {
               "name": "sources",
-              "label": "Sources et références",
-              "type": "text"
+              "label": "Crédits existants",
+              "type": "text",
+              "description": "Anciennes mentions conservées. Utilisez les champs séparés ci-dessous pour les nouveaux documents."
+            },
+            {
+              "name": "auteur",
+              "label": "Auteur ou autrice",
+              "type": "string"
+            },
+            {
+              "name": "dateCreation",
+              "label": "Date de création",
+              "type": "string",
+              "description": "Facultatif, par exemple 09.04.2024."
+            },
+            {
+              "name": "dateRevision",
+              "label": "Dernière révision du contenu",
+              "type": "string",
+              "description": "Facultatif. À renseigner uniquement après une véritable relecture du contenu, pas lors de sa mise en ligne."
+            },
+            {
+              "name": "references",
+              "label": "Références utilisées",
+              "type": "text",
+              "description": "Articles, organismes ou ouvrages sur lesquels le contenu s’appuie. Le nom de la personne qui crée le document est à renseigner dans Auteur ou autrice."
             }
           ]
         }
