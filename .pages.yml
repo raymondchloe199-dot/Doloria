@@ -318,12 +318,12 @@
         },
         {
           "name": "description_page",
-          "label": "Description pour les moteurs de recherche",
+          "label": "Doloria crée des ressources et développe des rencontres, ateliers et séjours adaptés ",
           "type": "text"
         },
         {
           "name": "t001",
-          "label": "Association suisse dédiée aux personnes vivant avec une douleur chronique",
+          "label": "Association suisse · Douleur persistante et maladie chronique",
           "type": "text"
         },
         {
@@ -348,12 +348,12 @@
         },
         {
           "name": "t006",
-          "label": "Doloria existe pour que la douleur ne prenne jamais toute la place.",
+          "label": "Des ressources pour comprendre. Des projets pour participer.",
           "type": "text"
         },
         {
           "name": "t007",
-          "label": "Pour que les personnes vivant avec une douleur chronique puissent continuer à choisir, décider,…",
+          "label": "Doloria crée des supports d’information et développe des rencontres, des ateliers et ",
           "type": "text"
         },
         {
@@ -458,12 +458,12 @@
         },
         {
           "name": "t028",
-          "label": "toute votre histoire.",
+          "label": "Les Petits Courageux, le pôle enfants et adolescents de Doloria, prépare des séjours ",
           "type": "text"
         },
         {
           "name": "t029",
-          "label": "La douleur en commun.",
+          "label": "Rencontrer d’autres jeunes, découvrir, jouer et se fabriquer des souvenirs : une aven",
           "type": "text"
         },
         {
@@ -493,12 +493,12 @@
         },
         {
           "name": "t035",
-          "label": "Moins de place pour la douleur.",
+          "label": "Enfants, adolescents, parents et proches : découvrez le projet de séjours, ce qui se ",
           "type": "text"
         },
         {
           "name": "t036",
-          "label": "Plus de place pour vivre.",
+          "label": "Vous accompagnez des jeunes ou représentez une école, une association ou une structur",
           "type": "text"
         },
         {
@@ -588,7 +588,7 @@
         },
         {
           "name": "t054",
-          "label": "un projet de séjours où tes envies et ton rythme ont leur place.",
+          "label": "Nos actions",
           "type": "text"
         },
         {
@@ -608,12 +608,12 @@
         },
         {
           "name": "t058",
-          "label": "contribuer à leur place dans les activités, l’école, les loisirs et la vie collective.",
+          "label": "Des projets pour se rencontrer et partager des expériences. Consultez l’agenda pour c",
           "type": "text"
         },
         {
           "name": "t059",
-          "label": "Pour les structures :",
+          "label": "Voir les prochains rendez-vous ↗",
           "type": "text"
         },
         {
@@ -628,7 +628,7 @@
         },
         {
           "name": "t062",
-          "label": "écrivez à Doloria",
+          "label": "Des infographies et des documents pour comprendre la douleur, mettre des mots sur son",
           "type": "text"
         },
         {
@@ -648,7 +648,7 @@
         },
         {
           "name": "t066",
-          "label": "Le besoin d’être entendu reste.",
+          "label": "Une question sur vos droits, l’assurance-invalidité (AI) ou une demande d’aide ? Prés",
           "type": "text"
         },
         {
@@ -663,17 +663,17 @@
         },
         {
           "name": "t069",
-          "label": "01",
+          "label": "Projets avec les professionnels",
           "type": "text"
         },
         {
           "name": "t070",
-          "label": "Rencontres & ateliers",
+          "label": "Témoignage, sensibilisation, travail d’études ou recherche : échangeons sur la place ",
           "type": "text"
         },
         {
           "name": "t071",
-          "label": "Se retrouver, partager des expériences et explorer ensemble des activités adaptées au rythme de…",
+          "label": "Proposer une collaboration ↗",
           "type": "text"
         },
         {
@@ -787,7 +787,7 @@
         },
         {
           "name": "t001",
-          "label": "Les Petits Courageux · Les séjours, au cœur du projet",
+          "label": "Le pôle enfants et adolescents de Doloria",
           "type": "text"
         },
         {
@@ -802,7 +802,7 @@
         },
         {
           "name": "t004",
-          "label": "Les Petits Courageux préparent des aventures adaptées aux enfants et adolescents vivant avec un…",
+          "label": "Un projet de séjours adaptés aux enfants et adolescents vivant avec une maladie chron",
           "type": "text"
         },
         {
@@ -852,12 +852,12 @@
         },
         {
           "name": "t014",
-          "label": "Son projet part d’une conviction simple : un enfant ou un adolescent vivant avec une maladie ch…",
+          "label": " Son projet : permettre aux jeunes de participer aux loisirs et à la vie de groupe, a",
           "type": "text"
         },
         {
           "name": "t015",
-          "label": "Les Petits Courageux construit des séjours adaptés pour que ces jeunes puissent trouver leur pl…",
+          "label": "Les Petits Courageux prépare des séjours adaptés pour partir, découvrir et partager d",
           "type": "text"
         },
         {
@@ -937,7 +937,7 @@
         },
         {
           "name": "t031",
-          "label": "Aucun séjour n’est annoncé sur cette page et les inscriptions ne sont pas ouvertes. Les dates, …",
+          "label": " Aucun séjour n’est encore annoncé et les inscriptions ne sont pas ouvertes. Les date",
           "type": "text"
         },
         {
@@ -1221,17 +1221,22 @@
         },
         {
           "name": "but_titre",
-          "label": "Améliorer la qualité de vie.",
+          "label": "Vivre avec la douleur ou la maladie.",
           "type": "text"
         },
         {
           "name": "but_suite",
-          "label": "Faire une place à ce qui compte pour vous.",
+          "label": "Garder une place pour ses choix et ses projets.",
           "type": "text"
         },
         {
           "name": "but_texte",
-          "label": "L’ASD est une association suisse à but non lucratif. Elle agit pour améliorer la qualité d",
+          "label": "L’Association Suisse Doloria (ASD) est une association à but non lucratif. Elle agit ",
+          "type": "text"
+        },
+        {
+          "name": "but_actions",
+          "label": "Comment Doloria agit concrètement",
           "type": "text"
         },
         {
@@ -1281,7 +1286,7 @@
         },
         {
           "name": "valeur_4_texte",
-          "label": "Il n’existe pas une seule façon de vivre avec la douleur. Chaque parcours est unique, tout",
+          "label": "Il n’existe pas une seule façon de vivre avec la douleur ou la maladie. Chaque parcou",
           "type": "text"
         },
         {
@@ -1371,7 +1376,7 @@
         },
         {
           "name": "description_page",
-          "label": "Le but de Doloria, ses six valeurs et l’histoire de Chloé Raymond, sa fondatrice.",
+          "label": "Pourquoi Doloria existe : soutenir la qualité de vie, les choix et les projets des pe",
           "type": "text"
         }
       ]
@@ -1509,32 +1514,32 @@
         },
         {
           "name": "intro_1",
-          "label": "Bienvenue dans l’espace ressources de Doloria.",
+          "label": "Comprendre la douleur. Mettre des mots sur ce que l’on vit.",
           "type": "text"
         },
         {
           "name": "intro_2",
-          "label": "Que vous viviez avec une douleur chronique, que vous soyez un proche, un professionnel de ",
+          "label": "Ces ressources s’adressent aux personnes concernées, à leurs proches, aux professionn",
           "type": "text"
         },
         {
           "name": "intro_3",
-          "label": "Contenus visuels, repères, informations pratiques et outils : cet espace a été pensé pour ",
+          "label": "Des infographies, des lectures et des livrets pour trouver des repères et préparer vo",
           "type": "text"
         },
         {
           "name": "intro_4",
-          "label": "Pour les personnes concernées, ces ressources peuvent aider à mieux comprendre ce qu’elles",
+          "label": "Pour vous et vos proches : éclairer des expériences parfois difficiles à expliquer et",
           "type": "text"
         },
         {
           "name": "intro_5",
-          "label": "Pour les professionnels, les étudiants ou les personnes simplement curieuses, elles offren",
+          "label": "Pour les professionnels et les étudiants : découvrir des supports accessibles qui rel",
           "type": "text"
         },
         {
           "name": "intro_6",
-          "label": "Parce que mieux comprendre, c’est aussi mieux communiquer, mieux accompagner, mieux choisi",
+          "label": "Ces contenus apportent des repères généraux. Ils ne remplacent pas un avis médical ad",
           "type": "text"
         },
         {
@@ -1564,7 +1569,7 @@
         },
         {
           "name": "contact_texte",
-          "label": "Écrivez-nous : nous pourrons vous orienter selon votre demande.",
+          "label": "Dites-nous ce que vous cherchez : nous examinerons les ressources et les pistes d’ori",
           "type": "text"
         },
         {
@@ -1603,17 +1608,17 @@
         },
         {
           "name": "t002",
-          "label": "Une question,",
+          "label": "Parlons de",
           "type": "text"
         },
         {
           "name": "t003",
-          "label": "une idée, une envie d’échanger ?",
+          "label": "votre demande.",
           "type": "text"
         },
         {
           "name": "t004",
-          "label": "Tu peux nous écrire à ton rythme. Dis-nous simplement ce que tu cherches ou ce que tu aimerais …",
+          "label": "Une question sur une ressource, une activité, les séjours ou un projet ? Écrivez à co",
           "type": "text"
         },
         {
@@ -1623,7 +1628,7 @@
         },
         {
           "name": "t006",
-          "label": "Pour une première prise de contact, une proposition de partenariat, une question sur les action…",
+          "label": "Personnes concernées, proches, professionnels, étudiants ou structures : présentez-no",
           "type": "text"
         },
         {
@@ -1657,7 +1662,7 @@
         },
         {
           "name": "t001",
-          "label": "Se retrouver · Participer · Partager",
+          "label": "Agenda · Ateliers · Nouvelles",
           "type": "text"
         },
         {
@@ -1672,7 +1677,7 @@
         },
         {
           "name": "t004",
-          "label": "Des moments pour se rencontrer, des ateliers à découvrir et des nouvelles à partager. Retrouvez…",
+          "label": "Retrouvez les prochains ateliers, rencontres et événements, leurs modalités de partic",
           "type": "text"
         },
         {
@@ -1717,7 +1722,7 @@
         },
         {
           "name": "t013",
-          "label": "Des images, des souvenirs et les étapes du projet, pour suivre l’aventure avec nous.",
+          "label": "Les projets en cours et les moments partagés, pour découvrir concrètement la vie de D",
           "type": "text"
         },
         {

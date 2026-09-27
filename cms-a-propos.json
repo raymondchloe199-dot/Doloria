@@ -1,8 +1,8 @@
 {
   "intro_label": "Association Suisse Doloria · ASD",
-  "but_titre": "Améliorer la qualité de vie.",
-  "but_suite": "Faire une place à ce qui compte pour vous.",
-  "but_texte": "L’ASD est une association suisse à but non lucratif. Elle agit pour améliorer la qualité de vie, soutenir l’autonomie et favoriser la participation à la vie sociale des personnes concernées par la douleur chronique. Doloria souhaite permettre à chacun de composer avec la douleur, à son rythme, pour construire une vie qui lui ressemble : faire ses propres choix, créer des liens et donner une place à ses envies et à ses projets.",
+  "but_titre": "Vivre avec la douleur ou la maladie.",
+  "but_suite": "Garder une place pour ses choix et ses projets.",
+  "but_texte": "L’Association Suisse Doloria (ASD) est une association à but non lucratif. Elle agit pour la qualité de vie, l’autonomie et la participation des personnes vivant avec une douleur persistante ou une maladie chronique. Son point de départ : ce que chacun souhaite pouvoir vivre, à l’école, au travail, dans ses relations et ses loisirs.",
   "valeurs_label": "Nos valeurs",
   "valeurs_titre": "Commencez là où vous êtes.",
   "valeur_1_titre": "Respect",
@@ -12,7 +12,7 @@
   "valeur_3_titre": "Co-construction",
   "valeur_3_texte": "Les réponses ne se construisent pas à la place des personnes concernées, mais avec elles. L’expérience vécue, les priorités de chacun et les savoirs professionnels ont tous leur place.",
   "valeur_4_titre": "Singularité",
-  "valeur_4_texte": "Il n’existe pas une seule façon de vivre avec la douleur. Chaque parcours est unique, tout comme les besoins, les ressources, les envies et les objectifs de vie de chacun.",
+  "valeur_4_texte": "Il n’existe pas une seule façon de vivre avec la douleur ou la maladie. Chaque parcours est unique, tout comme les besoins, les ressources, les envies et les objectifs de vie de chacun.",
   "valeur_5_titre": "Accessibilité",
   "valeur_5_texte": "L’information et les ressources doivent pouvoir être comprises et utilisées par tous. Doloria veut rendre les connaissances autour de la douleur plus claires, plus accessibles et plus proches du quotidien.",
   "valeur_6_titre": "La vie avant la douleur",
@@ -30,5 +30,6 @@
   "histoire_9": "Et parce qu’avant de parler de douleur, nous voulons d’abord parler de vous.",
   "signature": "Chloé Raymond, fondatrice de Doloria",
   "titre_page": "À propos — Doloria",
-  "description_page": "Le but de Doloria, ses six valeurs et l’histoire de Chloé Raymond, sa fondatrice."
+  "description_page": "Pourquoi Doloria existe : soutenir la qualité de vie, les choix et les projets des personnes vivant avec une douleur persistante ou une maladie chronique.",
+  "but_actions": "Pour cela, Doloria crée des ressources d’information et développe des projets de rencontres, d’ateliers et de sensibilisation. Son pôle Les Petits Courageux prépare des séjours adaptés aux enfants et adolescents. Ces actions se construisent avec les personnes concernées, leurs proches et les professionnels."
 }
