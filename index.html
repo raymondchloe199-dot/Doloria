@@ -187,7 +187,18 @@ html.no-motion{scroll-behavior:auto!important}
 #doloria-intro .intro-skip,#doloria-intro .intro-enter{background:#351723a6;color:#fff5ed;backdrop-filter:blur(8px)}
 #doloria-intro .intro-hint{text-shadow:0 2px 8px #071522;opacity:1}
 .intro-birds{position:absolute;inset:0;width:100%;height:100%;fill:#263542;pointer-events:none;z-index:1}.intro-bird{opacity:0}
-</style><link rel="stylesheet" href="navigation.css?v=1"></head>
+</style><link rel="stylesheet" href="navigation.css?v=1"><style id="intro-choices-style">
+#doloria-intro .intro-finale{padding:100px 24px 88px;gap:20px}
+#doloria-intro .intro-finale>p:first-child{font-size:clamp(2rem,4.5vw,4.8rem)}
+#doloria-intro .intro-finale .intro-logo{width:clamp(76px,11vw,120px);margin:0 auto}
+.intro-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:850px;width:100%;margin:auto}
+.intro-choice{min-width:0;display:flex;flex-direction:column;align-items:center;gap:12px}
+#doloria-intro .intro-choice .intro-enter{width:100%;max-width:410px;min-height:54px;line-height:1.35;text-decoration:none;background:#351723ed;padding:14px 20px}
+#doloria-intro .intro-choice p,#doloria-intro .intro-finale .intro-affiliation{font-size:1rem;font-weight:400;line-height:1.5;letter-spacing:0;max-width:360px;text-shadow:0 2px 8px #071522;background:#172331c9;border-radius:10px;padding:8px 12px}
+#doloria-intro .intro-finale .intro-affiliation{max-width:650px;font-size:.9rem}
+#doloria-intro .intro-choice .intro-enter:hover{background:#f7ede2;color:#570204}
+@media(max-width:600px){.intro-choices{grid-template-columns:1fr;gap:20px;max-width:370px}#doloria-intro .intro-finale{gap:18px}#doloria-intro .intro-choice p{font-size:.95rem}#doloria-intro .intro-finale .intro-affiliation{font-size:.85rem}}
+</style></head>
 <body data-cms-page="index">
 <a class="skip" href="#contenu">Aller au contenu</a>
 <header id="site-header"><nav id="site-navigation" aria-label="Navigation principale"><a class="site-logo" href="index.html" aria-label="Doloria, accueil"><img src="media/site-564880e612cbc043.webp" alt="Doloria" width="72" height="72"></a><button id="site-menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" hidden>Menu</button><div id="site-menu"><a href="a-propos.html">À propos</a><a href="vie-doloria.html">La vie de Doloria</a><a href="index.html#actions">Nos actions</a><a href="ressources.html">Ressources</a><a href="professionnels.html">Espace professionnels</a><a href="petits-courageux.html">Les Petits Courageux</a><a href="contact.html">Contact</a></div><button class="site-motion" id="motion" type="button" aria-pressed="false">Réduire les animations</button></nav></header>
@@ -358,7 +369,7 @@ draw();
 <section class="intro-screen"><p>De vos projets.</p></section>
 <section class="intro-screen"><p>De ce qui compte pour vous.</p></section>
 <section class="intro-screen"><p>Et de tout ce que la douleur vient parfois bousculer.</p></section>
-<section class="intro-screen"><p>Doloria commence par là.<br><em>Par vous.</em></p><img class="intro-logo" src="media/site-564880e612cbc043.webp" alt="Doloria, logo avec ligne ondulée et point lumineux"><button type="button" class="intro-enter">Entrer dans Doloria →</button></section>
+<section class="intro-screen intro-finale"><p>Doloria commence par là.<br><em>Par vous.</em></p><img class="intro-logo" src="media/site-564880e612cbc043.webp" alt="Doloria, logo avec ligne ondulée et point lumineux"><div class="intro-choices" aria-label="Choisir votre entrée"><div class="intro-choice"><button type="button" class="intro-enter" aria-describedby="intro-doloria-description">Découvrir Doloria →</button><p id="intro-doloria-description">L’association, les ressources et les rencontres.</p></div><div class="intro-choice"><a class="intro-enter intro-kids" href="petits-courageux.html" aria-describedby="intro-kids-description">Entrer dans Les Petits Courageux →</a><p id="intro-kids-description">Le projet de séjours pour les enfants et adolescents.</p></div></div><p class="intro-affiliation">Les Petits Courageux, le pôle enfants et adolescents de Doloria.</p></section>
 </div>
 <p class="intro-hint" aria-hidden="true">Faire défiler pour continuer ↓</p>
 <button type="button" class="intro-skip" autofocus>Passer l’introduction</button>
@@ -382,7 +393,8 @@ draw();
   if(title){title.setAttribute('tabindex','-1');title.focus({preventScroll:true});title.addEventListener('blur',()=>title.removeAttribute('tabindex'),{once:true});}
  }
  intro.querySelector('.intro-skip').addEventListener('click',finish);
- intro.querySelector('.intro-enter').addEventListener('click',finish);
+ intro.querySelector('button.intro-enter').addEventListener('click',finish);
+ intro.querySelector('.intro-kids').addEventListener('click',()=>{try{sessionStorage.setItem('doloria-intro-mountains-seen-v1','1');}catch(_){}});
  intro.addEventListener('cancel',event=>{event.preventDefault();finish();});
  reduced.addEventListener('change',()=>{if(reduced.matches)finish();});
  intro.showModal();
