@@ -1,0 +1,7 @@
+/* Keep a readable text layer while the scene stays visible during the journey. */
+.pro-animation .photo{object-position:72% 50%;transform-origin:72% 50%}
+.pro-institutions .photo{object-position:72% 50%;transform-origin:72% 50%}
+.pro-animation .shade,.pro-institutions .shade{background:linear-gradient(90deg,#071523f5 0%,#071523df 27%,#07152380 49%,#0715230a 80%),linear-gradient(0deg,#07152377,transparent 50%)}
+.professional .research .text-link{display:block;color:#efb6cb}
+.threads{opacity:calc(var(--signal,0.25)*.7)}
+@media(max-width:700px){.pro-animation .shade,.pro-institutions .shade{background:linear-gradient(0deg,#071523fa 0%,#071523e8 45%,#07152355 80%,#07152344)}.chapter .copy{width:100%}.thoughts span{max-width:170px}.thoughts span:nth-child(3){left:42%;top:34%}}

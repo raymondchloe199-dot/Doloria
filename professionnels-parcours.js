@@ -1,0 +1,13 @@
+(()=>{
+const chapters=[...document.querySelectorAll('.chapter')],photo=document.querySelector('.photo'),thoughts=[...document.querySelectorAll('.thoughts span')],button=document.getElementById('motion'),professional=document.getElementById('professionnels'),step=document.getElementById('step'),bar=document.querySelector('.progress i'),mq=matchMedia('(prefers-reduced-motion:reduce)');
+if(!chapters.length||!photo||!button||!professional)return;
+let userReduced=false;try{userReduced=localStorage.getItem('doloria-reduced-motion')==='true'}catch{}
+let still=mq.matches||userReduced,target=0,current=0,last=performance.now(),frameId=0;
+const clamp=x=>Math.max(0,Math.min(1,x)),lastChapter=chapters.length-1;
+function draw(p){photo.style.transform=still?'none':`scale(${1.02+Math.sin(p/lastChapter*Math.PI)*.055})`;const pressure=clamp(1-Math.abs(p-2)/2.4);document.body.style.setProperty('--pressure',pressure);document.body.style.setProperty('--signal',.25+pressure*.5);thoughts.forEach((el,i)=>{el.style.opacity=still?'0':clamp((.85-Math.abs(p-[1.2,3,3.8][i]))/.4)})}
+function measure(){document.body.classList.toggle('in-professional',professional.getBoundingClientRect().top<100);target=0;const anchor=innerHeight*.2;chapters.forEach((chapter,i)=>{const rect=chapter.getBoundingClientRect();if(rect.top<=anchor)target=Math.min(lastChapter,i+clamp((anchor-rect.top)/rect.height))});step.textContent=`${String(Math.min(chapters.length,Math.floor(target)+1)).padStart(2,'0')} / ${String(chapters.length).padStart(2,'0')}`;bar.style.width=target/lastChapter*100+'%';if(still)draw(target)}
+function frame(now){frameId=0;if(still||document.hidden)return;const dt=Math.min(.05,(now-last)/1000);last=now;current+=(target-current)*(1-Math.exp(-dt*3.5));draw(current);frameId=requestAnimationFrame(frame)}
+function run(){cancelAnimationFrame(frameId);frameId=0;last=performance.now();if(!still&&!document.hidden)frameId=requestAnimationFrame(frame)}
+function mode(){still=mq.matches||userReduced;document.documentElement.classList.toggle('still',still);button.setAttribute('aria-pressed',String(still));button.disabled=mq.matches;button.textContent=mq.matches?'Animations réduites par votre appareil':still?'Animations réduites':'Réduire les mouvements';current=target;draw(target);run()}
+button.addEventListener('click',()=>{if(mq.matches)return;userReduced=!userReduced;try{localStorage.setItem('doloria-reduced-motion',String(userReduced))}catch{}mode()});mq.addEventListener('change',mode);addEventListener('scroll',measure,{passive:true});addEventListener('resize',measure);document.addEventListener('visibilitychange',run);measure();mode();
+})();
