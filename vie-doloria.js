@@ -22,14 +22,10 @@ function render(){
 $('previous').addEventListener('click',()=>{const d=new Date(year,month-1,1);year=d.getFullYear();month=d.getMonth();render();});$('next').addEventListener('click',()=>{const d=new Date(year,month+1,1);year=d.getFullYear();month=d.getMonth();render();});$('all-events').addEventListener('click',()=>{selected=null;render();showEvents();});
 const failed=typeof data.erreurEvenements==='boolean'?data.erreurEvenements:!!data.erreur;
 const upcoming=validEvents.some(e=>e.date>=todayKey),calendar=$('calendar-panel');
-calendar.hidden=failed||!validEvents.length;calendar.open=upcoming&&!failed;
+calendar.hidden=failed;calendar.open=!failed;
 $('agenda-interactive').classList.toggle('agenda-compact',!upcoming||failed);
 $('agenda-contact').hidden=upcoming&&!failed;
 if(upcoming){const first=date(validEvents.find(e=>e.date>=todayKey).date);year=first.getFullYear();month=first.getMonth();}
 $('agenda-interactive').hidden=false;render();showEvents();
-const stories=$('stories');const validNews=news.filter(n=>n&&date(n.date)&&typeof n.titre==='string').sort((a,b)=>b.date.localeCompare(a.date));
 if(failed)$('event-status').textContent='Le chargement des rendez-vous est momentanément indisponible. Réessayez ou contactez Doloria.';
-if(data.erreurNouvelles)stories.append(node('p','Le chargement des nouvelles est momentanément indisponible. Réessayez plus tard.', 'empty'));
-else if(!validNews.length)stories.append(node('p','Les premières nouvelles et photos de l’association seront partagées ici.', 'empty'));
-for(const n of validNews){const article=node('article',null,'story'),url=safeURL(n.photo);if(url&&!url.startsWith('mailto:')){const img=node('img');img.src=url;img.alt=n.descriptionPhoto||'';img.loading='lazy';img.addEventListener('error',()=>{img.remove();});article.append(img);}const time=node('time',label(n.date));time.dateTime=n.date;article.append(time,node('h3',n.titre),node('p',n.texte||''));for(const photo of Array.isArray(n.galerie)?n.galerie:[]){const source=safeURL(photo.photo);if(source&&!source.startsWith('mailto:')){const img=node('img');img.src=source;img.alt=photo.descriptionPhoto||'';img.loading='lazy';article.append(img);}}stories.append(article);}
 })();

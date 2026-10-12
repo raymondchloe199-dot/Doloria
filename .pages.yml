@@ -7,7 +7,9 @@
       "jpeg",
       "png",
       "webp",
-      "pdf"
+      "pdf",
+      "mp4",
+      "webm"
     ],
     "rename": "safe"
   },
@@ -121,7 +123,7 @@
     },
     {
       "name": "nouvelles",
-      "label": "Nouvelles · Photos et récits",
+      "label": "Journal de Doloria",
       "type": "file",
       "path": "cms-nouvelles.json",
       "format": "json",
@@ -214,6 +216,23 @@
                   "required": true
                 }
               ]
+            },
+            {
+              "name": "une",
+              "label": "Mettre à la une",
+              "type": "boolean",
+              "default": false,
+              "description": "Si plusieurs articles sont cochés, le plus récent est placé à la une."
+            },
+            {
+              "name": "categorie",
+              "label": "Rubrique (projet, annonce, partenariat…)",
+              "type": "string"
+            },
+            {
+              "name": "resume",
+              "label": "Résumé pour le journal",
+              "type": "text"
             }
           ]
         }
@@ -298,6 +317,22 @@
             {
               "name": "lienTexte",
               "label": "Texte du lien",
+              "type": "string"
+            },
+            {
+              "name": "atelier",
+              "label": "Afficher aussi dans Ateliers et rencontres",
+              "type": "boolean",
+              "default": false
+            },
+            {
+              "name": "affiche",
+              "label": "Affiche de l’atelier",
+              "type": "image"
+            },
+            {
+              "name": "descriptionAffiche",
+              "label": "Description de l’affiche",
               "type": "string"
             }
           ]
@@ -1694,21 +1729,6 @@
           "name": "t013",
           "label": "Les projets en cours et les moments partagés, pour découvrir concrètement la vie de D",
           "type": "text"
-        },
-        {
-          "name": "t014",
-          "label": "Une envie de participer ?",
-          "type": "text"
-        },
-        {
-          "name": "t015",
-          "label": "Une question sur un atelier, un besoin d’adaptation ou une idée à partager ? Écrivez-nous pour …",
-          "type": "text"
-        },
-        {
-          "name": "t016",
-          "label": "Échanger avec Doloria ↗",
-          "type": "text"
         }
       ]
     },
@@ -1881,6 +1901,117 @@
               "name": "lien",
               "label": "Lien de consultation ou page du livre",
               "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "albums",
+      "label": "Moments à partager · Albums",
+      "type": "file",
+      "path": "cms-albums.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "elements",
+          "label": "Albums par événement",
+          "type": "object",
+          "list": {
+            "collapsible": {
+              "collapsed": true,
+              "summary": "{titre}"
+            }
+          },
+          "fields": [
+            {
+              "name": "publie",
+              "label": "Afficher sur le site",
+              "type": "boolean",
+              "default": false,
+              "description": "Les fichiers du dépôt sont publics, même pour un contenu non affiché. Publier uniquement des médias autorisés."
+            },
+            {
+              "name": "titre",
+              "label": "Nom de l’événement",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "date",
+              "label": "Date",
+              "type": "date",
+              "options": {
+                "format": "yyyy-MM-dd",
+                "time": false
+              }
+            },
+            {
+              "name": "description",
+              "label": "Présentation de l’album",
+              "type": "text"
+            },
+            {
+              "name": "medias",
+              "label": "Photos, vidéos et témoignages",
+              "type": "object",
+              "list": {
+                "collapsible": {
+                  "collapsed": true,
+                  "summary": "{legende}"
+                }
+              },
+              "fields": [
+                {
+                  "name": "photo",
+                  "label": "Photo ou couverture vidéo",
+                  "type": "image"
+                },
+                {
+                  "name": "descriptionPhoto",
+                  "label": "Description de l’image",
+                  "type": "text"
+                },
+                {
+                  "name": "video",
+                  "label": "Vidéo MP4 ou WebM",
+                  "type": "file",
+                  "options": {
+                    "extensions": [
+                      "mp4",
+                      "webm"
+                    ]
+                  }
+                },
+                {
+                  "name": "legende",
+                  "label": "Légende",
+                  "type": "string"
+                },
+                {
+                  "name": "format",
+                  "label": "Format dans l’album",
+                  "type": "select",
+                  "options": {
+                    "values": [
+                      "naturel",
+                      "portrait",
+                      "paysage",
+                      "carre"
+                    ]
+                  }
+                },
+                {
+                  "name": "temoignage",
+                  "label": "Témoignage ou retour",
+                  "type": "text"
+                },
+                {
+                  "name": "auteur",
+                  "label": "Signature (avec accord de la personne)",
+                  "type": "string"
+                }
+              ]
             }
           ]
         }
