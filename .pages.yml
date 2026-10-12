@@ -1533,21 +1533,6 @@
           "type": "text"
         },
         {
-          "name": "intro_4",
-          "label": "Pour vous et vos proches : éclairer des expériences parfois difficiles à expliquer et",
-          "type": "text"
-        },
-        {
-          "name": "intro_5",
-          "label": "Pour les professionnels et les étudiants : découvrir des supports accessibles qui rel",
-          "type": "text"
-        },
-        {
-          "name": "intro_6",
-          "label": "Ces contenus apportent des repères généraux. Ils ne remplacent pas un avis médical ad",
-          "type": "text"
-        },
-        {
           "name": "infographies_titre",
           "label": "Les infographies de Doloria",
           "type": "text"
@@ -1565,16 +1550,6 @@
         {
           "name": "livrets_intro",
           "label": "Des livrets consacrés à la neurostimulation médullaire et à la douleur neuropathique.",
-          "type": "text"
-        },
-        {
-          "name": "contact_titre",
-          "label": "Vous cherchez une autre ressource ?",
-          "type": "text"
-        },
-        {
-          "name": "contact_texte",
-          "label": "Dites-nous ce que vous cherchez : nous examinerons les ressources et les pistes d’ori",
           "type": "text"
         },
         {
@@ -1812,8 +1787,32 @@
             },
             {
               "name": "lien",
-              "label": "Lien de consultation ou page du livre",
+              "label": "Lien vers la page de l’éditeur",
               "type": "string"
+            },
+            {
+              "name": "auteur",
+              "label": "Auteur ou autrice",
+              "type": "string"
+            },
+            {
+              "name": "public",
+              "label": "Public concerné (facultatif)",
+              "type": "text"
+            },
+            {
+              "name": "categorie",
+              "label": "Thème (pour les futurs filtres)",
+              "type": "select",
+              "options": {
+                "values": [
+                  "Douleur et santé",
+                  "Psychologie",
+                  "Témoignages",
+                  "Professionnels",
+                  "Autres"
+                ]
+              }
             }
           ]
         }

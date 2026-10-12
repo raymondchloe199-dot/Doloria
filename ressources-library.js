@@ -26,6 +26,13 @@
  const preview=new URLSearchParams(location.search).get('apercu')==='1';
  function el(tag,text){const node=document.createElement(tag);if(text)node.textContent=text;return node;}
  function url(value){if(typeof value!=='string'||!value.trim())return null;try{const u=new URL(value,location.href);return ['https:','http:'].includes(u.protocol)?u.href:null;}catch{return null;}}
+
+ const dialog=document.getElementById('book-dialog'),detail=document.getElementById('book-detail');let bookOpener=null;
+ function closeBook(){dialog.close();detail.replaceChildren();bookOpener?.focus();}
+ document.getElementById('book-close').addEventListener('click',closeBook);dialog.addEventListener('cancel',e=>{e.preventDefault();closeBook();});
+ function openBook(item,button){bookOpener=button;detail.replaceChildren();const title=el('h2',item.titre||'Ouvrage');title.id='book-dialog-title';detail.append(title);if(item.auteur)detail.append(el('p',item.auteur));const image=url(item.image);if(image){const img=el('img');img.src=image;img.alt=item.descriptionImage||'';detail.append(img);}for(const k of ['description','public','transcription','sources'])if(item[k])detail.append(el('p',item[k]));const href=url(item.lien);if(href){const a=el('a','Découvrir auprès de l’éditeur');a.href=href;detail.append(a);}const file=url(item.fichier);if(file){const a=el('a','Consulter le document');a.href=file;detail.append(a);}dialog.showModal();document.getElementById('book-close').focus();}
+ function booklets(){const t=document.getElementById('livrets-list'),c=document.getElementById('booklet-controls'),prev=document.getElementById('booklet-prev'),next=document.getElementById('booklet-next'),pos=document.getElementById('booklet-position');let i=0;function update(){const cards=[...t.children];if(!cards.length)return;i=cards.reduce((best,x,n)=>Math.abs(x.getBoundingClientRect().left-t.getBoundingClientRect().left)<Math.abs(cards[best].getBoundingClientRect().left-t.getBoundingClientRect().left)?n:best,0);c.hidden=cards.length<2;prev.disabled=i===0;next.disabled=i===cards.length-1;pos.textContent=(i+1)+' / '+cards.length;}function go(step){const card=t.children[Math.max(0,Math.min(t.children.length-1,i+step))];if(card)t.scrollBy({left:card.getBoundingClientRect().left-t.getBoundingClientRect().left,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches||document.documentElement.classList.contains('no-motion')?'instant':'smooth'});}prev.addEventListener('click',()=>go(-1));next.addEventListener('click',()=>go(1));t.addEventListener('keydown',e=>{if(e.target===t&&['ArrowLeft','ArrowRight'].includes(e.key)){e.preventDefault();go(e.key==='ArrowRight'?1:-1);}});t.addEventListener('scroll',update,{passive:true});addEventListener('resize',update);update();}
+
  async function load(name){
   const status=document.getElementById(`${name}-status`),list=document.getElementById(`${name}-list`);
   try{
@@ -35,12 +42,16 @@
    status.textContent=items.length?'':name==='lectures'?'Les livres et magazines seront ajoutés ici prochainement.':'Les premiers livrets seront disponibles ici prochainement.';
    for(const item of items){
     const article=el('article');article.className='publication';
+    if(name==='lectures'){const button=el('button');button.type='button';button.setAttribute('aria-haspopup','dialog');const image=url(item.image);if(image){const img=el('img');img.src=image;img.alt=item.descriptionImage||'';img.loading='lazy';button.append(img);}button.append(el('h3',item.titre||'Ouvrage'));if(item.auteur)button.append(el('span',item.auteur));button.addEventListener('click',()=>openBook(item,button));article.dataset.category=item.categorie||'';article.append(button);list.append(article);continue;}
+
     const image=url(item.image);if(image){const img=el('img');img.src=image;img.alt=item.descriptionImage||`Couverture : ${item.titre||'document'}`;img.loading='lazy';article.append(img);}
     const body=el('div');body.append(el('h3',item.titre||'Document'));if(item.description)body.append(el('p',item.description));
     const href=url(item.fichier)||url(item.lien);if(href){const a=el('a','Consulter le document →');a.href=href;body.append(a);}
     if(item.transcription){const details=el('details');details.append(el('summary','En savoir plus'),el('p',item.transcription));body.append(details);}
     if(item.sources)body.append(el('p',`Références : ${item.sources}`));article.append(body);list.append(article);
    }
+   if(name==='livrets')booklets();
+   if(name==='lectures'){const categories=[...new Set(items.map(x=>x.categorie).filter(Boolean))];if(items.length>=8&&categories.length>=2){const filters=document.getElementById('book-filters'),select=document.getElementById('book-category');filters.hidden=false;for(const c of categories){const o=el('option',c);o.value=c;select.append(o);}select.addEventListener('change',()=>{for(const card of list.children)card.hidden=!!select.value&&card.dataset.category!==select.value;});}}
   }catch{status.textContent='Le chargement est momentanément indisponible. Réessayez ou contactez Doloria.';}
  }
  load('lectures');load('livrets');

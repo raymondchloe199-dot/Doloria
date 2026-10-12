@@ -18,7 +18,7 @@
   window.DOLORIA_CONTENUS={evenements:results[0].status==='fulfilled'?published(results[0].value):[],nouvelles:results[1].status==='fulfilled'?published(results[1].value):[],erreur:results.some(r=>r.status==='rejected'),erreurEvenements:results[0].status==='rejected',erreurNouvelles:results[1].status==='rejected'};
  }):Promise.resolve();
  if(slug==='ressources')read('infographies').then(data=>{
-  const items=published(data),target=document.getElementById('cms-resources');document.getElementById('resources-status').textContent=items.length?`${items.length} ressource(s) disponible(s).`:'Les premières infographies seront publiées ici.';
+  const items=published(data),target=document.getElementById('cms-resources');document.getElementById('resources-status').textContent=items.length?'':'Les premières infographies seront publiées ici.';
   for(const item of items){
    const title=item.titre||'Infographie',card=element('article');card.className='card';card.append(element('h3',title));
    const image=safe(item.image),file=safe(item.fichier);
