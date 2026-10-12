@@ -1161,7 +1161,7 @@
         },
         {
           "name": "but_suite",
-          "label": "Garder une place pour ses choix et ses projets.",
+          "label": "Titre · Vous ne voyez rien ?",
           "type": "text"
         },
         {
@@ -1312,6 +1312,41 @@
         {
           "name": "description_page",
           "label": "Pourquoi Doloria existe : soutenir la qualité de vie, les choix et les projets des pe",
+          "type": "text"
+        },
+        {
+          "name": "but_origine",
+          "label": "Présentation · Pourquoi Doloria",
+          "type": "text"
+        },
+        {
+          "name": "but_projets",
+          "label": "Présentation · Nos intentions",
+          "type": "text"
+        },
+        {
+          "name": "phrase_phare",
+          "label": "Présentation · Phrase phare",
+          "type": "text"
+        },
+        {
+          "name": "histoire_10",
+          "label": "Histoire · Paragraphe 10",
+          "type": "text"
+        },
+        {
+          "name": "histoire_11",
+          "label": "Histoire · Paragraphe 11",
+          "type": "text"
+        },
+        {
+          "name": "histoire_12",
+          "label": "Histoire · Paragraphe 12",
+          "type": "text"
+        },
+        {
+          "name": "histoire_13",
+          "label": "Histoire · Paragraphe 13",
           "type": "text"
         }
       ]
