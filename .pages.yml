@@ -324,7 +324,8 @@
         {
           "name": "t001",
           "label": "Association suisse · Douleur persistante et maladie chronique",
-          "type": "text"
+          "type": "text",
+          "description": "Texte affiché sur la page d’accueil."
         },
         {
           "name": "t002",
@@ -349,12 +350,14 @@
         {
           "name": "t006",
           "label": "Des ressources pour comprendre. Des projets pour participer.",
-          "type": "text"
+          "type": "text",
+          "description": "Texte affiché sur la page d’accueil."
         },
         {
           "name": "t007",
           "label": "Doloria crée des supports d’information et développe des rencontres, des ateliers et ",
-          "type": "text"
+          "type": "text",
+          "description": "Texte affiché sur la page d’accueil."
         },
         {
           "name": "t008",
@@ -399,27 +402,32 @@
         {
           "name": "t016",
           "label": "Mieux comprendre ce que l’on traverse, participer aux décisions et retrouver de la marge de man…",
-          "type": "text"
+          "type": "text",
+          "description": "Texte affiché sur la page d’accueil."
         },
         {
           "name": "t017",
           "label": "01 — Mettre du sens",
-          "type": "text"
+          "type": "text",
+          "description": "Texte affiché sur la page d’accueil."
         },
         {
           "name": "t018",
           "label": "Comprendre ce qui se passe",
-          "type": "text"
+          "type": "text",
+          "description": "Texte affiché sur la page d’accueil."
         },
         {
           "name": "t019",
           "label": "Sortir des raccourcis. Trouver des mots et des repères pour mieux comprendre son expérience de …",
-          "type": "text"
+          "type": "text",
+          "description": "Texte affiché sur la page d’accueil."
         },
         {
           "name": "t020",
           "label": "02 — Trouver des repères",
-          "type": "text"
+          "type": "text",
+          "description": "Texte affiché sur la page d’accueil."
         },
         {
           "name": "t021",
@@ -459,12 +467,14 @@
         {
           "name": "t028",
           "label": "Les Petits Courageux, le pôle enfants et adolescents de Doloria, prépare des séjours ",
-          "type": "text"
+          "type": "text",
+          "description": "Texte affiché sur la page d’accueil."
         },
         {
           "name": "t029",
           "label": "Rencontrer d’autres jeunes, découvrir, jouer et se fabriquer des souvenirs : une aven",
-          "type": "text"
+          "type": "text",
+          "description": "Texte affiché sur la page d’accueil."
         },
         {
           "name": "t030",
@@ -474,116 +484,6 @@
         {
           "name": "t031",
           "label": "Vivre avec une douleur chronique ressemble rarement à une ligne droite.",
-          "type": "text"
-        },
-        {
-          "name": "t032",
-          "label": "On avance. Parfois, on a l’impression de reculer. Certaines expériences peuvent se ressembler, …",
-          "type": "text"
-        },
-        {
-          "name": "t033",
-          "label": "Il n’existe pas une bonne manière d’avancer : chacun construit son chemin, à son rythme.",
-          "type": "text"
-        },
-        {
-          "name": "t034",
-          "label": "Changer de perspective",
-          "type": "text"
-        },
-        {
-          "name": "t035",
-          "label": "Enfants, adolescents, parents et proches : découvrez le projet de séjours, ce qui se ",
-          "type": "text"
-        },
-        {
-          "name": "t036",
-          "label": "Vous accompagnez des jeunes ou représentez une école, une association ou une structur",
-          "type": "text"
-        },
-        {
-          "name": "t037",
-          "label": "Doloria ouvre un autre chapitre",
-          "type": "text"
-        },
-        {
-          "name": "t038",
-          "label": "Les Petits",
-          "type": "text"
-        },
-        {
-          "name": "t039",
-          "label": "Courageux.",
-          "type": "text"
-        },
-        {
-          "name": "t040",
-          "label": "Entre. Tu as ta place.",
-          "type": "text"
-        },
-        {
-          "name": "t041",
-          "label": "Les Petits Courageux préparent des aventures adaptées aux enfants et adolescents vivant avec un…",
-          "type": "text"
-        },
-        {
-          "name": "t042",
-          "label": "Des séjours et des expériences pensés pour leur permettre de rencontrer d’autres jeunes, partag…",
-          "type": "text"
-        },
-        {
-          "name": "t043",
-          "label": "Ici, on vient d’abord vivre quelque chose ensemble.",
-          "type": "text"
-        },
-        {
-          "name": "t044",
-          "label": "Ouvre la porte des Petits Courageux",
-          "type": "text"
-        },
-        {
-          "name": "t045",
-          "label": "L’histoire ne s’arrête pas ici",
-          "type": "text"
-        },
-        {
-          "name": "t046",
-          "label": "Il y a une place",
-          "type": "text"
-        },
-        {
-          "name": "t047",
-          "label": "pour chacun.",
-          "type": "text"
-        },
-        {
-          "name": "t048",
-          "label": "Derrière cette porte se trouvent des rencontres, des expériences et des aventures à vivre à son…",
-          "type": "text"
-        },
-        {
-          "name": "t049",
-          "label": "Enseignant, éducateur, animateur, professionnel de santé, association, institution ou structure…",
-          "type": "text"
-        },
-        {
-          "name": "t050",
-          "label": "Entrer dans Les Petits Courageux",
-          "type": "text"
-        },
-        {
-          "name": "t051",
-          "label": "Enfants & ados · Familles · Accompagnants · Structures",
-          "type": "text"
-        },
-        {
-          "name": "t052",
-          "label": "À chacun son entrée",
-          "type": "text"
-        },
-        {
-          "name": "t053",
-          "label": "Pour toi :",
           "type": "text"
         },
         {
@@ -764,6 +664,41 @@
         {
           "name": "t089",
           "label": "Rejoindre Doloria",
+          "type": "text"
+        },
+        {
+          "name": "t077",
+          "label": "Accueil · Notre démarche",
+          "type": "text"
+        },
+        {
+          "name": "t078",
+          "label": "Accueil · Se rassembler",
+          "type": "text"
+        },
+        {
+          "name": "t079",
+          "label": "Accueil · Invitation",
+          "type": "text"
+        },
+        {
+          "name": "t080",
+          "label": "Petits Courageux · Construire ensemble",
+          "type": "text"
+        },
+        {
+          "name": "t081",
+          "label": "Pause · Trouver un équilibre",
+          "type": "text"
+        },
+        {
+          "name": "t082",
+          "label": "Pause · Se réinventer",
+          "type": "text"
+        },
+        {
+          "name": "t083",
+          "label": "Pause · Retrouver du pouvoir d’agir",
           "type": "text"
         }
       ]
