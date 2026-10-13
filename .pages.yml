@@ -756,423 +756,228 @@
           "type": "text"
         },
         {
-          "name": "t001",
+          "name": "pole",
           "label": "Le pôle enfants et adolescents de Doloria",
           "type": "text"
         },
         {
-          "name": "t002",
-          "label": "Entre.",
+          "name": "titre",
+          "label": "Entre. Tu as ta place.",
           "type": "text"
         },
         {
-          "name": "t003",
-          "label": "Tu as ta place.",
+          "name": "soustitre",
+          "label": "Ici, tu peux simplement être un enfant.",
           "type": "text"
         },
         {
-          "name": "t004",
-          "label": "Un projet de séjours adaptés aux enfants et adolescents vivant avec une maladie chron",
+          "name": "bienvenue1",
+          "label": "Rire, jouer, découvrir, rencontrer d’autres enfants, partir à l’aventure et te créer ",
           "type": "text"
         },
         {
-          "name": "t005",
+          "name": "bienvenue2",
+          "label": "Quand on grandit avec une douleur ou une maladie chronique, certaines choses qui para",
+          "type": "text"
+        },
+        {
+          "name": "bienvenue3",
+          "label": "Mais la maladie peut aussi faire partie du quotidien d’un enfant autrement, lorsqu’el",
+          "type": "text"
+        },
+        {
+          "name": "bienvenue4",
+          "label": "Avec Les Petits Courageux, nous souhaitons développer des activités et des aventures ",
+          "type": "text"
+        },
+        {
+          "name": "bienvenue5",
+          "label": "Des expériences imaginées en tenant compte des envies, des besoins et des possibilité",
+          "type": "text"
+        },
+        {
+          "name": "bienvenue6",
+          "label": "Parce qu’avant tout, il y a des enfants qui ont envie de vivre leur enfance.",
+          "type": "text"
+        },
+        {
+          "name": "bienvenue7",
           "label": "Ici, on vient d’abord vivre quelque chose ensemble.",
           "type": "text"
         },
         {
-          "name": "t006",
-          "label": "Je suis enfant / ado",
+          "name": "aventureTitre",
+          "label": "Et si on imaginait l’aventure ensemble ?",
           "type": "text"
         },
         {
-          "name": "t007",
-          "label": "J’accompagne mon enfant",
+          "name": "aventureIntro",
+          "label": "Chez Les Petits Courageux, nous souhaitons imaginer différentes façons de se retrouve",
           "type": "text"
         },
         {
-          "name": "t008",
-          "label": "J’accompagne des jeunes",
+          "name": "aventures-cartes0title",
+          "label": "Partir à l’aventure",
           "type": "text"
         },
         {
-          "name": "t009",
-          "label": "Je représente une structure",
+          "name": "aventures-cartes0sub",
+          "label": "Séjours et vacances",
           "type": "text"
         },
         {
-          "name": "t010",
-          "label": "Notre raison d’être",
+          "name": "aventures-cartes0body",
+          "label": "Changer d’air, découvrir de nouveaux endroits, partager la vie de groupe et vivre des",
           "type": "text"
         },
         {
-          "name": "t011",
-          "label": "Des séjours pour vivre",
+          "name": "aventures-cartes1title",
+          "label": "Profiter de ses vacances",
           "type": "text"
         },
         {
-          "name": "t012",
-          "label": "l’aventure ensemble.",
+          "name": "aventures-cartes1sub",
+          "label": "Accueils de loisirs",
           "type": "text"
         },
         {
-          "name": "t013",
-          "label": "Les Petits Courageux est le pôle enfants et adolescents de l’Association Suisse Doloria (ASD).",
+          "name": "aventures-cartes1body",
+          "label": "Des journées pour jouer, créer, expérimenter et participer à des activités, dans un e",
           "type": "text"
         },
         {
-          "name": "t014",
-          "label": " Son projet : permettre aux jeunes de participer aux loisirs et à la vie de groupe, a",
+          "name": "aventures-cartes2title",
+          "label": "Se retrouver autrement",
           "type": "text"
         },
         {
-          "name": "t015",
-          "label": "Les Petits Courageux prépare des séjours adaptés pour partir, découvrir et partager d",
+          "name": "aventures-cartes2sub",
+          "label": "Sorties et activités",
           "type": "text"
         },
         {
-          "name": "t016",
-          "label": "sans que la maladie ou la douleur définisse toute l’expérience.",
+          "name": "aventures-cartes2body",
+          "label": "Des occasions de se rencontrer, de découvrir de nouvelles choses et de partager des m",
           "type": "text"
         },
         {
-          "name": "t017",
-          "label": "Ici, l’objectif n’est pas de créer un séjour « autour de la maladie ». C’est de permettre à cha…",
+          "name": "aventures-cartes3title",
+          "label": "Explorer à son rythme",
           "type": "text"
         },
         {
-          "name": "t018",
-          "label": "vivre une vraie aventure, avec les autres.",
+          "name": "aventures-cartes3body",
+          "label": "Chaque enfant a ses envies, ses capacités, ses besoins et sa manière de participer. N",
           "type": "text"
         },
         {
-          "name": "t019",
-          "label": "Se rencontrer.",
+          "name": "aventures-cartes4title",
+          "label": "Préparer ensemble",
           "type": "text"
         },
         {
-          "name": "t020",
-          "label": "Partager des moments avec d’autres jeunes, créer des liens, rire, découvrir, participer à la vi…",
+          "name": "aventures-cartes4body",
+          "label": "Parce qu’un accueil inclusif ne s’improvise pas, nous souhaitons prendre le temps d’é",
           "type": "text"
         },
         {
-          "name": "t021",
-          "label": "Les Petits Courageux veut offrir un espace où chacun peut être là",
+          "name": "futurTitre",
+          "label": "Les premières aventures se préparent",
           "type": "text"
         },
         {
-          "name": "t022",
-          "label": "comme enfant ou adolescent avant tout",
+          "name": "futurTexte",
+          "label": "Les projets des Petits Courageux prennent forme. Aucune inscription n’est ouverte pou",
           "type": "text"
         },
         {
-          "name": "t023",
-          "label": ", sans avoir à raconter ou justifier son histoire médicale pour trouver sa place.",
-          "type": "text"
-        },
-        {
-          "name": "t024",
-          "label": "Parce que l’inclusion, ce n’est pas seulement pouvoir participer.",
-          "type": "text"
-        },
-        {
-          "name": "t025",
-          "label": "C’est pouvoir appartenir au groupe, vivre les mêmes moments et repartir avec des souvenirs à so…",
-          "type": "text"
-        },
-        {
-          "name": "t026",
-          "label": "Explorer à son rythme.",
-          "type": "text"
-        },
-        {
-          "name": "t027",
-          "label": "Imaginer des activités avec plusieurs manières de participer, des temps de repos et la possibil…",
-          "type": "text"
-        },
-        {
-          "name": "t028",
-          "label": "Préparer ensemble.",
-          "type": "text"
-        },
-        {
-          "name": "t029",
-          "label": "Construire le projet avec les enfants, les familles et les professionnels pour tenir compte des…",
-          "type": "text"
-        },
-        {
-          "name": "t030",
-          "label": "Le projet se construit.",
-          "type": "text"
-        },
-        {
-          "name": "t031",
-          "label": " Aucun séjour n’est encore annoncé et les inscriptions ne sont pas ouvertes. Les date",
-          "type": "text"
-        },
-        {
-          "name": "t032",
-          "label": "Échanger sur le projet de séjours ↗",
-          "type": "text"
-        },
-        {
-          "name": "t033",
-          "label": "Pour les enfants & les ados",
-          "type": "text"
-        },
-        {
-          "name": "t034",
-          "label": "L’aventure commence",
-          "type": "text"
-        },
-        {
-          "name": "t035",
-          "label": "aussi avec toi !",
-          "type": "text"
-        },
-        {
-          "name": "t036",
-          "label": "En attendant les prochaines aventures des Petits Courageux, voici quelques invitations à explor…",
-          "type": "text"
-        },
-        {
-          "name": "t037",
-          "label": "Ce ne sont pas les activités d’un séjour annoncé, mais de petites idées à vivre seul, en famill…",
-          "type": "text"
-        },
-        {
-          "name": "t038",
-          "label": "à ton rythme et selon tes envies.",
-          "type": "text"
-        },
-        {
-          "name": "t039",
-          "label": "Parce qu’une aventure peut commencer n’importe où.",
-          "type": "text"
-        },
-        {
-          "name": "t040",
-          "label": "L’automne — Qu’y a-t-il dans ton sac ?",
-          "type": "text"
-        },
-        {
-          "name": "t041",
-          "label": "Imagine un sac qui peut contenir autre chose que des objets. Tu peux y mettre une chanson, une …",
-          "type": "text"
-        },
-        {
-          "name": "t042",
-          "label": "Sur une feuille, dessine ou écris trois choses que tu aimerais emporter. Tu peux aussi simpleme…",
-          "type": "text"
-        },
-        {
-          "name": "t043",
-          "label": "L’hiver — Une cabane à ton idée",
-          "type": "text"
-        },
-        {
-          "name": "t044",
-          "label": "Dans cette cabane, c’est toi qui choisis : de la lumière ou de la pénombre, du calme ou une mus…",
-          "type": "text"
-        },
-        {
-          "name": "t045",
-          "label": "Qu’est-ce qui te ferait du bien maintenant ? Si tu veux, tu peux le dire à une personne qui t’a…",
-          "type": "text"
-        },
-        {
-          "name": "t046",
-          "label": "Le printemps — Des mots, même inventés",
-          "type": "text"
-        },
-        {
-          "name": "t047",
-          "label": "Parfois, « ça va » et « ça ne va pas » ne racontent pas tout. Si ta journée était un paysage, à…",
-          "type": "text"
-        },
-        {
-          "name": "t048",
-          "label": "Raconte, dessine ou invente ton propre mot. Il n’y a pas de mauvaise réponse, et tu peux choisi…",
-          "type": "text"
-        },
-        {
-          "name": "t049",
-          "label": "L’été — Une envie à ta taille",
-          "type": "text"
-        },
-        {
-          "name": "t050",
-          "label": "Écouter une histoire, envoyer un message à quelqu’un, regarder dehors… Quelle petite chose te f…",
-          "type": "text"
-        },
-        {
-          "name": "t051",
-          "label": "Tu peux imaginer une version plus courte, la faire avec de l’aide, ou la garder pour une autre …",
-          "type": "text"
-        },
-        {
-          "name": "t052",
-          "label": "On s’appelle",
-          "type": "text"
-        },
-        {
-          "name": "t053",
-          "label": "Les Petits Courageux",
-          "type": "text"
-        },
-        {
-          "name": "t054",
-          "label": ", mais tu n’as pas à être courageux tout le temps. Tu peux demander de l’aide et dire stop.",
-          "type": "text"
-        },
-        {
-          "name": "t055",
+          "name": "parentsLabel",
           "label": "Parents & proches",
           "type": "text"
         },
         {
-          "name": "t056",
-          "label": "Préparer un départ.",
+          "name": "parentsTitre",
+          "label": "Pour votre enfant. Et aussi pour vous.",
           "type": "text"
         },
         {
-          "name": "t057",
-          "label": "Avec vous, avec lui.",
+          "name": "parentsTexte1",
+          "label": "Être parent, c’est accompagner son enfant dans ses découvertes, ses envies et ses ave",
           "type": "text"
         },
         {
-          "name": "t058",
-          "label": "Un séjour adapté se prépare avec l’enfant et ses proches. Avant toute inscription, il faudra po…",
+          "name": "parentsTexte2",
+          "label": "Confier son enfant, particulièrement lorsqu’il a des besoins spécifiques, peut aussi ",
           "type": "text"
         },
         {
-          "name": "t059",
-          "label": "Proposer.",
+          "name": "parentsTexte3",
+          "label": "Chez Les Petits Courageux, nous souhaitons prendre le temps de comprendre votre réali",
           "type": "text"
         },
         {
-          "name": "t060",
-          "label": "Qu’aimerait-il vivre pendant un séjour ? Qu’est-ce qui lui donnerait envie de partir, et qu’est…",
+          "name": "parentsTexte4",
+          "label": "Ensemble, nous chercherons les possibilités d’accueil, les ressources et les adaptati",
           "type": "text"
         },
         {
-          "name": "t061",
-          "label": "Écouter.",
+          "name": "parentsTexte5",
+          "label": "Et lorsque c’est possible, ces temps d’accueil pourront aussi vous permettre de vous ",
           "type": "text"
         },
         {
-          "name": "t062",
-          "label": "Repérer ensemble ce qui aide au quotidien : les pauses, les repères rassurants, la manière de d…",
+          "name": "parentsTexte6",
+          "label": "Parce que prendre soin de soi et permettre à son enfant de vivre ses propres aventure",
           "type": "text"
         },
         {
-          "name": "t063",
-          "label": "Adapter.",
+          "name": "principesTitre",
+          "label": "Proposer. Écouter. Adapter.",
           "type": "text"
         },
         {
-          "name": "t064",
-          "label": "Vérifier avec l’équipe les possibilités concrètes d’accueil et d’accompagnement, avant de décid…",
+          "name": "familles-cartes0title",
+          "label": "Proposer",
           "type": "text"
         },
         {
-          "name": "t065",
-          "label": "Pour un premier contact, présentez simplement votre demande. Les informations de santé détaillé…",
+          "name": "familles-cartes0body",
+          "label": "Ouvrir des possibilités de loisirs, de découvertes et de rencontres, en tenant compte",
           "type": "text"
         },
         {
-          "name": "t066",
-          "label": "J’accompagne des jeunes",
+          "name": "familles-cartes1title",
+          "label": "Écouter",
           "type": "text"
         },
         {
-          "name": "t067",
-          "label": "Construire des séjours",
+          "name": "familles-cartes1body",
+          "label": "Prendre en considération la parole de l’enfant, ses envies, ses inquiétudes et ses be",
           "type": "text"
         },
         {
-          "name": "t068",
-          "label": "qui font une place à chacun.",
+          "name": "familles-cartes2title",
+          "label": "Adapter",
           "type": "text"
         },
         {
-          "name": "t069",
-          "label": "Vous travaillez dans la santé, l’éducation, l’animation, le social ou l’accompagnement des enfa…",
+          "name": "familles-cartes2body",
+          "label": "Réfléchir ensemble aux aménagements et aux solutions envisageables, dans le respect d",
           "type": "text"
         },
         {
-          "name": "t070",
-          "label": "Vous accueillez un jeune vivant avec une douleur chronique ou une maladie chronique et vous ne …",
+          "name": "prosTitre",
+          "label": "Vous accompagnez des enfants ou représentez une structure ?",
           "type": "text"
         },
         {
-          "name": "t071",
-          "label": "Doloria prépare une offre d’accompagnement.",
+          "name": "prosTexte",
+          "label": "L’inclusion se construit aussi avec les personnes qui accueillent et accompagnent les",
           "type": "text"
         },
         {
-          "name": "t072",
-          "label": "L’association souhaite transmettre des repères concrets pour mieux comprendre la douleur chroni…",
-          "type": "text"
-        },
-        {
-          "name": "t073",
-          "label": "Ce projet est en préparation : les accompagnements, temps de sensibilisation et formations ne s…",
-          "type": "text"
-        },
-        {
-          "name": "t074",
-          "label": "Échanger avec Doloria ↗",
-          "type": "text"
-        },
-        {
-          "name": "t075",
-          "label": "Je représente une structure",
-          "type": "text"
-        },
-        {
-          "name": "t076",
-          "label": "Rendre l’aventure accessible.",
-          "type": "text"
-        },
-        {
-          "name": "t077",
-          "label": "Construire les réponses ensemble.",
-          "type": "text"
-        },
-        {
-          "name": "t078",
-          "label": "Écoles, structures parascolaires, associations, institutions, camps et structures jeunesse : vo…",
-          "type": "text"
-        },
-        {
-          "name": "t079",
-          "label": "Les expériences de vos équipes peuvent nourrir la future offre de Doloria. Échangeons sur les o…",
-          "type": "text"
-        },
-        {
-          "name": "t080",
-          "label": "L’accompagnement et les formations sont en préparation. Leurs modalités seront définies avec le…",
-          "type": "text"
-        },
-        {
-          "name": "t081",
-          "label": "Parler de notre projet ↗",
-          "type": "text"
-        },
-        {
-          "name": "t082",
-          "label": "Un petit pas, une grande pause,",
-          "type": "text"
-        },
-        {
-          "name": "t083",
-          "label": "un détour… L’histoire reste la tienne.",
-          "type": "text"
-        },
-        {
-          "name": "t084",
-          "label": "← Retrouver Doloria",
+          "name": "citation",
+          "label": "Parce que chaque enfant mérite des histoires à raconter, pas seulement des difficulté",
           "type": "text"
         }
       ]
