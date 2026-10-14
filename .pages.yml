@@ -34,10 +34,10 @@
           "fields": [
             {
               "name": "publie",
-              "label": "Afficher sur le site",
+              "label": "Afficher dans les pages du site (contenu déjà public)",
               "type": "boolean",
               "default": false,
-              "description": "Désactivé : visible seulement en aperçu. Un brouillon enregistré reste dans le dépôt public : aucun contenu confidentiel."
+              "description": "Enregistrer rend ce contenu accessible publiquement dans le dépôt, les fichiers du site et leur historique, même si cette case est décochée. Cette case règle uniquement son affichage dans les pages. Préparer les brouillons confidentiels hors de Pages CMS et du dépôt. Ne jamais enregistrer de dossier médical, de coordonnées privées ou de média sans autorisation de publication."
             },
             {
               "name": "titre",
@@ -141,10 +141,10 @@
           "fields": [
             {
               "name": "publie",
-              "label": "Afficher sur le site",
+              "label": "Afficher dans les pages du site (contenu déjà public)",
               "type": "boolean",
               "default": false,
-              "description": "Désactivé : visible seulement en aperçu. Un brouillon enregistré reste dans le dépôt public : aucun contenu confidentiel."
+              "description": "Enregistrer rend ce contenu accessible publiquement dans le dépôt, les fichiers du site et leur historique, même si cette case est décochée. Cette case règle uniquement son affichage dans les pages. Préparer les brouillons confidentiels hors de Pages CMS et du dépôt. Ne jamais enregistrer de dossier médical, de coordonnées privées ou de média sans autorisation de publication."
             },
             {
               "name": "titre",
@@ -258,10 +258,10 @@
           "fields": [
             {
               "name": "publie",
-              "label": "Afficher sur le site",
+              "label": "Afficher dans les pages du site (contenu déjà public)",
               "type": "boolean",
               "default": false,
-              "description": "Désactivé : visible seulement en aperçu. Un brouillon enregistré reste dans le dépôt public : aucun contenu confidentiel."
+              "description": "Enregistrer rend ce contenu accessible publiquement dans le dépôt, les fichiers du site et leur historique, même si cette case est décochée. Cette case règle uniquement son affichage dans les pages. Préparer les brouillons confidentiels hors de Pages CMS et du dépôt. Ne jamais enregistrer de dossier médical, de coordonnées privées ou de média sans autorisation de publication."
             },
             {
               "name": "titre",
@@ -1532,10 +1532,10 @@
           "fields": [
             {
               "name": "publie",
-              "label": "Afficher sur le site",
+              "label": "Afficher dans les pages du site (contenu déjà public)",
               "type": "boolean",
               "default": false,
-              "description": "Désactivé : visible seulement en aperçu. Un brouillon enregistré reste dans le dépôt public : aucun contenu confidentiel."
+              "description": "Enregistrer rend ce contenu accessible publiquement dans le dépôt, les fichiers du site et leur historique, même si cette case est décochée. Cette case règle uniquement son affichage dans les pages. Préparer les brouillons confidentiels hors de Pages CMS et du dépôt. Ne jamais enregistrer de dossier médical, de coordonnées privées ou de média sans autorisation de publication."
             },
             {
               "name": "titre",
@@ -1643,10 +1643,10 @@
           "fields": [
             {
               "name": "publie",
-              "label": "Afficher sur le site",
+              "label": "Afficher dans les pages du site (contenu déjà public)",
               "type": "boolean",
               "default": false,
-              "description": "Désactivé : visible seulement en aperçu. Un brouillon enregistré reste dans le dépôt public : aucun contenu confidentiel."
+              "description": "Enregistrer rend ce contenu accessible publiquement dans le dépôt, les fichiers du site et leur historique, même si cette case est décochée. Cette case règle uniquement son affichage dans les pages. Préparer les brouillons confidentiels hors de Pages CMS et du dépôt. Ne jamais enregistrer de dossier médical, de coordonnées privées ou de média sans autorisation de publication."
             },
             {
               "name": "titre",
@@ -1730,10 +1730,10 @@
           "fields": [
             {
               "name": "publie",
-              "label": "Afficher sur le site",
+              "label": "Afficher dans les pages du site (contenu déjà public)",
               "type": "boolean",
               "default": false,
-              "description": "Les fichiers du dépôt sont publics, même pour un contenu non affiché. Publier uniquement des médias autorisés."
+              "description": "Enregistrer rend ce contenu accessible publiquement dans le dépôt, les fichiers du site et leur historique, même si cette case est décochée. Cette case règle uniquement son affichage dans les pages. Préparer les brouillons confidentiels hors de Pages CMS et du dépôt. Ne jamais enregistrer de dossier médical, de coordonnées privées ou de média sans autorisation de publication."
             },
             {
               "name": "titre",
