@@ -735,6 +735,36 @@
           "name": "t083",
           "label": "Pause · Retrouver du pouvoir d’agir",
           "type": "text"
+        },
+        {
+          "name": "apres_titre",
+          "label": "Après PAUSE · Titre",
+          "type": "text"
+        },
+        {
+          "name": "apres_1",
+          "label": "Après PAUSE · Paragraphe 1",
+          "type": "text"
+        },
+        {
+          "name": "apres_2",
+          "label": "Après PAUSE · Paragraphe 2",
+          "type": "text"
+        },
+        {
+          "name": "apres_3",
+          "label": "Après PAUSE · Paragraphe 3",
+          "type": "text"
+        },
+        {
+          "name": "apres_4",
+          "label": "Après PAUSE · Paragraphe 4",
+          "type": "text"
+        },
+        {
+          "name": "apres_fin",
+          "label": "Après PAUSE · Conclusion",
+          "type": "text"
         }
       ]
     },
