@@ -1,7 +1,7 @@
 {
   "media": {
     "input": "media",
-    "output": "/Doloria/media",
+    "output": "media",
     "extensions": [
       "jpg",
       "jpeg",
