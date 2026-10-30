@@ -1937,6 +1937,21 @@
           "name": "experience_texte",
           "label": "Experience texte",
           "type": "text"
+        },
+        {
+          "name": "sous_titre",
+          "label": "Sous titre",
+          "type": "text"
+        },
+        {
+          "name": "commande_titre",
+          "label": "Commande titre",
+          "type": "text"
+        },
+        {
+          "name": "commande_texte",
+          "label": "Commande texte",
+          "type": "text"
         }
       ]
     }
