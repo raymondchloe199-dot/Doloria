@@ -1850,6 +1850,95 @@
           ]
         }
       ]
+    },
+    {
+      "name": "neuromodulation",
+      "label": "Page · Neuromodulation",
+      "type": "file",
+      "path": "cms-neuromodulation.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "etape_0_titre",
+          "label": "Etape 0 titre",
+          "type": "text"
+        },
+        {
+          "name": "etape_0_texte",
+          "label": "Etape 0 texte",
+          "type": "text"
+        },
+        {
+          "name": "etape_1_titre",
+          "label": "Etape 1 titre",
+          "type": "text"
+        },
+        {
+          "name": "etape_1_texte",
+          "label": "Etape 1 texte",
+          "type": "text"
+        },
+        {
+          "name": "etape_2_titre",
+          "label": "Etape 2 titre",
+          "type": "text"
+        },
+        {
+          "name": "etape_2_texte",
+          "label": "Etape 2 texte",
+          "type": "text"
+        },
+        {
+          "name": "etape_3_titre",
+          "label": "Etape 3 titre",
+          "type": "text"
+        },
+        {
+          "name": "etape_3_texte",
+          "label": "Etape 3 texte",
+          "type": "text"
+        },
+        {
+          "name": "etape_4_titre",
+          "label": "Etape 4 titre",
+          "type": "text"
+        },
+        {
+          "name": "etape_4_texte",
+          "label": "Etape 4 texte",
+          "type": "text"
+        },
+        {
+          "name": "titre",
+          "label": "Titre",
+          "type": "text"
+        },
+        {
+          "name": "intro",
+          "label": "Intro",
+          "type": "text"
+        },
+        {
+          "name": "quotidien_titre",
+          "label": "Quotidien titre",
+          "type": "text"
+        },
+        {
+          "name": "quotidien_intro",
+          "label": "Quotidien intro",
+          "type": "text"
+        },
+        {
+          "name": "experience_titre",
+          "label": "Experience titre",
+          "type": "text"
+        },
+        {
+          "name": "experience_texte",
+          "label": "Experience texte",
+          "type": "text"
+        }
+      ]
     }
   ]
 }
