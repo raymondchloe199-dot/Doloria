@@ -32,3 +32,16 @@
 .story button:focus-visible,.story summary:focus-visible{outline:2px solid #fff0ca;outline-offset:5px}
 @media(max-width:760px){.story-visual{position:static}.story-visual svg{max-height:390px;min-height:0}.story-tabs button{font-size:.82rem}.story-layout{gap:12px}.story-reading h3{margin-top:10px}}
 @media(prefers-reduced-motion:reduce){.story.is-running .sensation-line{animation:none}}
+
+/* Distinct teaching states: structure, spontaneous activity, local relay. */
+.story-keyboard{font-size:.85rem;color:#e3c5d0;line-height:1.5;margin:12px 0 24px}.story-view-label{color:#fff0ca;letter-spacing:.03em;margin:0 0 14px;font-size:1.05rem}
+.story .ectopic-inset{display:none}.story[data-story="2"] .ectopic-inset{display:initial}.story:not([data-story="2"]) .ectopic-origin{opacity:.25}
+.story[data-story="1"] .neuropathy-mark{opacity:.18}.story[data-story="2"] #signal-body{stroke-width:4}
+.story-influences{display:grid;grid-template-columns:1fr 1fr;gap:12px;border-block:1px solid #efb7c640;padding:12px 0;margin-bottom:14px;font-size:.86rem;line-height:1.55}.story-influences p{margin:0}.story-influences span{display:block;color:#fff0ca;margin-bottom:4px}
+.story[data-story="4"] .story-body{width:110px;position:absolute;right:0;top:0;opacity:.55;pointer-events:none}.story[data-story="4"] .story-body svg{min-height:0;max-height:110px}.story[data-story="4"] .story-visual{padding-top:4px}.story[data-story="4"] .story-view-label{padding-right:115px;min-height:50px}.story-zoom svg{max-height:520px}.relay-caption{color:#fff0ca;font-size:1rem;line-height:1.45;border-left:3px solid #fff0ca;padding-left:14px}
+.contact-learning{margin:24px 0;padding-block:18px;border-block:1px solid #efb7c640}.contact-invitation{font-size:.95rem;line-height:1.5}.contact-topics{display:flex;flex-wrap:wrap;gap:8px 16px;margin:12px 0 18px}.contact-topics button{border:0;border-bottom:2px solid transparent;background:transparent;padding:10px 0;font-size:.9rem}.contact-topics button[aria-pressed="true"]{border-color:#fff0ca;color:#fff0ca}.contact-learning h4{font-family:Alike,serif;font-weight:400;font-size:1.4rem;margin:12px 0}.contact-learning p{line-height:1.6}.contact-learning a{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-underline-offset:4px;font-size:.85rem;color:#fff0ca}.story [data-contact][aria-pressed="true"] .contact-metal{stroke:#fff;stroke-width:3}.story [data-contact]:focus-visible{outline:none}.story [data-contact]:focus-visible .contact-hit{stroke:#fff0ca;stroke-width:2}
+.story.is-running .ectopic-spark{animation:nerve-origin 3s ease-in-out infinite}@keyframes nerve-origin{0%,100%{stroke-opacity:.5;fill-opacity:.1}50%{stroke-opacity:1;fill-opacity:.26}}
+@media(max-width:760px){.story-influences{font-size:.8rem}.story-zoom svg{max-height:none}.story[data-story="4"] .story-body{width:80px}.story[data-story="4"] .story-view-label{padding-right:85px}.story-view-label{font-size:.95rem}.contact-learning{margin-top:18px}}
+@media(prefers-reduced-motion:reduce){.story.is-running .ectopic-spark{animation:none}}
+.story[data-story="4"] .story-view-label{min-height:90px}
+@media(max-width:760px){.story-zoom svg text{font-size:21px}.story-zoom svg text[y="512"],.story-zoom svg text[y="536"]{font-size:14px}.story-zoom svg text[y="367"]{font-size:24px}}
