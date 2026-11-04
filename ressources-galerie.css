@@ -57,3 +57,4 @@ body[data-cms-page="ressources"] .neuro-resource h2{color:#f7ede2;grid-column:2}
 body[data-cms-page="ressources"] .neuro-resource p:not(.eyebrow){color:#f7ede2;grid-column:2}
 body[data-cms-page="ressources"] .neuro-resource a{color:#f7ede2;grid-column:2;justify-self:start}
 @media(max-width:760px){body[data-cms-page="ressources"] .neuro-resource{display:block;padding:26px 22px}body[data-cms-page="ressources"] .neuro-resource-mark{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}body[data-cms-page="ressources"] .neuro-resource .eyebrow{margin:0}body[data-cms-page="ressources"] .neuro-resource-device{width:82px;flex-shrink:0}}
+@media(max-width:400px){body[data-cms-page="ressources"] .neuro-resource .eyebrow{font-size:.65rem;letter-spacing:.09em;white-space:nowrap}body[data-cms-page="ressources"] .neuro-resource-device{width:64px}}
