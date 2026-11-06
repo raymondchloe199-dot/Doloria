@@ -1,0 +1,67 @@
+/* Doloria collection: existing CMS artwork, no fabricated covers. */
+body[data-cms-page="ressources"] .resource-opening{display:block;max-width:1050px;padding-bottom:12px}
+body[data-cms-page="ressources"] .resource-opening h1{max-width:1000px;font-size:clamp(2.8rem,6.5vw,6rem);font-weight:400;line-height:1.06;letter-spacing:-.035em;margin:24px 0}
+.library-about{max-width:800px;margin:20px 0}.library-about summary{cursor:pointer;font-size:1.1rem;padding:12px 0}.library-about .resources-intro{margin-top:16px;max-width:none}
+body[data-cms-page="ressources"] .resource-shortcuts{margin:22px 0 0;padding-bottom:25px;border-bottom:1px solid #57020430;gap:clamp(16px,4vw,54px)}
+body[data-cms-page="ressources"] .resource-shortcuts a{border:0;border-radius:0;padding:8px 0;font-size:1.05rem}
+body[data-cms-page="ressources"] #infographies{margin-top:44px;padding-top:0}
+body[data-cms-page="ressources"] #infographies::before{display:none}
+body[data-cms-page="ressources"] #infographies h2{font-size:clamp(1.9rem,3vw,2.8rem)}
+body[data-cms-page="ressources"] .resource-hint{text-align:left;margin:14px 0 34px}
+body[data-cms-page="ressources"] :is(#cms-resources,.featured-resource){display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:55px 32px;max-width:none;width:100%;padding:0;overflow:visible;align-items:start;scroll-snap-type:none}
+body[data-cms-page="ressources"] :is(#cms-resources,.featured-resource)>.card{text-align:left;display:flex;flex-direction:column;padding:0!important;background:transparent!important;border:0!important;min-width:0;animation:collection-enter .65s ease both}
+body[data-cms-page="ressources"] :is(#cms-resources,.featured-resource)>.card:nth-child(2){animation-delay:.1s}
+body[data-cms-page="ressources"] :is(#cms-resources,.featured-resource)>.card:nth-child(3){animation-delay:.2s}
+body[data-cms-page="ressources"] :is(#cms-resources,.featured-resource) .infographic-preview{width:100%;max-width:none;margin:0 0 24px;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;display:block;transition:transform .3s ease}
+body[data-cms-page="ressources"] :is(#cms-resources,.featured-resource) .infographic-preview::before,body[data-cms-page="ressources"] :is(#cms-resources,.featured-resource) .infographic-preview::after{display:none}
+body[data-cms-page="ressources"] :is(#cms-resources,.featured-resource) .infographic-preview img{display:block;width:100%;height:340px;max-height:none;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 12px 10px #260b081c);margin:0}
+body[data-cms-page="ressources"] :is(#cms-resources,.featured-resource) .infographic-preview:hover{transform:translateY(-7px)}
+body[data-cms-page="ressources"] :is(#cms-resources,.featured-resource) h3{font-family:Alike,Georgia,serif;font-weight:400;font-size:clamp(1.25rem,2vw,1.65rem);margin:0 0 12px;line-height:1.25}
+body[data-cms-page="ressources"] :is(#cms-resources,.featured-resource) .infographic-actions{justify-content:flex-start;margin:0 0 12px;gap:8px}
+body[data-cms-page="ressources"] :is(#cms-resources,.featured-resource) .infographic-actions a{padding:6px 0;border:0;border-radius:0;font-size:.9rem;text-decoration:underline;text-underline-offset:5px}
+body[data-cms-page="ressources"] :is(#cms-resources,.featured-resource) details{width:100%;margin:0;border-color:#57020425;font-size:.9rem}
+body[data-cms-page="ressources"] :is(#cms-resources,.featured-resource) summary{padding:9px 0;min-height:44px}
+body[data-cms-page="ressources"] :is(#cms-resources,.featured-resource)>.card>p{margin:7px 0;font-size:.8rem;opacity:.8}
+body[data-cms-page="ressources"] .neuro-resource{margin:60px 0}
+body[data-cms-page="ressources"] #lectures,body[data-cms-page="ressources"] #livrets{margin-top:80px;padding-top:40px;border-top:1px solid #57020430}
+body[data-cms-page="ressources"] :is(#lectures-list,#livrets-list).cover-fan{display:block;position:relative;perspective:1200px;height:530px;max-width:none;width:100%;overflow:hidden;margin:25px 0 0;padding:20px 0}
+body[data-cms-page="ressources"] :is(#lectures-list,#livrets-list).fan-empty{display:none}
+body[data-cms-page="ressources"] .cover-fan .publication{position:absolute;left:50%;top:40px;width:270px;display:block!important;border:0!important;padding:0!important;text-align:center;transform:translateX(calc(-50% + var(--offset)*180px)) translateY(calc(var(--distance)*24px)) rotateY(calc(var(--offset)*-12deg)) scale(calc(1 - var(--distance)*.08));opacity:1;transition:transform .5s ease,opacity .5s ease;transform-origin:center center}
+body[data-cms-page="ressources"] .cover-fan .publication[hidden]{display:none!important}
+body[data-cms-page="ressources"] .cover-fan .publication[inert]{opacity:0;pointer-events:none}
+body[data-cms-page="ressources"] .cover-fan .publication button{display:block;width:100%;border:0;background:transparent;color:inherit;padding:0;cursor:pointer;font:inherit;text-align:center}
+body[data-cms-page="ressources"] .cover-fan .publication img{width:100%;height:330px;max-height:none;max-width:none;object-fit:contain;margin:0 0 20px;transform:none!important;filter:drop-shadow(8px 16px 10px #300a0a26)}
+body[data-cms-page="ressources"] .cover-fan .publication h3{font-family:Alike,Georgia,serif;font-weight:400;font-size:1.4rem;margin:12px 0 8px}
+body[data-cms-page="ressources"] .cover-fan .publication span{display:block;font-size:.95rem;margin-top:8px}
+body[data-cms-page="ressources"] .cover-fan .publication span:last-child{text-decoration:underline;text-underline-offset:6px}
+body[data-cms-page="ressources"] .cover-fan .publication:not(.is-selected) :is(h3,span){visibility:hidden}
+.fan-controls{display:flex;justify-content:center;align-items:center;gap:32px;margin:12px auto 30px}.fan-controls[hidden]{display:none}.fan-controls button{font:inherit;color:inherit;background:none;border:0;border-bottom:1px solid currentColor;padding:12px;min-height:44px;cursor:pointer}.fan-controls button:disabled{opacity:.35;cursor:default}.fan-controls span{min-width:60px;text-align:center}
+@keyframes collection-enter{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@media(min-width:1100px){body[data-cms-page="ressources"] :is(#cms-resources,.featured-resource){grid-template-columns:repeat(3,minmax(0,1fr));gap:64px 48px}body[data-cms-page="ressources"] :is(#cms-resources,.featured-resource) .infographic-preview img{height:400px}}
+@media(max-width:760px){body[data-cms-page="ressources"] :is(#cms-resources,.featured-resource){grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 20px}body[data-cms-page="ressources"] :is(#cms-resources,.featured-resource) .infographic-preview img{height:280px}body[data-cms-page="ressources"] .cover-fan .publication{width:220px;transform:translateX(calc(-50% + var(--offset)*135px)) translateY(calc(var(--distance)*20px)) rotateY(calc(var(--offset)*-12deg)) scale(calc(1 - var(--distance)*.1))}body[data-cms-page="ressources"] .cover-fan .publication img{height:290px}}
+@media(max-width:480px){body[data-cms-page="ressources"] :is(#cms-resources,.featured-resource){grid-template-columns:1fr;gap:44px}body[data-cms-page="ressources"] :is(#cms-resources,.featured-resource) .infographic-preview img{height:380px}body[data-cms-page="ressources"] .resource-opening h1{font-size:2.8rem}body[data-cms-page="ressources"] .resource-shortcuts{gap:16px}body[data-cms-page="ressources"] .resource-shortcuts a{font-size:.9rem}.fan-controls{gap:12px;font-size:.9rem}}
+@media(prefers-reduced-motion:reduce){body[data-cms-page="ressources"] *{animation:none!important;transition:none!important}}
+body[data-cms-page="ressources"] :is(#cms-resources,.featured-resource) .infographic-preview img{box-shadow:none}
+body[data-cms-page="ressources"] #infographies h2{text-align:left}
+body[data-cms-page="ressources"] .page{padding-top:44px}
+body[data-cms-page="ressources"] .resource-shortcuts{border-top:0;margin-top:0}
+body[data-cms-page="ressources"] :is(#cms-resources,.featured-resource) .infographic-preview:is(:hover,:focus-visible){box-shadow:none;background:transparent}
+@media(max-width:760px){body[data-cms-page="ressources"] :is(#lectures-list,#livrets-list).cover-fan{height:430px}}
+
+body[data-cms-page="ressources"] .resource-opening{position:relative;max-width:none;display:grid;grid-template-columns:1.3fr .7fr;column-gap:50px;align-items:start}
+.resource-opening>.eyebrow,.resource-opening>h1,.resource-opening>.library-about{grid-column:1}
+body[data-cms-page="ressources"] .resource-opening h1{font-size:clamp(2.8rem,5.7vw,5.4rem)}
+body[data-cms-page="ressources"] .featured-resource{grid-column:2;grid-row:1 / span 4;display:block;margin:0;padding:0;width:100%;max-width:340px;justify-self:end}
+body[data-cms-page="ressources"] .featured-resource .infographic-preview img{height:330px;object-fit:contain}
+body[data-cms-page="ressources"] #cms-resources{grid-template-columns:repeat(4,minmax(0,1fr));gap:36px}
+body[data-cms-page="ressources"] #cms-resources .infographic-preview img{height:320px}
+@media(max-width:900px){body[data-cms-page="ressources"] #cms-resources{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px}body[data-cms-page="ressources"] .resource-opening{grid-template-columns:1fr}.resource-opening>.eyebrow,.resource-opening>h1,.resource-opening>.library-about{grid-column:1}body[data-cms-page="ressources"] .featured-resource{grid-column:1;grid-row:auto;justify-self:center;margin-top:24px}}
+@media(max-width:480px){body[data-cms-page="ressources"] #cms-resources{grid-template-columns:1fr}body[data-cms-page="ressources"] #cms-resources .infographic-preview img{height:380px}}
+body[data-cms-page="ressources"] #contenu .featured-resource{display:block;max-width:340px}
+body[data-cms-page="ressources"] #contenu .featured-resource .infographic-preview img{height:330px}
+body[data-cms-page="ressources"] .resource-opening>.eyebrow{grid-column:1;grid-row:1}
+body[data-cms-page="ressources"] .resource-opening>h1{grid-column:1;grid-row:2}
+body[data-cms-page="ressources"] .resource-opening>.library-about{grid-column:1;grid-row:3}
+body[data-cms-page="ressources"] .resource-opening{row-gap:12px;grid-template-rows:auto auto 1fr}
+@media(max-width:900px){body[data-cms-page="ressources"] #contenu .resource-opening>.featured-resource{grid-row:4;grid-column:1}}
+body[data-cms-page="ressources"] #contenu .featured-resource>.card>p{color:#570204;opacity:.75}

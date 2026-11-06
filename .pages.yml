@@ -64,6 +64,20 @@
               }
             },
             {
+              "name": "couverture",
+              "label": "Couverture dans la bibliothèque (facultatif)",
+              "type": "image",
+              "description": "Votre visuel de présentation. L’image complète de l’infographie reste accessible au clic.",
+              "options": {
+                "extensions": [
+                  "jpg",
+                  "jpeg",
+                  "png",
+                  "webp"
+                ]
+              }
+            },
+            {
               "name": "descriptionImage",
               "label": "Description courte de l’image",
               "type": "string"

@@ -24,7 +24,7 @@
    const image=safe(item.image),file=safe(item.fichier);
    if(image){
     const a=element('a');a.href=image;a.target='_blank';a.rel='noopener';a.className='infographic-preview';a.setAttribute('aria-label',`Ouvrir en grand : ${title} (nouvel onglet)`);
-    const img=element('img');img.src=image;img.alt=item.descriptionImage||title;img.loading='lazy';a.append(img);card.append(a);
+    const img=element('img');img.src=safe(item.couverture)||image;img.alt=item.descriptionImage||title;img.loading='lazy';a.append(img);card.append(a);
    }
    const actions=element('div');actions.className='infographic-actions';
    if(image){const a=element('a','Ouvrir l’image en grand ↗');a.href=image;a.target='_blank';a.rel='noopener';a.setAttribute('aria-label',`Ouvrir l’image en grand : ${title} (nouvel onglet)`);actions.append(a);}
