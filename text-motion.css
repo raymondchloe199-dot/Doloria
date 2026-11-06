@@ -1,0 +1,5 @@
+/* Only the text fragments move: layout, links and existing scenes are unchanged. */
+.doloria-motion-word{display:inline-block;max-width:100%;vertical-align:baseline;white-space:normal}
+@media(prefers-reduced-motion:reduce){.doloria-motion-word{transform:none!important;opacity:1!important}}
+.no-motion .doloria-motion-word,.still .doloria-motion-word{transform:none!important;opacity:1!important}
+@media print{.doloria-motion-word{transform:none!important;opacity:1!important}}
