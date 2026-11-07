@@ -1,0 +1,77 @@
+/* Isolated motion study. All overrides disappear with the comparison switch. */
+
+
+.universe-bridge{display:none}
+.univers-doloria .after-care{position:relative;isolation:isolate;background:linear-gradient(var(--deep),#430507 65%,#570204);padding:clamp(60px,8vw,120px) 0 230px;overflow:visible}
+.univers-doloria .after-care .universe-word{position:absolute;bottom:50px;left:3vw;font-family:Alike,Georgia,serif;font-size:clamp(120px,27vw,380px);line-height:1;color:#efbccb;opacity:.055;pointer-events:none;transform:translateY(var(--with-drift,0px));z-index:-1}
+.univers-doloria .after-care-layout{grid-template-columns:1.05fr 1fr;gap:clamp(45px,8vw,120px)}
+.univers-doloria .after-care h2{position:sticky;top:calc(var(--header,88px) + 65px);font-size:clamp(2.6rem,5vw,4.8rem);line-height:1.12;max-width:12ch;align-self:start}
+.univers-doloria .after-care-copy{padding-top:7px;padding-bottom:70px;max-width:530px}
+.univers-doloria .after-care-copy p{font-size:clamp(1.08rem,1.45vw,1.3rem);line-height:1.65;margin-bottom:48px}
+.univers-doloria .after-care-copy p:nth-child(3){font-family:Alike,Georgia,serif;font-size:clamp(1.65rem,2.5vw,2.4rem);line-height:1.3}
+.univers-doloria .after-care-copy .after-care-ending{margin-top:60px}
+.univers-doloria .journey{margin-top:-125px;border-radius:54% 46% 0 0 / 125px 85px 0 0;padding-top:195px;z-index:2;overflow:visible;background:var(--cream);transform:translateY(var(--land-rise,0px))}
+.univers-doloria .journey h2{max-width:17ch;margin-left:auto;font-size:clamp(2.8rem,5.6vw,5.4rem);line-height:1.13;position:relative;z-index:2}
+.univers-doloria .journey-bottom{margin-top:95px;gap:9vw}
+.univers-doloria .journey-bottom h3{font-size:clamp(1.8rem,3vw,2.8rem);max-width:14ch}
+.univers-doloria .journey-line{position:relative;z-index:1}
+.univers-doloria .universe-bridge{display:block;position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:3}
+.univers-doloria .universe-bridge path{fill:none;stroke:#be627c;stroke-width:1.8;vector-effect:non-scaling-stroke}.univers-doloria .universe-bridge .bridge-ghost{opacity:.16}.univers-doloria .universe-bridge .bridge-ink{opacity:.65}.univers-doloria .universe-bridge circle{fill:#bd315a;stroke:#f7ede2;stroke-width:3}
+.univers-doloria .breathe{margin-top:-2px}
+.univers-doloria .journey + .breathe:before{height:65px}
+@media(max-width:760px){.univers-doloria .after-care{padding-top:65px;padding-bottom:145px}.univers-doloria .after-care-layout{grid-template-columns:1fr;gap:36px}.univers-doloria .after-care h2{position:relative;top:auto;max-width:17ch;font-size:clamp(2.2rem,8vw,3.3rem)}.univers-doloria .after-care-copy{padding-bottom:0}.univers-doloria .after-care-copy p{margin-bottom:30px}.univers-doloria .journey{margin-top:-65px;border-radius:50% 40% 0 0 / 65px 35px 0 0;padding-top:110px}.univers-doloria .journey h2{font-size:clamp(2.5rem,9.5vw,3.6rem);margin-left:0;max-width:17ch}.univers-doloria .journey-bottom{margin-top:45px;gap:30px}.univers-doloria .universe-bridge path{stroke-width:1.2}.univers-doloria .universe-bridge circle{r:4}}
+@media(prefers-reduced-motion:reduce){.univers-doloria .journey,.univers-doloria .after-care .universe-word{transform:none!important}.universe-bridge{display:none!important}.univers-doloria .after-care h2{position:relative;top:auto}}
+.no-motion.univers-doloria .journey,.no-motion.univers-doloria .after-care .universe-word{transform:none!important}.no-motion .universe-bridge{display:none!important}.no-motion.univers-doloria .after-care h2{position:relative;top:auto}
+@media print{.universe-tools,.universe-bridge{display:none!important}.univers-doloria .journey{transform:none!important}.univers-doloria .after-care h2{position:static}}
+
+.universe-word{display:none}.univers-doloria .universe-word{display:block}
+
+.movement-panorama[hidden],.univers-doloria #actions[hidden]{display:none!important}
+.movement-panorama{background:#570204;color:#f7ede2;position:relative}
+.movement-stage{padding:100px 0 60px;overflow:hidden;background:radial-gradient(ellipse at 90% 75%,#86203b66,transparent 60%)}
+.movement-heading{padding:0 6vw;display:flex;justify-content:space-between;align-items:center;gap:30px}
+.movement-heading h2{font-family:Alike,Georgia,serif!important;font-weight:400!important;font-size:clamp(32px,4vw,62px);line-height:1.15;margin:0;max-width:18ch}
+.movement-progress{color:#efbccb;font-size:18px;white-space:nowrap}
+.movement-track{display:flex;flex-direction:column}
+.movement-scene{position:relative;padding:60px 8vw;min-width:0;display:flex;align-items:center;gap:5vw}
+.movement-number{font-family:Alike,Georgia,serif;font-size:clamp(120px,21vw,320px);line-height:1;color:#efbccb33;flex:none;letter-spacing:-.07em}
+.movement-copy{position:relative;max-width:600px}.movement-copy h3{font-family:Alike,Georgia,serif!important;font-weight:400!important;font-size:clamp(32px,3.5vw,58px);line-height:1.12;margin:0 0 24px}.movement-copy p{font-size:clamp(17px,1.5vw,23px);line-height:1.6;margin:0 0 14px;color:#e7c9c3}.movement-copy a{color:#f7ede2;display:inline-block;margin-top:20px;text-underline-offset:7px}.movement-copy .neuro-entry{font-size:16px}
+.movement-footer{padding:0 6vw;display:flex;justify-content:space-between;gap:25px;color:#efbccb;font-size:15px}
+.movement-panorama.is-pinned{height:340vh}.is-pinned .movement-stage{position:sticky;top:0;height:100vh;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;padding-top:115px;padding-bottom:38px}.is-pinned .movement-window{width:100%;overflow:hidden}.is-pinned .movement-track{flex-direction:row;width:max-content;will-change:transform}.is-pinned .movement-scene{flex:0 0 88vw;width:88vw;box-sizing:border-box;padding:25px 6vw;min-height:340px}.is-pinned .movement-scene:nth-child(even) .movement-number{color:#f7ede21c}.is-pinned .movement-scene:last-child{width:100vw;flex-basis:100vw}
+@media(max-width:900px){.movement-stage{padding-top:70px}.movement-heading{align-items:flex-start}.movement-progress{display:none}.movement-scene{padding:45px 6vw;gap:20px;align-items:flex-start}.movement-number{font-size:85px}.movement-copy h3{font-size:31px}.movement-footer{display:none}}
+@media(prefers-reduced-motion:reduce){.movement-track{transform:none!important}}
+.movement-panorama h2,.movement-panorama h2 span,.movement-panorama h3,.movement-panorama p,.movement-panorama .doloria-word{opacity:1!important;transform:none!important;filter:none!important}
+.story-library{display:none}.univers-doloria .story-library{display:block;margin:65px 0 20px}.story-invitation{color:#75524f;font-size:19px;text-align:center;margin:0 0 45px}.story-shelf{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(25px,5vw,75px);align-items:start;padding:10px 20px 35px}.story-book{min-width:0;perspective:1500px;position:relative;color:#570204}.story-book summary{list-style:none;cursor:pointer;position:relative;outline-offset:12px}.story-book summary::-webkit-details-marker{display:none}.book-cover{display:flex;flex-direction:column;position:relative;background:#f5f4f2;border-radius:2px 9px 9px 2px;padding:22px 18px 20px 26px;box-shadow:6px 5px 0 #ded3c8,9px 8px 0 #fff9f0,13px 11px 0 #d6c6bb,16px 18px 30px #57020422;transform:rotate(-3deg);transform-origin:left center;transition:transform .65s ease,box-shadow .65s ease;z-index:2;border-left:8px solid #8d3045}.story-book:nth-child(2) .book-cover{transform:rotate(2deg);border-color:#632226}.story-book:nth-child(3) .book-cover{transform:rotate(-1deg);border-color:#b84d6a}.book-cover:before{content:'';position:absolute;left:5px;top:0;bottom:0;width:2px;background:#5702041a}.book-name{font:400 clamp(32px,3.3vw,50px)/1.1 Alike,Georgia,serif;text-align:center}.book-cover img{width:100%;height:clamp(220px,27vw,370px);object-fit:contain;mix-blend-mode:multiply;display:block;margin:8px 0}.book-theme{text-align:center;font:400 20px/1.25 Alike,Georgia,serif}.book-open{text-align:center;font:15px/1.4 Questrial,Arial,sans-serif;margin-top:16px;color:#90465a}.book-under{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;background:#fffaf0;padding:25px;font:26px/1.4 Alike,Georgia,serif;border-radius:4px;box-shadow:0 5px 20px #57020413}.story-book summary:hover .book-cover{transform:rotate(0) translateY(-8px)}.story-book[open] .book-cover{transform:rotateY(-22deg) rotate(-2deg);box-shadow:12px 12px 25px #57020425}.book-story{padding:35px 12px 0;animation:story-arrival .5s ease}.book-story h3{font:400 28px/1.2 Alike,Georgia,serif;margin:0 0 16px}.book-story p{color:#75524f;line-height:1.65;font-size:18px;margin:0 0 18px}.book-story .story-wish{color:#9a2549;font:400 23px/1.4 Alike,Georgia,serif}.story-common{text-align:center;max-width:850px;margin:55px auto 20px;font:400 clamp(26px,3vw,40px)/1.35 Alike,Georgia,serif;color:#570204}.story-common em{font-style:normal;color:#aa3157}.story-fiction{text-align:center;font-size:14px;color:#75524f;max-width:600px;margin:auto}.univers-doloria .story-library~.journey-bottom{margin-top:70px}@keyframes story-arrival{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}@media(max-width:760px){.story-shelf{grid-template-columns:1fr;max-width:360px;margin:auto;gap:60px;padding:10px 20px}.book-cover img{height:300px}.story-invitation{font-size:17px}.story-common{margin-top:60px}.story-library{padding-bottom:10px}}@media(prefers-reduced-motion:reduce){.book-cover{transition:none!important}.book-story{animation:none!important}}.no-motion .book-cover{transition:none!important}.no-motion .book-story{animation:none!important}
+.book-name,.book-theme{font-family:Alike,Georgia,serif!important;font-weight:400!important}.book-cover{background:#f4f4f4}.book-cover img{mix-blend-mode:normal}.story-library p,.story-library h3{opacity:1!important;filter:none!important;transform:none!important}.story-library{scroll-margin-top:120px}
+
+/* Requested white word in the main homepage title. */
+#hero-title [data-cms-text="t003"],#hero-title [data-cms-text="t003"] *{color:#fff!important}
+
+body .hero #hero-title{max-width:none;font-size:clamp(1.55rem,5.7vw,5.6rem)!important;line-height:1.15!important;letter-spacing:-.035em!important}
+body .hero #hero-title .hero-sentence{display:block;white-space:nowrap}
+body .hero #hero-title .hero-title-line{display:inline}
+body .hero #hero-title .hero-title-line + .hero-title-line:before{content:' '}
+@media(max-width:760px){body .hero #hero-title{font-size:clamp(1.25rem,5.9vw,2.8rem)!important;line-height:1.25!important}}
+.life-collage{display:none}.univers-doloria .life-collage{display:block;margin:40px 0 70px;position:relative;scroll-margin-top:115px}.univers-doloria .hero{display:block;min-height:0;padding-bottom:35px}.univers-doloria .hero-foot{position:relative;bottom:auto;margin-top:30px}.life-pictures{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;align-items:start}.life-label{margin:0;opacity:var(--reveal,1);transform:translateY(calc((1 - var(--reveal,1))*65px)) rotate(calc(var(--tilt) * var(--reveal,1)));transform-origin:50% 15%;will-change:transform,opacity}.life-label img{width:100%;height:auto;display:block}.life-label:nth-child(even){margin-top:35px}.life-label figcaption{padding:14px 8px 0;text-align:center}.life-label h3{font:400 clamp(20px,1.9vw,29px)/1.2 Alike,Georgia,serif!important;letter-spacing:-.02em!important;color:#f7ede2}.hero .life-label p{font:16px/1.45 Questrial,Arial,sans-serif!important;margin:12px auto 0;color:#e7c9c3;max-width:24ch;opacity:1!important;transform:none!important}.hero .life-message{font:400 clamp(28px,3.4vw,48px)/1.25 Alike,Georgia,serif!important;text-align:center;max-width:none;margin:65px auto 0;opacity:1!important;transform:none!important}.life-message span{color:#efbccb}@media(max-width:760px){.life-pictures{grid-template-columns:repeat(2,minmax(0,1fr));gap:35px 14px}.life-label:nth-child(even){margin-top:25px}.life-label h3{font-size:21px!important}.hero .life-label p{font-size:15px!important}.univers-doloria .life-collage{margin-top:35px}.hero .life-message{margin-top:50px}}@media(max-width:390px){.life-label h3{font-size:18px!important}.hero .life-label p{font-size:14px!important}}@media(prefers-reduced-motion:reduce){.life-label{opacity:1!important;transform:none!important;will-change:auto}}.no-motion .life-label{opacity:1!important;transform:none!important;will-change:auto}
+
+/* Open the next chapter from its centre, instead of a rounded panel. */
+.univers-doloria .universe-word{display:none!important}
+.univers-doloria .after-care{padding-bottom:110px}
+.univers-doloria .journey{margin-top:0;border-radius:0;padding-top:100px;transform:none!important;isolation:isolate}
+.univers-doloria .journey #journey-title{margin-inline:auto;text-align:center;max-width:1100px;font-size:clamp(2.4rem,5.6vw,5.4rem);line-height:1.15}
+.chapter-reveal{display:none}
+.univers-doloria .chapter-reveal{display:block;position:absolute;inset:0 0 auto;height:clamp(280px,45vw,510px);overflow:hidden;pointer-events:none;z-index:5}
+.chapter-reveal:before,.chapter-reveal:after{content:'';position:absolute;top:0;bottom:0;width:50.2%;background:#570204;will-change:transform}
+.chapter-reveal:before{left:0;transform:translateX(calc(-101% * var(--chapter-open,1)));border-right:1px solid #efbccb44}
+.chapter-reveal:after{right:0;transform:translateX(calc(101% * var(--chapter-open,1)));border-left:1px solid #efbccb44}
+@media(max-width:760px){.univers-doloria .after-care{padding-bottom:65px}.univers-doloria .journey{padding-top:75px}.univers-doloria .journey #journey-title{max-width:22ch}.univers-doloria .chapter-reveal{height:350px}}
+@media(prefers-reduced-motion:reduce){.chapter-reveal{display:none!important}}
+.no-motion .chapter-reveal{display:none!important}
+
+/* One shared introduction and narrative, without the repeated lower block. */
+.univers-doloria .journey-bottom{display:none}
+.story-library .story-invitation{font:400 clamp(25px,3vw,40px)/1.3 Alike,Georgia,serif!important;text-align:center;color:#570204;margin:0 auto 55px;max-width:850px}
+.story-library .story-common{max-width:820px;margin:60px auto 30px;text-align:left}
+.story-library .story-common p{max-width:none;font:400 19px/1.65 Questrial,Arial,sans-serif;margin:0 0 20px;color:#75524f}
+.story-library .story-common .story-common-lead{font:400 clamp(25px,2.5vw,34px)/1.35 Alike,Georgia,serif;color:#a72b50;margin-bottom:28px}
+@media(max-width:760px){.story-library .story-common p{font-size:17px}.story-library .story-common{margin-top:45px}}
