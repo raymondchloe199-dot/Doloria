@@ -371,12 +371,6 @@
           "type": "text"
         },
         {
-          "name": "t001",
-          "label": "Association Suisse Doloria",
-          "type": "text",
-          "description": "Texte affiché sur la page d’accueil."
-        },
-        {
           "name": "t002",
           "label": "La douleur",
           "type": "text"
@@ -409,11 +403,6 @@
           "description": "Texte affiché sur la page d’accueil."
         },
         {
-          "name": "t008",
-          "label": "Pourquoi Doloria ?",
-          "type": "text"
-        },
-        {
           "name": "t009",
           "label": "Vivre avec une douleur chronique",
           "type": "text"
@@ -431,11 +420,6 @@
         {
           "name": "t012",
           "label": "pause.",
-          "type": "text"
-        },
-        {
-          "name": "t013",
-          "label": "Le parcours",
           "type": "text"
         },
         {
@@ -479,11 +463,6 @@
           "description": "Texte affiché sur la page d’accueil."
         },
         {
-          "name": "t021",
-          "label": "Changer de perspective",
-          "type": "text"
-        },
-        {
           "name": "t022",
           "label": "Moins de place pour la douleur.",
           "type": "text"
@@ -491,11 +470,6 @@
         {
           "name": "t023",
           "label": "Plus de place pour vivre.",
-          "type": "text"
-        },
-        {
-          "name": "t024",
-          "label": "Doloria ouvre un autre chapitre",
           "type": "text"
         },
         {
@@ -516,11 +490,6 @@
         {
           "name": "t031",
           "label": "Ouvre la porte des Petits Courageux ",
-          "type": "text"
-        },
-        {
-          "name": "t054",
-          "label": "Nos actions",
           "type": "text"
         },
         {
@@ -606,11 +575,6 @@
         {
           "name": "t071",
           "label": "Proposer une collaboration ↗",
-          "type": "text"
-        },
-        {
-          "name": "t072",
-          "label": "Et maintenant ?",
           "type": "text"
         },
         {
@@ -753,11 +717,6 @@
           "type": "text"
         },
         {
-          "name": "pole",
-          "label": "Le pôle enfants et adolescents de Doloria",
-          "type": "text"
-        },
-        {
           "name": "titre",
           "label": "Entre. Tu as ta place.",
           "type": "text"
@@ -888,11 +847,6 @@
           "type": "text"
         },
         {
-          "name": "parentsLabel",
-          "label": "Parents & proches",
-          "type": "text"
-        },
-        {
           "name": "parentsTitre",
           "label": "Pour votre enfant. Et aussi pour vous.",
           "type": "text"
@@ -987,11 +941,6 @@
       "format": "json",
       "fields": [
         {
-          "name": "intro_label",
-          "label": "Association Suisse Doloria · ASD",
-          "type": "text"
-        },
-        {
           "name": "but_titre",
           "label": "Vivre avec la douleur ou la maladie.",
           "type": "text"
@@ -1009,11 +958,6 @@
         {
           "name": "but_actions",
           "label": "Comment Doloria agit concrètement",
-          "type": "text"
-        },
-        {
-          "name": "valeurs_label",
-          "label": "Nos valeurs",
           "type": "text"
         },
         {
@@ -1079,11 +1023,6 @@
         {
           "name": "valeur_6_texte",
           "label": "La douleur peut bouleverser une existence, mais elle ne définit pas une personne. Doloria ",
-          "type": "text"
-        },
-        {
-          "name": "histoire_label",
-          "label": "À l’origine de Doloria",
           "type": "text"
         },
         {
@@ -1305,11 +1244,6 @@
       "format": "json",
       "fields": [
         {
-          "name": "t001",
-          "label": "Ressources & sensibilisation",
-          "type": "text"
-        },
-        {
           "name": "t002",
           "label": "Des repères pour",
           "type": "text"
@@ -1384,11 +1318,6 @@
           "type": "text"
         },
         {
-          "name": "t001",
-          "label": "Écrire à Doloria",
-          "type": "text"
-        },
-        {
           "name": "t002",
           "label": "Parlons de",
           "type": "text"
@@ -1443,11 +1372,6 @@
           "type": "text"
         },
         {
-          "name": "t001",
-          "label": "Agenda · Ateliers · Nouvelles",
-          "type": "text"
-        },
-        {
           "name": "t002",
           "label": "La vie de",
           "type": "text"
@@ -1473,11 +1397,6 @@
           "type": "text"
         },
         {
-          "name": "t007",
-          "label": "À votre rythme",
-          "type": "text"
-        },
-        {
           "name": "t008",
           "label": "On se retrouve ?",
           "type": "text"
@@ -1490,11 +1409,6 @@
         {
           "name": "t010",
           "label": "Les dates encadrées indiquent un rendez-vous.",
-          "type": "text"
-        },
-        {
-          "name": "t011",
-          "label": "Les moments qui nous rassemblent",
           "type": "text"
         },
         {
