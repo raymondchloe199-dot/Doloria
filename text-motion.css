@@ -3,3 +3,22 @@
 @media(prefers-reduced-motion:reduce){.doloria-motion-word{transform:none!important;opacity:1!important}}
 .no-motion .doloria-motion-word,.still .doloria-motion-word{transform:none!important;opacity:1!important}
 @media print{.doloria-motion-word{transform:none!important;opacity:1!important}}
+
+/* Quotes are written by scroll distance, not an automatic entrance. */
+.doloria-quote-track{position:relative;min-height:150svh}
+.doloria-quote-stage{position:sticky;top:16svh;min-height:64svh;display:flex;align-items:center;justify-content:center}
+.doloria-scroll-quote{width:100%}
+.doloria-quote-word{display:inline-block;white-space:nowrap}
+.doloria-quote-char{opacity:1}
+body .breathe:has(.doloria-quote-track){overflow:visible}
+body .about-beacon.doloria-scroll-quote{margin:0!important}
+.doloria-quotes-still .doloria-quote-track{min-height:0}
+.doloria-quotes-still .doloria-quote-stage{position:static;min-height:0}
+.doloria-quotes-still .doloria-quote-char{opacity:1!important}
+@media(max-width:700px){.doloria-quote-track{min-height:130svh}.doloria-quote-stage{top:18svh;min-height:60svh}}
+@media(prefers-reduced-motion:reduce),print{.doloria-quote-track{min-height:0}.doloria-quote-stage{position:static;min-height:0}.doloria-quote-char{opacity:1!important}}
+
+.doloria-quote-word,.doloria-quote-char{color:inherit!important;font:inherit!important}
+
+
+.doloria-quote-readable{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}

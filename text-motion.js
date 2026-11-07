@@ -3,7 +3,7 @@
  'use strict';
  const root=document.documentElement,mq=matchMedia('(prefers-reduced-motion: reduce)');
  const active=new Map(),prepared=new WeakSet();let observer;
- const excluded='header,footer,nav,dialog,button,a,summary,[role="status"],[aria-live],svg,.intro-scroll,.pause-section,.forest-scene,.welcome-stage,.welcome-story,.invisible-story,.story,.neuro-step,.actions-track,.values-track,.cover-fan,.resource-carousel,.featured-resource';
+ const excluded='.doloria-scroll-quote,header,footer,nav,dialog,button,a,summary,[role="status"],[aria-live],svg,.intro-scroll,.pause-section,.forest-scene,.welcome-stage,.welcome-story,.invisible-story,.story,.neuro-step,.actions-track,.values-track,.cover-fan,.resource-carousel,.featured-resource';
  const professional=/professionnels(?:-animation|-institutions)?\.html$/.test(location.pathname);
  function reduced(){let saved=false;try{saved=localStorage.getItem('doloria-reduced-motion')==='true';}catch{}return mq.matches||saved||root.classList.contains('no-motion')||root.classList.contains('still');}
  function finishAll(){if(!reduced())return;for(const [el,animations] of active){animations.forEach(a=>a.finish());active.delete(el);}}
@@ -26,10 +26,52 @@
   active.set(el,animations);Promise.all(animations.map(a=>a.finished.catch(()=>{}))).then(()=>active.delete(el));
  }
  function scan(scope){const candidates=scope.querySelectorAll('main h1,main h2,main p,main blockquote');for(const el of candidates){if(!prepared.has(el)&&eligible(el)){observer.observe(el);}}}
+
+ function setupQuotes(){
+  const scenes=[];
+  document.querySelectorAll('.breathe h2,.about-beacon,.outro [data-cms-text="citation"]').forEach(el=>{
+   const spoken=el.innerText;
+   el.classList.add('doloria-scroll-quote');
+   const shell=document.createElement('div'),stage=document.createElement('div');
+   shell.className='doloria-quote-track';stage.className='doloria-quote-stage';
+   el.before(shell);shell.append(stage);stage.append(el);
+   const walker=document.createTreeWalker(el,NodeFilter.SHOW_TEXT),nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
+   const chars=[];
+   for(const node of nodes){
+    const fragment=document.createDocumentFragment();
+    for(const part of node.textContent.split(/([ \t\r\n]+)/)){
+     if(!part)continue;if(/^[ \t\r\n]+$/.test(part)){fragment.append(document.createTextNode(part));continue;}
+     const word=document.createElement('span');word.className='doloria-quote-word';word.setAttribute('aria-hidden','true');
+     for(const char of Array.from(part)){const span=document.createElement('span');span.className='doloria-quote-char';span.textContent=char;word.append(span);chars.push(span);}
+     fragment.append(word);
+    }
+    node.replaceWith(fragment);
+   }
+   const readable=document.createElement('span');readable.className='doloria-quote-readable';readable.textContent=spoken;el.append(readable);
+   scenes.push({shell,stage,chars});
+  });
+  let pending=false;
+  function render(){
+   pending=false;const off=reduced();root.classList.toggle('doloria-quotes-still',off);
+   for(const {shell,stage,chars} of scenes){
+    const rect=shell.getBoundingClientRect();
+    const travel=Math.max(1,shell.offsetHeight-stage.offsetHeight);
+    const p=off?1:Math.max(0,Math.min(1,(innerHeight*.16-rect.top)/travel));
+    chars.forEach((char,i)=>{const ink=off?1:Math.max(0,Math.min(1,p*(chars.length+5)-i));char.style.opacity=String(.12+.88*ink);});
+   }
+  }
+  function queue(){if(!pending){pending=true;requestAnimationFrame(render);}}
+  window.addEventListener('scroll',queue,{passive:true});window.addEventListener('resize',queue);
+  mq.addEventListener('change',queue);
+  new MutationObserver(queue).observe(root,{attributes:true,attributeFilter:['class']});
+  render();
+ }
+
  async function start(){
   if(!('IntersectionObserver'in window))return;
   await Promise.allSettled([document.fonts?.ready,window.doloriaDataReady]);
   observer=new IntersectionObserver(entries=>{for(const entry of entries)if(entry.isIntersecting)reveal(entry.target);},{threshold:.12,rootMargin:'0px 0px -5% 0px'});
+  setupQuotes();
   scan(document);
   // CMS updates and newly opened sections stay eligible; our own word spans are ignored.
   let queued=false;new MutationObserver(records=>{if(!records.some(r=>[...r.addedNodes].some(n=>n.nodeType===1&&!n.classList?.contains('doloria-motion-word'))||r.type==='attributes'))return;if(!queued){queued=true;requestAnimationFrame(()=>{queued=false;scan(document);});}}).observe(document.querySelector('main')||document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['hidden','open']});
@@ -38,3 +80,4 @@
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
 })();
+
