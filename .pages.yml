@@ -362,7 +362,7 @@
       "fields": [
         {
           "name": "titre_page",
-          "label": "Titre de l’onglet",
+          "label": "Doloria — La douleur existe. Votre vie aussi.",
           "type": "string"
         },
         {
@@ -372,7 +372,7 @@
         },
         {
           "name": "t001",
-          "label": "Association suisse · Douleur persistante et maladie chronique",
+          "label": "Association Suisse Doloria",
           "type": "text",
           "description": "Texte affiché sur la page d’accueil."
         },
@@ -398,13 +398,13 @@
         },
         {
           "name": "t006",
-          "label": "Des ressources pour comprendre. Des projets pour participer.",
+          "label": "Bienvenue chez Doloria !",
           "type": "text",
           "description": "Texte affiché sur la page d’accueil."
         },
         {
           "name": "t007",
-          "label": "Doloria crée des supports d’information et développe des rencontres, des ateliers et ",
+          "label": "Doloria souhaite vous informer, vous soutenir et partager des repères et des pistes concrè",
           "type": "text",
           "description": "Texte affiché sur la page d’accueil."
         },
@@ -425,7 +425,7 @@
         },
         {
           "name": "t011",
-          "label": "mettre sa vie en",
+          "label": "mettre sa vie en ",
           "type": "text"
         },
         {
@@ -435,104 +435,87 @@
         },
         {
           "name": "t013",
-          "label": "01 / Comprendre",
+          "label": "Le parcours",
           "type": "text"
         },
         {
           "name": "t014",
-          "label": "Comprendre.",
+          "label": "La douleur ne raconte pas",
           "type": "text"
         },
         {
           "name": "t015",
-          "label": "Choisir. Avancer.",
+          "label": "toute votre histoire.",
           "type": "text"
         },
         {
           "name": "t016",
-          "label": "Mieux comprendre ce que l’on traverse, participer aux décisions et retrouver de la marge de man…",
+          "label": "Une expérience commune.",
           "type": "text",
           "description": "Texte affiché sur la page d’accueil."
         },
         {
           "name": "t017",
-          "label": "01 — Mettre du sens",
+          "label": "Des millions de chemins différents.",
           "type": "text",
           "description": "Texte affiché sur la page d’accueil."
         },
         {
           "name": "t018",
-          "label": "Comprendre ce qui se passe",
+          "label": "Parce que chaque expérience de la douleur est unique et personnelle. Certaines sensations ",
           "type": "text",
           "description": "Texte affiché sur la page d’accueil."
         },
         {
           "name": "t019",
-          "label": "Sortir des raccourcis. Trouver des mots et des repères pour mieux comprendre son expérience de …",
+          "label": "Nos expériences, nos représentations, nos croyances, notre parcours de soins, notre enviro",
           "type": "text",
           "description": "Texte affiché sur la page d’accueil."
         },
         {
           "name": "t020",
-          "label": "02 — Trouver des repères",
+          "label": "Elle n’est jamais totalement figée. Elle fluctue, évolue et se transforme. Ses répercussio",
           "type": "text",
           "description": "Texte affiché sur la page d’accueil."
         },
         {
           "name": "t021",
-          "label": "Trouver son chemin dans les soins",
+          "label": "Changer de perspective",
           "type": "text"
         },
         {
           "name": "t022",
-          "label": "Médecins, centres de la douleur, rééducation, psychologie ou traitements : rendre les parcours …",
+          "label": "Moins de place pour la douleur.",
           "type": "text"
         },
         {
           "name": "t023",
-          "label": "03 — Garder sa place",
+          "label": "Plus de place pour vivre.",
           "type": "text"
         },
         {
           "name": "t024",
-          "label": "Continuer à vivre",
+          "label": "Doloria ouvre un autre chapitre",
           "type": "text"
         },
         {
           "name": "t025",
-          "label": "Travail, école, relations, activités et projets : la vie ne devrait jamais se résumer à un scor…",
+          "label": "Les Petits",
           "type": "text"
         },
         {
           "name": "t026",
-          "label": "Le parcours",
+          "label": "Courageux.",
           "type": "text"
         },
         {
           "name": "t027",
-          "label": "La douleur ne raconte pas",
-          "type": "text"
-        },
-        {
-          "name": "t028",
-          "label": "Les Petits Courageux, le pôle enfants et adolescents de Doloria, prépare des séjours ",
-          "type": "text",
-          "description": "Texte affiché sur la page d’accueil."
-        },
-        {
-          "name": "t029",
-          "label": "Rencontrer d’autres jeunes, découvrir, jouer et se fabriquer des souvenirs : une aven",
-          "type": "text",
-          "description": "Texte affiché sur la page d’accueil."
-        },
-        {
-          "name": "t030",
-          "label": "Dix mille chemins de vie.",
+          "label": "Entre. Tu as ta place.",
           "type": "text"
         },
         {
           "name": "t031",
-          "label": "Vivre avec une douleur chronique ressemble rarement à une ligne droite.",
+          "label": "Ouvre la porte des Petits Courageux ",
           "type": "text"
         },
         {
@@ -542,22 +525,22 @@
         },
         {
           "name": "t055",
-          "label": "Pour les parents et les proches :",
+          "label": "Doloria vous met en mouvement",
           "type": "text"
         },
         {
           "name": "t056",
-          "label": "les intentions du projet et les questions à préparer ensemble avant un séjour.",
+          "label": "01",
           "type": "text"
         },
         {
           "name": "t057",
-          "label": "Pour les personnes qui accompagnent des jeunes :",
+          "label": "Rencontres & ateliers",
           "type": "text"
         },
         {
           "name": "t058",
-          "label": "Des projets pour se rencontrer et partager des expériences. Consultez l’agenda pour c",
+          "label": "Des projets pour se rencontrer et partager des expériences. Consultez l’agenda pour connaî",
           "type": "text"
         },
         {
@@ -567,47 +550,47 @@
         },
         {
           "name": "t060",
-          "label": "écoles, parascolaire, associations, institutions et structures jeunesse : échangeons sur vos be…",
+          "label": "02",
           "type": "text"
         },
         {
           "name": "t061",
-          "label": "Pour participer à la suite de cette aventure,",
+          "label": "Ressources & sensibilisation",
           "type": "text"
         },
         {
           "name": "t062",
-          "label": "Des infographies et des documents pour comprendre la douleur, mettre des mots sur son",
+          "label": "Des infographies et des documents pour comprendre la douleur, mettre des mots sur son vécu",
           "type": "text"
         },
         {
           "name": "t063",
-          "label": "pour en parler.",
+          "label": "Explorer les ressources ↗",
           "type": "text"
         },
         {
           "name": "t064",
-          "label": "Le même fil, à chaque âge",
+          "label": "03",
           "type": "text"
         },
         {
           "name": "t065",
-          "label": "Les histoires changent.",
+          "label": "Droits & démarches",
           "type": "text"
         },
         {
           "name": "t066",
-          "label": "Une question sur vos droits, l’assurance-invalidité (AI) ou une demande d’aide ? Prés",
+          "label": "Une question sur vos droits, l’assurance-invalidité (AI) ou une demande d’aide ? Présentez",
           "type": "text"
         },
         {
           "name": "t067",
-          "label": "02 / Nos actions",
+          "label": "Nous contacter pour une démarche ↗",
           "type": "text"
         },
         {
           "name": "t068",
-          "label": "Doloria en mouvement.",
+          "label": "04",
           "type": "text"
         },
         {
@@ -617,7 +600,7 @@
         },
         {
           "name": "t070",
-          "label": "Témoignage, sensibilisation, travail d’études ou recherche : échangeons sur la place ",
+          "label": "Témoignage, sensibilisation, travail d’études ou recherche : échangeons sur la place de l’",
           "type": "text"
         },
         {
@@ -627,62 +610,47 @@
         },
         {
           "name": "t072",
-          "label": "Découvrir les ateliers et rendez-vous ↗",
+          "label": "Et maintenant ?",
           "type": "text"
         },
         {
           "name": "t073",
-          "label": "02",
+          "label": "Faire bouger",
           "type": "text"
         },
         {
           "name": "t074",
-          "label": "Ressources & sensibilisation",
+          "label": "les lignes.",
           "type": "text"
         },
         {
           "name": "t075",
-          "label": "Des infographies et des repères pour mieux comprendre la douleur chronique et partager l’inform…",
+          "label": "Ensemble.",
           "type": "text"
         },
         {
           "name": "t076",
-          "label": "Explorer les ressources ↗",
-          "type": "text"
-        },
-        {
-          "name": "t077",
-          "label": "03",
-          "type": "text"
-        },
-        {
-          "name": "t078",
-          "label": "Droits & démarches",
+          "label": "Échanger avec Doloria ",
           "type": "text"
         },
         {
           "name": "t079",
-          "label": "Une question sur l’assurance-invalidité (AI), une demande d’aide ou une démarche administrative…",
-          "type": "text"
-        },
-        {
-          "name": "t080",
-          "label": "Nous contacter pour une démarche ↗",
+          "label": "Alors venez comme vous êtes, vous avez mille choses à partager.",
           "type": "text"
         },
         {
           "name": "t081",
-          "label": "04",
+          "label": "Vivre avec la douleur, c’est parfois trouver un équilibre.",
           "type": "text"
         },
         {
           "name": "t082",
-          "label": "Recherche & innovation",
+          "label": "Parfois, on doit se réinventer.",
           "type": "text"
         },
         {
           "name": "t083",
-          "label": "Participer à l’évolution des parcours et imaginer de nouvelles manières de penser le soin. Vous…",
+          "label": "Explorer, comprendre, tester pour retrouver peu à peu du pouvoir d’agir.",
           "type": "text"
         },
         {
@@ -716,68 +684,53 @@
           "type": "text"
         },
         {
-          "name": "t077",
-          "label": "Accueil · Notre démarche",
-          "type": "text"
-        },
-        {
-          "name": "t078",
-          "label": "Accueil · Se rassembler",
-          "type": "text"
-        },
-        {
           "name": "t079",
-          "label": "Accueil · Invitation",
-          "type": "text"
-        },
-        {
-          "name": "t080",
-          "label": "Petits Courageux · Construire ensemble",
+          "label": "Alors venez comme vous êtes, vous avez mille choses à partager.",
           "type": "text"
         },
         {
           "name": "t081",
-          "label": "Pause · Trouver un équilibre",
+          "label": "Vivre avec la douleur, c’est parfois trouver un équilibre.",
           "type": "text"
         },
         {
           "name": "t082",
-          "label": "Pause · Se réinventer",
+          "label": "Parfois, on doit se réinventer.",
           "type": "text"
         },
         {
           "name": "t083",
-          "label": "Pause · Retrouver du pouvoir d’agir",
+          "label": "Explorer, comprendre, tester pour retrouver peu à peu du pouvoir d’agir.",
           "type": "text"
         },
         {
           "name": "apres_titre",
-          "label": "Après PAUSE · Titre",
+          "label": "Et quand vous vous retrouvez seul avec la douleur ?",
           "type": "text"
         },
         {
           "name": "apres_1",
-          "label": "Après PAUSE · Paragraphe 1",
+          "label": "Entre deux rendez-vous, la douleur peut rester présente. À la maison, au travail ou au mil",
           "type": "text"
         },
         {
           "name": "apres_2",
-          "label": "Après PAUSE · Paragraphe 2",
+          "label": "Comment trouver ses repères, adapter une activité, expliquer ce que l’on vit ou savoir ver",
           "type": "text"
         },
         {
           "name": "apres_3",
-          "label": "Après PAUSE · Paragraphe 3",
+          "label": "Doloria souhaite vous aider à ne pas rester seul avec ces questions.",
           "type": "text"
         },
         {
           "name": "apres_4",
-          "label": "Après PAUSE · Paragraphe 4",
+          "label": "En complément des soins, nous partageons des ressources, des expériences et des pistes con",
           "type": "text"
         },
         {
           "name": "apres_fin",
-          "label": "Après PAUSE · Conclusion",
+          "label": "Pour faire une place à ce qui compte pour vous, même avec la douleur.",
           "type": "text"
         }
       ]
