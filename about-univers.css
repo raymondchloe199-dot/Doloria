@@ -5,3 +5,14 @@ body .founder-story{margin-top:0;padding:100px clamp(24px,5vw,75px);display:grid
 @media(max-width:600px){.value-scene{display:block;padding:30px 7vw}.value-index{display:block;font-size:48px;margin-bottom:14px}.value-scene h3{font-size:clamp(25px,7vw,34px)!important;overflow-wrap:normal;margin-bottom:16px!important}.value-scene p{font-size:18px}.values-stage h2{font-size:30px!important}}
 
 body[data-cms-page="a-propos"] .about-beacon:before{background:#efbccb}
+/* Témoignage : une feuille personnelle, annotée au fil de la lecture. */
+body .founder-story{position:relative;display:block;max-width:850px;margin:125px auto 80px;padding:90px clamp(25px,6vw,85px) 65px;border:0;background-color:#f7f0e7;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23927961' opacity='.045' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E");box-shadow:0 20px 60px #26020040;box-sizing:border-box}
+body .founder-story #story-title{position:static;max-width:20ch;margin:0 auto 48px;text-align:center;font-size:clamp(32px,4vw,49px)}
+body .founder-story .story-copy{max-width:680px;margin:0 auto}
+body .story-copy p.story-reading{opacity:calc(.72 + var(--reading,1)*.28)!important}
+.story-copy mark{color:inherit;background:linear-gradient(176deg,transparent 9%,#efbccbaa 12%,#efbccbd9 89%,transparent 94%);padding:.06em .14em;box-decoration-break:clone;-webkit-box-decoration-break:clone;border-radius:.18em .4em .15em .25em}
+.story-clip{position:absolute;left:50%;top:-74px;transform:translateX(-50%) rotate(-3deg);width:105px;height:135px;filter:drop-shadow(2px 5px 3px #26020040);pointer-events:none}
+body .story-copy .founder-signature{margin-top:30px;text-align:right;letter-spacing:0}
+@media(max-width:600px){body .founder-story{margin:105px 0 45px;padding:65px 24px 38px}body .founder-story #story-title{font-size:30px;margin-bottom:32px}.story-clip{width:82px;height:110px;top:-64px}}
+@media(prefers-reduced-motion:reduce){body .story-copy p.story-reading{opacity:1!important}}
+.no-motion .story-copy p.story-reading{opacity:1!important}
