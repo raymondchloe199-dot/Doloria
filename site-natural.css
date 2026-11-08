@@ -7,3 +7,21 @@ body .resource-shortcuts a,body .anchors a{border:0;border-radius:0;background:t
 @media(prefers-reduced-motion:no-preference){#doloria-navigation[open]{animation:natural-menu-in .28s ease-out}@keyframes natural-menu-in{from{transform:translateX(-35px);opacity:.5}to{transform:none;opacity:1}}}.no-motion #doloria-navigation{animation:none!important}
 /* Consistent side arrows and a quiet centered position indicator. */
 body .side-carousel{display:grid;grid-template-columns:48px minmax(0,1fr) 48px;column-gap:22px;row-gap:18px;align-items:center;width:100%;margin-top:30px}body .side-carousel>.side-carousel-track{grid-column:2;grid-row:1;min-width:0;width:100%;max-width:100%;margin:0}body .side-carousel>.side-carousel-controls{display:contents}body .side-carousel>.side-carousel-controls[hidden]{display:none!important}body .side-carousel-controls button{grid-row:1;grid-column:1;align-self:center;justify-self:center;min-width:44px;min-height:48px;padding:8px!important;border:0!important;border-radius:0!important;text-decoration:none!important;background:none!important;color:inherit;font-size:1.7rem!important;line-height:1;cursor:pointer}body .side-carousel-controls button:last-of-type{grid-column:3}body .side-carousel-controls>span{grid-column:2;grid-row:2;justify-self:center;text-align:center}body .actions-track .action-row{border-top:0!important}body .side-carousel-controls button:disabled{opacity:.3;cursor:default}@media(max-width:600px){body .side-carousel{grid-template-columns:36px minmax(0,1fr) 36px;column-gap:6px}body .side-carousel-controls button{min-width:36px;padding:4px!important}body .actions-track .action-row h3{font-size:1.8rem}}
+
+/* Compact navigation, framed like a wavy paper label. */
+#doloria-navigation{inset:18px auto 18px 18px;width:min(420px,calc(100% - 36px));height:auto;max-height:calc(100dvh - 36px);padding:32px 42px;background:transparent;border:0;box-shadow:none;isolation:isolate;scrollbar-width:thin;scrollbar-color:#ab6a78 transparent}
+#doloria-navigation:before{content:'';position:fixed;inset:18px auto 18px 18px;width:min(420px,calc(100% - 36px));z-index:-1;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 800' preserveAspectRatio='none'%3E%3Cpath d='M22 20 Q38 8 60 20 T105 20 T150 20 T195 20 T240 20 T285 20 T330 20 T375 20 Q410 8 400 50 Q386 75 400 100 T400 150 T400 200 T400 250 T400 300 T400 350 T400 400 T400 450 T400 500 T400 550 T400 600 T400 650 T400 700 T400 750 Q412 795 375 780 Q350 766 325 780 T275 780 T225 780 T175 780 T125 780 T75 780 T25 780 Q7 777 20 740 Q34 715 20 690 T20 640 T20 590 T20 540 T20 490 T20 440 T20 390 T20 340 T20 290 T20 240 T20 190 T20 140 T20 90 Q7 50 22 20Z' fill='%23f7ede2' stroke='%23570204' stroke-width='3'/%3E%3C/svg%3E") center/100% 100% no-repeat;filter:drop-shadow(8px 8px 18px #21050844)}
+#doloria-navigation::backdrop{background:#21050866;backdrop-filter:blur(3px)}
+#doloria-navigation .natural-menu-top{margin-bottom:14px;gap:8px}
+#doloria-navigation .natural-menu-top p{text-transform:none;letter-spacing:0;font-family:Alike,Georgia,serif;font-size:23px}
+#doloria-navigation .natural-menu-top button{font-size:15px;padding:8px;min-height:44px}
+#doloria-navigation #site-menu{gap:3px}
+#doloria-navigation #site-menu>a,#doloria-navigation summary{font-size:22px!important;line-height:1.25;min-height:46px;padding:10px 0}
+#doloria-navigation .site-pro-links{gap:0;padding:2px 0 6px 16px}
+#doloria-navigation .site-pro-links a{font-size:16px!important;min-height:44px}
+#doloria-navigation #site-menu>a:hover,#doloria-navigation summary:hover{color:#ae2452}
+@media(max-width:480px){#doloria-navigation{padding:28px 36px;inset:10px auto 10px 10px;width:calc(100% - 20px);max-height:calc(100dvh - 20px)}#doloria-navigation:before{inset:10px auto 10px 10px;width:calc(100% - 20px)}#doloria-navigation #site-menu>a,#doloria-navigation summary{font-size:21px!important}}
+#doloria-navigation{bottom:auto;height:fit-content;min-height:550px;padding-bottom:42px}
+#doloria-navigation:before{position:absolute;inset:0;width:100%;height:100%}
+@media(max-width:480px){#doloria-navigation{bottom:auto;min-height:0;padding-bottom:40px}#doloria-navigation:before{inset:0;width:100%;height:100%}}
+
