@@ -1,6 +1,7 @@
 (()=>{
 const header=document.getElementById('site-header'),menu=document.getElementById('site-menu'),button=document.getElementById('site-menu-toggle');
 if(!header||!menu||!button)return;
+menu.querySelectorAll('a').forEach(link=>{const url=new URL(link.getAttribute('href'),location.href);if(url.pathname.endsWith('/actions.html')||(url.hash==='#actions'&&(/\/index\.html$/.test(url.pathname)||url.pathname.endsWith('/')))){link.remove();return;}if(url.pathname.endsWith('/vie-doloria.html'))link.textContent='Agenda & vie de Doloria';});
 const dialog=document.createElement('dialog');dialog.id='doloria-navigation';dialog.setAttribute('aria-labelledby','doloria-navigation-title');
 const top=document.createElement('div');top.className='natural-menu-top';const title=document.createElement('p');title.id='doloria-navigation-title';title.textContent='Explorer Doloria';const close=document.createElement('button');close.type='button';close.textContent='Fermer ×';close.setAttribute('aria-label','Fermer le menu');top.append(title,close);dialog.append(top);
 const nav=document.createElement('nav');nav.setAttribute('aria-label','Navigation principale');nav.append(menu);dialog.append(nav);document.body.append(dialog);
