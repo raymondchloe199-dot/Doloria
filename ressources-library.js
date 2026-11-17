@@ -11,9 +11,8 @@
 
  // Existing infographic data and accessible text continue to come from cms-public.js.
  const gallery=document.getElementById('cms-resources');
- let featured=false;
  function arrange(){for(const card of gallery.children){if(card.dataset.arranged)return;card.dataset.arranged='true';const preview=card.querySelector('.infographic-preview');if(preview)card.prepend(preview);}
- if(!featured&&gallery.firstElementChild){featured=true;const spot=el('div');spot.className='featured-resource';spot.append(gallery.firstElementChild);document.querySelector('.resource-opening').append(spot);}}
+ }
  new MutationObserver(arrange).observe(gallery,{childList:true});arrange();
  function fan(list){
   list.classList.add('cover-fan');list.tabIndex=0;list.setAttribute('role','region');list.setAttribute('aria-roledescription','carrousel');list.setAttribute('aria-label',list.id==='lectures-list'?'Livres et magazines':'Livrets de Doloria');
