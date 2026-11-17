@@ -1,0 +1,11 @@
+(async()=>{const target=document.getElementById('cms-dicoloria'),status=document.getElementById('dicoloria-status');if(!target)return;
+const make=(tag,text)=>{const e=document.createElement(tag);if(text)e.textContent=text;return e};
+const safe=v=>{try{if(typeof v!=='string'||!v.trim())return null;const u=new URL(v,location.href);return ['https:','http:'].includes(u.protocol)?u.href:null}catch{return null}};
+try{const res=await fetch('cms-dicoloria.json',{cache:'no-cache',credentials:'omit'});if(!res.ok)throw Error();const data=await res.json();const preview=new URLSearchParams(location.search).get('apercu')==='1';const items=(Array.isArray(data.elements)?data.elements:[]).filter(x=>x&&(preview||x.publie===true));status.textContent=items.length?'':'Les premières fiches Dicoloria arrivent bientôt.';
+for(const item of items){const card=make('article');card.className='card';const title=item.titre||'Fiche Dicoloria',image=safe(item.image),file=safe(item.fichier);
+if(image){const a=make('a');a.href=image;a.target='_blank';a.rel='noopener';a.className='infographic-preview';a.setAttribute('aria-label','Ouvrir en grand : '+title+' (nouvel onglet)');const img=make('img');img.src=safe(item.couverture)||image;img.alt=item.descriptionImage||title;img.loading='lazy';a.append(img);card.append(a)}card.append(make('h3',title));const actions=make('div');actions.className='infographic-actions';
+for(const [href,text] of [[image,'Ouvrir l’image en grand ↗'],[file,'Consulter le document']])if(href){const a=make('a',text);a.href=href;a.target='_blank';a.rel='noopener';actions.append(a)}card.append(actions);
+for(const [key,label] of [['description','À propos de cette fiche'],['transcription','Lire la version texte'],['references','Références utilisées']])if(item[key]){const d=make('details');d.append(make('summary',label),make('p',item[key]));card.append(d)}
+for(const [key,label] of [['auteur','Auteur / autrice : '],['dateCreation','Création : '],['dateRevision','Dernière révision : '],['sources','Crédits : ']])if(item[key])card.append(make('p',label+item[key]));target.append(card)}
+}catch{status.textContent='Le chargement des fiches est momentanément indisponible. Réessayez ou contactez Doloria.'}
+})();

@@ -1,13 +1,13 @@
 
 /* Infographies : galerie horizontale, présentation conservée. */
 body[data-cms-page="ressources"] .infographic-slider{position:relative;padding:0 44px}
-body[data-cms-page="ressources"] #cms-resources{display:grid;grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:calc((100% - 108px)/4);gap:36px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#a33b59 #eadbd0;padding:12px 0 20px;cursor:grab;overscroll-behavior-x:contain}
-body[data-cms-page="ressources"] #cms-resources>.card{scroll-snap-align:start;min-width:0}
-body[data-cms-page="ressources"] #cms-resources.is-dragging{cursor:grabbing;scroll-snap-type:none;user-select:none}
-#cms-resources img{-webkit-user-drag:none}
+body[data-cms-page="ressources"] :is(#cms-resources,#cms-dicoloria){display:grid;grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:calc((100% - 108px)/4);gap:36px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#a33b59 #eadbd0;padding:12px 0 20px;cursor:grab;overscroll-behavior-x:contain}
+body[data-cms-page="ressources"] :is(#cms-resources,#cms-dicoloria)>.card{scroll-snap-align:start;min-width:0}
+body[data-cms-page="ressources"] :is(#cms-resources,#cms-dicoloria).is-dragging{cursor:grabbing;scroll-snap-type:none;user-select:none}
+:is(#cms-resources,#cms-dicoloria) img{-webkit-user-drag:none}
 .infographic-arrow{position:absolute;top:150px;width:44px;height:48px;border:0;background:none;color:#570204;font:32px Questrial,Arial,sans-serif;cursor:pointer;z-index:2}
 .infographic-arrow.prev{left:0}.infographic-arrow.next{right:0}.infographic-arrow:disabled{opacity:.3;cursor:default}
 .infographic-count{text-align:center;color:#570204;font:16px Questrial,Arial,sans-serif;margin:16px 0 0}
 .infographic-slider [hidden]{display:none!important}
-@media(max-width:900px){body[data-cms-page="ressources"] #cms-resources{grid-auto-columns:calc((100% - 30px)/2);gap:30px}}
-@media(max-width:600px){body[data-cms-page="ressources"] .infographic-slider{padding:0 30px}body[data-cms-page="ressources"] #cms-resources{grid-auto-columns:100%;gap:24px}.infographic-arrow{width:30px;top:170px}}
+@media(max-width:900px){body[data-cms-page="ressources"] :is(#cms-resources,#cms-dicoloria){grid-auto-columns:calc((100% - 30px)/2);gap:30px}}
+@media(max-width:600px){body[data-cms-page="ressources"] .infographic-slider{padding:0 30px}body[data-cms-page="ressources"] :is(#cms-resources,#cms-dicoloria){grid-auto-columns:100%;gap:24px}.infographic-arrow{width:30px;top:170px}}

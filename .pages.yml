@@ -136,6 +136,127 @@
       ]
     },
     {
+      "name": "dicoloria",
+      "label": "Ressources · Dicoloria",
+      "type": "file",
+      "path": "cms-dicoloria.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "elements",
+          "label": "Les fiches Dicoloria",
+          "type": "object",
+          "list": {
+            "collapsible": {
+              "collapsed": true,
+              "summary": "{titre}"
+            }
+          },
+          "fields": [
+            {
+              "name": "publie",
+              "label": "Afficher dans les pages du site (contenu déjà public)",
+              "type": "boolean",
+              "default": false,
+              "description": "Enregistrer rend ce contenu accessible publiquement dans le dépôt, les fichiers du site et leur historique, même si cette case est décochée. Cette case règle uniquement son affichage dans les pages. Préparer les brouillons confidentiels hors de Pages CMS et du dépôt. Ne jamais enregistrer de dossier médical, de coordonnées privées ou de média sans autorisation de publication."
+            },
+            {
+              "name": "titre",
+              "label": "Titre",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "description",
+              "label": "Présentation",
+              "type": "text"
+            },
+            {
+              "name": "image",
+              "label": "Image de la fiche",
+              "type": "image",
+              "options": {
+                "extensions": [
+                  "jpg",
+                  "jpeg",
+                  "png",
+                  "webp"
+                ]
+              }
+            },
+            {
+              "name": "couverture",
+              "label": "Couverture dans la bibliothèque (facultatif)",
+              "type": "image",
+              "description": "Votre visuel de présentation. La fiche complète reste accessible au clic.",
+              "options": {
+                "extensions": [
+                  "jpg",
+                  "jpeg",
+                  "png",
+                  "webp"
+                ]
+              }
+            },
+            {
+              "name": "descriptionImage",
+              "label": "Description courte de l’image",
+              "type": "string"
+            },
+            {
+              "name": "fichier",
+              "label": "Image ou PDF à consulter",
+              "type": "file",
+              "options": {
+                "extensions": [
+                  "pdf",
+                  "jpg",
+                  "jpeg",
+                  "png",
+                  "webp"
+                ]
+              }
+            },
+            {
+              "name": "transcription",
+              "label": "Version texte accessible de la fiche",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "sources",
+              "label": "Crédits existants",
+              "type": "text",
+              "description": "Anciennes mentions conservées. Utilisez les champs séparés ci-dessous pour les nouveaux documents."
+            },
+            {
+              "name": "auteur",
+              "label": "Auteur ou autrice",
+              "type": "string"
+            },
+            {
+              "name": "dateCreation",
+              "label": "Date de création",
+              "type": "string",
+              "description": "Facultatif, par exemple 09.04.2024."
+            },
+            {
+              "name": "dateRevision",
+              "label": "Dernière révision du contenu",
+              "type": "string",
+              "description": "Facultatif. À renseigner uniquement après une véritable relecture du contenu, pas lors de sa mise en ligne."
+            },
+            {
+              "name": "references",
+              "label": "Références utilisées",
+              "type": "text",
+              "description": "Articles, organismes ou ouvrages sur lesquels le contenu s’appuie. Le nom de la personne qui crée le document est à renseigner dans Auteur ou autrice."
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "nouvelles",
       "label": "Journal de Doloria",
       "type": "file",
